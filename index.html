@@ -128,6 +128,7 @@
 
 </head>
 <body>
+  <div class="mobile-nav-overlay"></div>
   <div class="sticky-cta-bar">
     <a href="tel:043219638696" class="sticky-cta-btn sticky-cta-phone">📞 Sofort Taxi anrufen</a>
     <a href="https://wa.me/4943219638696" class="sticky-cta-btn sticky-cta-whatsapp" target="_blank">💬 WhatsApp Bestellung</a>
@@ -336,23 +337,28 @@ faqQuestions.forEach(question => {
     item.classList.toggle('open');
   });
 });
-// Burger-Menü für mobile Navigation bleibt wie gehabt
+// Mobile Navigation Overlay & Menü
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
-if (navToggle && navLinks) {
+const navOverlay = document.querySelector('.mobile-nav-overlay');
+if (navToggle && navLinks && navOverlay) {
+  function closeMenu() {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+    navOverlay.classList.remove('active');
+  }
   navToggle.addEventListener('click', function() {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', !expanded);
     navToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
+    navOverlay.classList.toggle('active');
   });
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
+    link.addEventListener('click', closeMenu);
   });
+  navOverlay.addEventListener('click', closeMenu);
 }
     </script>
 </body>
