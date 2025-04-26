@@ -36,8 +36,103 @@
     }
     </script>
 
+    <!-- JSON-LD Structured Data for FAQ Page -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie kann ich ein Taxi bestellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie können uns telefonisch unter 04321-9638696 erreichen oder bequem per WhatsApp bestellen. Wir sind 24/7 für Sie da."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Zahlungsmethoden werden akzeptiert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir akzeptieren Barzahlung, EC-Karte, Kreditkarte und Rechnung (für Geschäftskunden)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktionieren Krankenfahrten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir rechnen direkt mit allen Krankenkassen ab. Sie benötigen lediglich eine Verordnung Ihres Arztes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Festpreise für Flughafentransfers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, für Fahrten zu Flughäfen wie Hamburg oder Lübeck bieten wir verbindliche Festpreise an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich ein Taxi im Voraus bestellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Sie können Ihre Fahrt jederzeit im Voraus buchen. Wir empfehlen eine frühzeitige Reservierung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Großraumtaxis für mehr Personen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir verfügen über Großraumtaxis für bis zu 8 Personen. Bitte geben Sie dies bei der Bestellung an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktionieren Schülerfahrten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir bieten regelmäßige Schülerfahrten mit festen Fahrern an. Die Abrechnung erfolgt monatlich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Haustiere erlaubt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Haustiere sind in unseren Taxis erlaubt. Bitte informieren Sie uns bei der Bestellung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell ist ein Taxi vor Ort?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Neumünster sind wir meist innerhalb von 5-10 Minuten bei Ihnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es einen Nachtzuschlag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein, unsere Preise gelten rund um die Uhr ohne Nachtzuschlag."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
+  <div class="sticky-cta-bar">
+    <a href="tel:043219638696" class="sticky-cta-btn sticky-cta-phone">📞 Sofort Taxi anrufen</a>
+    <a href="https://wa.me/4943219638696" class="sticky-cta-btn sticky-cta-whatsapp" target="_blank">💬 WhatsApp Bestellung</a>
+  </div>
+
     <!-- Sticky Navigation -->
 <nav class="navbar" aria-label="Hauptnavigation">
   <div class="container nav-container">
@@ -169,6 +264,26 @@
             </div>
         </section>
 
+        <section class="testimonials" style="background: var(--gray);">
+  <div class="container">
+    <h2 class="section-title">Das sagen unsere Kunden</h2>
+    <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="testimonial-card">
+        <p>"Sehr freundlicher Fahrer, pünktlich und das Taxi war top gepflegt. Immer wieder gerne!"</p>
+        <span class="testimonial-author">– Anna S. aus Neumünster</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Der Flughafentransfer hat super geklappt, Festpreis und schnelle Abwicklung. Absolute Empfehlung!"</p>
+        <span class="testimonial-author">– Markus T.</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Auch für meine regelmäßigen Krankenfahrten immer zuverlässig und hilfsbereit. Danke!"</p>
+        <span class="testimonial-author">– Frau Berger</span>
+      </div>
+    </div>
+  </div>
+</section>
+
         <footer>
   <div class="container">
     <div class="footer-grid">
@@ -213,9 +328,16 @@
     </main>
 
     <script>
-        // FAQ Functionality bleibt wie gehabt
-        // Burger-Menü für mobile Navigation
-        const navToggle = document.querySelector('.nav-toggle');
+        // FAQ Functionality: Toggle einzelne FAQ-Items unabhängig
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+// Burger-Menü für mobile Navigation bleibt wie gehabt
+const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', function() {
@@ -224,7 +346,6 @@ if (navToggle && navLinks) {
     navToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
   });
-  // Optional: Menü schließt bei Klick auf Link
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
