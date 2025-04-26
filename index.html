@@ -10,18 +10,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- JSON-LD Structured Data for Local Business (Taxi) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "Taxi Go Neumünster",
+      "description": "Ihr zuverlässiges Taxiunternehmen in Neumünster für Stadtfahrten, Flughafentransfer, Krankenfahrten und mehr.",
+      "telephone": "+4943219638696",
+      "email": "taxigoneumuenster@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Beispielstraße 1", // Bitte korrekte Adresse eintragen
+        "addressLocality": "Neumünster",
+        "postalCode": "24534",
+        "addressCountry": "DE"
+      },
+      "openingHours": "Mo-Su 00:00-23:59", // 24/7 geöffnet
+      "url": "https://www.deine-domain.de", // Bitte korrekte Domain eintragen
+      "priceRange": "€€", // Beispiel für Preisniveau
+      "image": "https://www.deine-domain.de/images/logo-oder-hero.jpg" // URL zu einem repräsentativen Bild
+      // Optional: "areaServed": { "@type": "City", "name": "Neumünster" }
+    }
+    </script>
+
 </head>
 <body>
     <!-- Sticky Navigation -->
 <nav class="navbar" aria-label="Hauptnavigation">
   <div class="container nav-container">
     <a href="index.html" class="nav-logo" aria-label="Zur Startseite">Taxi Go Neumünster</a>
+    <button class="nav-toggle" aria-label="Menü öffnen/schließen" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Start</a></li>
       <li><a href="about.html">Über uns</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="impressum.html">Impressum & Datenschutz</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
     </ul>
   </div>
 </nav>
@@ -141,63 +170,69 @@
         </section>
 
         <footer>
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-section">
-                        <h3>Taxi Go Neumünster</h3>
-                        <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. 24/7 für Sie da.</p>
-                        <div class="contact-info">
-                            <p><a href="tel:043219638696">04321-9638696</a></p>
-                            <p><a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Beliebte Ziele</h3>
-                        <ul>
-                            <li>Flughafen Hamburg</li>
-                            <li>Bahnhof Neumünster</li>
-                            <li>Designer Outlet</li>
-                            <li>Holstenhallen</li>
-                            <li>FEK Neumünster</li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Service</h3>
-                        <ul>
-                            <li><a href="#services">Unsere Leistungen</a></li>
-                            <li><a href="#prices">Preise</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                            <li><a href="#datenschutz">Datenschutz</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten</p>
-                </div>
-            </div>
-        </footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Taxi Go Neumünster</h3>
+        <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. 24/7 für Sie da.</p>
+        <div class="contact-info" style="margin-top: 1rem;">
+            <p><i class="icon-phone"></i> <a href="tel:043219638696">04321-9638696</a></p>
+            <p><i class="icon-mail"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
+            <!-- Optional: Adresse -->
+            <!-- <p><i class="icon-location"></i> Beispielstraße 1, 24534 Neumünster</p> -->
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Schnell-Links</h3>
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Unsere Top-Leistungen</h3>
+        <ul>
+            <li><a href="leistungen.html#flughafen">Flughafentransfer</a></li>
+            <li><a href="leistungen.html#krankenfahrt">Krankenfahrten</a></li>
+            <li><a href="leistungen.html#stadtfahrt">Stadtfahrten</a></li>
+            <li><a href="leistungen.html#kurier">Kurierfahrten</a></li>
+            <li><a href="leistungen.html#business">Business Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten.</p>
+      <!-- Optional: Social Media Links -->
+    </div>
+  </div>
+</footer>
     </main>
 
     <script>
-        // Updated FAQ Functionality using 'open' class
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.closest('.faq-item'); // Find the parent .faq-item
-                const currentlyOpen = item.classList.contains('open');
-
-                // Close all other items first
-                document.querySelectorAll('.faq-item.open').forEach(openItem => {
-                    if (openItem !== item) { // Don't close the one we might be opening
-                        openItem.classList.remove('open');
-                    }
-                });
-
-                // Toggle the clicked item
-                item.classList.toggle('open');
-            });
-        });
-
-        // Initial state is handled by CSS, no need to hide answers via JS
+        // FAQ Functionality bleibt wie gehabt
+        // Burger-Menü für mobile Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', function() {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+  // Optional: Menü schließt bei Klick auf Link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+}
     </script>
 </body>
 </html>

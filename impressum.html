@@ -3,29 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Impressum und Datenschutzerklärung von Taxi Go Neumünster. Rechtliche Informationen und Hinweise zum Datenschutz.">
-  <meta name="keywords" content="Taxi Neumünster, Impressum, Datenschutz, Rechtliches">
+  <meta name="description" content="Impressum und Datenschutzerklärung von Taxi Go Neumünster. Verantwortlich für den Inhalt und Informationen zum Datenschutz gemäß DSGVO.">
+  <meta name="keywords" content="Taxi Neumünster Impressum, Datenschutz, DSGVO, Verantwortlicher, Rechtliche Hinweise">
   <title>Impressum & Datenschutz | Taxi Go Neumünster</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon-Links -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-<nav class="navbar">
+
+<nav class="navbar" aria-label="Hauptnavigation">
   <div class="container nav-container">
-    <a href="index.html" class="nav-logo">Taxi Go Neumünster</a>
+    <a href="index.html" class="nav-logo" aria-label="Zur Startseite">Taxi Go Neumünster</a>
+    <button class="nav-toggle" aria-label="Menü öffnen/schließen" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Start</a></li>
       <li><a href="about.html">Über uns</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="impressum.html" class="active">Impressum & Datenschutz</a></li>
+      <li><a href="impressum.html" class="active">Impressum</a></li>
     </ul>
   </div>
 </nav>
+
 <main>
-  <h1>Impressum</h1>
-  <p><strong>Taxi Go Neumünster</strong><br>Inhaber: Max Mustermann<br>Beispielstraße 1<br>24534 Neumünster<br>Telefon: 04321-9638696<br>E-Mail: taxigoneumuenster@gmail.com</p>
-  <h2>Datenschutzerklärung</h2>
-  <p>Wir nehmen den Schutz Ihrer Daten ernst. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Weitere Informationen erhalten Sie auf Anfrage.</p>
+  <section class="page-header" style="background: var(--gray); padding: 3rem 0; text-align: center;">
+    <div class="container">
+      <h1 style="color: var(--secondary); margin-bottom: 0.5rem;">Impressum & Datenschutz</h1>
+      <p style="color: var(--gray-dark); font-size: 1.1rem;">Rechtliche Hinweise und Informationen zum Schutz Ihrer Daten.</p>
+    </div>
+  </section>
+
+  <section id="impressum">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Impressum</h2>
+      <p>Angaben gemäß § 5 TMG:</p>
+      <p style="margin-bottom: 1rem;">
+        <strong>Taxi Go Neumünster</strong><br>
+        Inhaber: Max Mustermann (Beispiel)<br>
+        Beispielstraße 1<br>
+        24534 Neumünster
+      </p>
+      <p style="margin-bottom: 1rem;">
+        <strong>Kontakt:</strong><br>
+        Telefon: <a href="tel:043219638696">04321-9638696</a><br>
+        E-Mail: <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a>
+      </p>
+      <p style="margin-bottom: 1rem;">
+        <strong>Umsatzsteuer-ID:</strong><br>
+        Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:<br>
+        DE123456789 (Beispiel)
+      </p>
+      <p style="margin-bottom: 1rem;">
+        <strong>Aufsichtsbehörde:</strong><br>
+        Stadt Neumünster<br>
+        Fachdienst Straßenverkehr<br>
+        Großflecken 59<br>
+        24534 Neumünster (Beispieladresse, bitte prüfen)
+      </p>
+      <p>
+        <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+        Max Mustermann<br>
+        (Adresse wie oben)
+      </p>
+    </div>
+  </section>
+
+  <section id="datenschutz" style="background-color: var(--gray);">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Datenschutzerklärung</h2>
+      <p style="margin-bottom: 1rem;">Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+      <h3 style="color: var(--secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Datenerfassung auf unserer Website</h3>
+      <p style="margin-bottom: 1rem;">Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen im Kontaktformular) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+      <p style="margin-bottom: 1rem;">Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+      <h3 style="color: var(--secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Kontaktformular</h3>
+      <p style="margin-bottom: 1rem;">Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+      <h3 style="color: var(--secondary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Ihre Rechte</h3>
+      <p style="margin-bottom: 1rem;">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
+      <p><em>Hinweis: Dies ist ein einfacher Beispieltext. Für eine rechtssichere Datenschutzerklärung sollten Sie einen Datenschutzexperten oder Generator konsultieren.</em></p>
+    </div>
+  </section>
+
 </main>
-<footer style="text-align:center;padding:2rem 0;color:#2c3e50;">&copy; 2024 Taxi Go Neumünster</footer>
+
+<footer>
+  <!-- ... Footer wie in about.html ... -->
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Taxi Go Neumünster</h3>
+        <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. 24/7 für Sie da.</p>
+        <div class="contact-info" style="margin-top: 1rem;">
+            <p><i class="icon-phone"></i> <a href="tel:043219638696">04321-9638696</a></p>
+            <p><i class="icon-mail"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Schnell-Links</h3>
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Unsere Top-Leistungen</h3>
+        <ul>
+            <li>Flughafentransfer</li>
+            <li>Krankenfahrten</li>
+            <li>Stadtfahrten</li>
+            <li>Kurierfahrten</li>
+            <li>Business Service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Burger-Menü für mobile Navigation
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', function() {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+}
+</script>
+
 </body>
 </html>
