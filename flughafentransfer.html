@@ -68,42 +68,41 @@
   <section id="anfrage">
     <div class="container">
       <h2 class="section-title">Flughafentransfer jetzt anfragen</h2>
-      <form action="https://formspree.io/f/DEIN_FORM_ID" method="POST" style="background: var(--gray); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); max-width:500px;margin:0 auto;">
+      <form id="mailtoFormFlughafen" style="background: var(--gray); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); max-width:500px;margin:0 auto;">
         <div style="margin-bottom: 1rem;">
-          <label for="name">Ihr Name:</label>
-          <input type="text" id="name" name="name" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="nameF">Ihr Name:</label>
+          <input type="text" id="nameF" name="name" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="email">Ihre E-Mail:</label>
-          <input type="email" id="email" name="email" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="emailF">Ihre E-Mail:</label>
+          <input type="email" id="emailF" name="email" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="telefon">Telefonnummer:</label>
-          <input type="text" id="telefon" name="telefon" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="telefonF">Telefonnummer:</label>
+          <input type="text" id="telefonF" name="telefon" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="abholort">Abholort:</label>
-          <input type="text" id="abholort" name="abholort" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="abholortF">Abholort:</label>
+          <input type="text" id="abholortF" name="abholort" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="ziel">Flughafen/Ziel:</label>
-          <input type="text" id="ziel" name="ziel" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="zielF">Flughafen/Ziel:</label>
+          <input type="text" id="zielF" name="ziel" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="datum">Datum & Uhrzeit:</label>
-          <input type="text" id="datum" name="datum" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="datumF">Datum & Uhrzeit:</label>
+          <input type="text" id="datumF" name="datum" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1rem;">
-          <label for="personen">Anzahl Personen:</label>
-          <input type="number" id="personen" name="personen" min="1" max="8" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
+          <label for="personenF">Anzahl Personen:</label>
+          <input type="number" id="personenF" name="personen" min="1" max="8" required style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;">
         </div>
         <div style="margin-bottom: 1.5rem;">
-          <label for="nachricht">Weitere Wünsche (optional):</label>
-          <textarea id="nachricht" name="nachricht" rows="3" style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;"></textarea>
+          <label for="nachrichtF">Weitere Wünsche (optional):</label>
+          <textarea id="nachrichtF" name="nachricht" rows="3" style="width:100%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;"></textarea>
         </div>
-        <input type="hidden" name="_subject" value="Flughafentransfer-Anfrage">
-        <button type="submit" class="btn btn-primary" style="width:100%;">Anfrage absenden</button>
-        <p style="font-size:0.9rem;color:var(--gray-dark);margin-top:1rem;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß <a href="impressum.html#datenschutz">Datenschutzerklärung</a> zu.</p>
+        <button type="submit" class="btn btn-primary" style="width:100%;">E-Mail Anfrage absenden</button>
+        <p style="font-size:0.9rem;color:var(--gray-dark);margin-top:1rem;">Mit dem Absenden wird Ihr E-Mail-Programm geöffnet.</p>
       </form>
     </div>
   </section>
