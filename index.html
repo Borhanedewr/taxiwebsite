@@ -179,28 +179,25 @@
     </main>
 
     <script>
-        // FAQ Functionality
+        // Updated FAQ Functionality using 'open' class
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                
-                // Close all answers
-                document.querySelectorAll('.faq-answer').forEach(a => {
-                    a.style.display = 'none';
+                const item = question.closest('.faq-item'); // Find the parent .faq-item
+                const currentlyOpen = item.classList.contains('open');
+
+                // Close all other items first
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    if (openItem !== item) { // Don't close the one we might be opening
+                        openItem.classList.remove('open');
+                    }
                 });
-                
-                // Open clicked answer if it was closed
-                if (!isOpen) {
-                    answer.style.display = 'block';
-                }
+
+                // Toggle the clicked item
+                item.classList.toggle('open');
             });
         });
 
-        // Hide all FAQ answers initially
-        document.querySelectorAll('.faq-answer').forEach(answer => {
-            answer.style.display = 'none';
-        });
+        // Initial state is handled by CSS, no need to hide answers via JS
     </script>
 </body>
 </html>
