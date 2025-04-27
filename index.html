@@ -637,25 +637,14 @@
         // Handle navigation
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
                 // Remove active class from all links
                 navLinks.forEach(l => l.classList.remove('active'));
-                
                 // Add active class to clicked link
                 link.classList.add('active');
-                
                 // Close mobile menu
                 nav.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
-                
-                // Smooth scroll to section
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                // Kein preventDefault und kein Scrollen mehr
             });
         });
 
