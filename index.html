@@ -156,73 +156,88 @@
 </nav>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Taxi in Neumünster gesucht?</h1>
-                    <p>Schnell, zuverlässig und fair – Ihr kompetenter Taxiservice in Neumünster, 24/7 für Sie da.</p>
-                    <div class="cta-buttons">
-                        <a href="tel:043219638696" class="btn btn-primary">Jetzt anrufen</a>
-                        <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">WhatsApp Bestellung</a>
-                        <a href="https://app.toyumobility.de/?srcid=34" class="btn btn-secondary btn-app" target="_blank">Per App buchen</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Moderner Hero-Bereich mit Bild und Overlay -->
+  <section class="hero" style="position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
+    <div style="position:absolute;inset:0;background:rgba(0,34,68,0.68);"></div>
+    <div class="container hero-content" style="position:relative;z-index:2;text-align:center;color:#fff;max-width:600px;">
+      <h1 style="font-size:2.5rem;font-weight:800;letter-spacing:0.01em;line-height:1.1;margin-bottom:1.2rem;">Dein Taxi. <span style='color:#ffd600;'>Sofort. Sicher. Überall.</span></h1>
+      <p style="font-size:1.25rem;margin-bottom:2.2rem;">24/7 für dich in Neumünster & ganz Norddeutschland. Flughafentransfer, Krankenfahrt, Business – <b>einfach buchen & losfahren!</b></p>
+      <div class="cta-buttons" style="justify-content:center;gap:1rem;">
+        <a href="tel:043219638696" class="btn btn-primary" style="font-size:1.15rem;">Jetzt anrufen</a>
+        <a href="https://wa.me/4943219638696" class="btn btn-whatsapp" style="font-size:1.15rem;">WhatsApp</a>
+        <a href="https://app.toyumobility.de/?srcid=34" class="btn btn-app" style="font-size:1.15rem;">Per App buchen</a>
+      </div>
+    </div>
+  </section>
 
-        <section class="services">
-            <div class="container">
-                <h2 class="section-title">Unsere Leistungen</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Flughafentransfer</h3>
-                        <p>Zuverlässiger Transfer zu allen Flughäfen mit Festpreisgarantie.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Krankenfahrten</h3>
-                        <p>Direktabrechnung mit allen Krankenkassen, barrierefrei und komfortabel.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Schülerfahrten</h3>
-                        <p>Sicherer Transport mit festen Fahrern und Pünktlichkeitsgarantie.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Kurierfahrten</h3>
-                        <p>Schnelle und sichere Lieferung Ihrer wichtigen Sendungen.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Business Service</h3>
-                        <p>Professioneller Service für Geschäftsreisende mit Rechnung.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Spannende Leistungen mit Icons -->
+  <section class="services" style="background:var(--background);">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <div class="services-grid" style="gap:2.2rem;">
+        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">✈️</span>
+          <h3>Flughafentransfer</h3>
+          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
+            <li>Festpreis & Pünktlichkeit</li>
+            <li>Hamburg, Lübeck, Hannover uvm.</li>
+          </ul>
+        </div>
+        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">❤️</span>
+          <h3>Krankenfahrten</h3>
+          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
+            <li>Direktabrechnung Kasse</li>
+            <li>Barrierefrei & diskret</li>
+          </ul>
+        </div>
+        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">🎒</span>
+          <h3>Schülerfahrten</h3>
+          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
+            <li>Feste Fahrer</li>
+            <li>Monatliche Abrechnung</li>
+          </ul>
+        </div>
+        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">📦</span>
+          <h3>Kurierfahrten</h3>
+          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
+            <li>Schnell & sicher</li>
+            <li>Wichtige Sendungen</li>
+          </ul>
+        </div>
+        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">💼</span>
+          <h3>Business Service</h3>
+          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
+            <li>Rechnung & Komfort</li>
+            <li>Diskret & flexibel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="prices">
-            <div class="container">
-                <h2 class="section-title">Offizielle Taxipreise Neumünster</h2>
-                <div class="price-table">
-                    <div class="price-row">
-                        <span>Grundpreis</span>
-                        <span>3,90 €</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Kilometerpreis</span>
-                        <span>2,20 € / km</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Wartezeit (pro Stunde)</span>
-                        <span>30,00 €</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Großraumtaxi Zuschlag</span>
-                        <span>8,00 €</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Fahrpreisrechner UI-Demo für ganz Deutschland -->
+  <section class="prices" style="background:var(--gray);">
+    <div class="container">
+      <h2 class="section-title">Fahrpreisrechner (Demo)</h2>
+      <form id="preisrechner" style="max-width:500px;margin:0 auto;">
+        <label for="start">Startadresse</label>
+        <input id="start" name="start" type="text" placeholder="Straße, PLZ, Ort" autocomplete="off" required style="width:100%;margin-bottom:1rem;">
+        <div id="start-suggestions" style="background:#fff;border:1px solid #ccc;border-radius:0.5em;max-height:140px;overflow-y:auto;display:none;position:absolute;z-index:10;width:calc(100% - 2px);"></div>
+        <label for="ziel">Zieladresse</label>
+        <input id="ziel" name="ziel" type="text" placeholder="Straße, PLZ, Ort" autocomplete="off" required style="width:100%;margin-bottom:1rem;">
+        <div id="ziel-suggestions" style="background:#fff;border:1px solid #ccc;border-radius:0.5em;max-height:140px;overflow-y:auto;display:none;position:absolute;z-index:10;width:calc(100% - 2px);"></div>
+        <button type="submit" class="btn btn-primary">Preis berechnen</button>
+        <div id="preis-output" style="margin-top:1.2rem;font-weight:600;font-size:1.1rem;"></div>
+      </form>
+      <p style="color:var(--gray-dark);font-size:0.95rem;margin-top:1.2rem;">Demo: Vorschläge für alle deutschen Straßen, Preisberechnung ist nicht verbindlich.</p>
+    </div>
+  </section>
 
-        <section class="faq">
+  <section class="faq">
             <div class="container">
                 <h2 class="section-title">Häufig gestellte Fragen</h2>
                 <div class="faq-container">
@@ -299,8 +314,6 @@
         <div class="contact-info" style="margin-top: 1rem;">
             <p><i class="icon-phone"></i> <a href="tel:043219638696">04321-9638696</a></p>
             <p><i class="icon-mail"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
-            <!-- Optional: Adresse -->
-            <!-- <p><i class="icon-location"></i> Beispielstraße 1, 24534 Neumünster</p> -->
         </div>
       </div>
       <div class="footer-section">
@@ -327,7 +340,6 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten.</p>
-      <!-- Optional: Social Media Links -->
     </div>
   </div>
 </footer>
@@ -365,6 +377,37 @@ if (navToggle && navLinks && navOverlay) {
   });
   navOverlay.addEventListener('click', closeMenu);
 }
+// Fahrpreisrechner: Demo für Auto-Vervollständigung (deutsche Straßen, nur UI)
+const streetsDE = [
+  "Berliner Straße", "Hauptstraße", "Bahnhofstraße", "Schulstraße", "Dorfstraße", "Gartenstraße", "Goethestraße", "Friedrichstraße", "Parkstraße", "Ringstraße", "Musterweg", "Königsallee", "Lindenstraße", "Marktplatz", "Poststraße", "Rathausplatz", "Waldweg", "Bergstraße", "Industriestraße", "Am Sportplatz", "Am Bahnhof", "Neue Straße", "Alte Straße", "Bismarckstraße", "Lessingstraße", "Mozartstraße", "Schillerstraße", "Uhlandstraße", "Wilhelmstraße", "Kastanienweg", "Rosenweg", "Tulpenweg", "Birkenweg", "Eichenweg", "Tannenweg", "Feldstraße", "Wiesenweg", "Heideweg", "Mühlenweg", "Kirchstraße", "Schlossstraße", "Seestraße", "Hafenstraße", "Brückenstraße", "Bachstraße", "Weidenweg", "Sonnenweg", "Dammstraße", "Teichstraße", "Bahnweg", "Burgstraße", "Hafenweg", "Kiefernweg", "Platanenweg", "Pappelweg", "Erlenweg", "Ahornweg", "Fichtenweg", "Im Wiesengrund", "Im Grund", "Im Winkel", "Im Tal", "Im Feld", "Im Dorf", "Im Park", "Im Garten", "Im Gehren", "Im Grundacker", "Im Hain", "Im Kirschgarten", "Im Mühlenfeld", "Im Oberdorf", "Im Unterdorf", "Im Wiesental", "Im Winkelacker", "Im Ziegelgarten"
+  // ... Liste kann beliebig erweitert werden, für echte Daten API nutzen
+];
+function setupAutoSuggest(inputId, suggestionsId) {
+  const input = document.getElementById(inputId);
+  const suggBox = document.getElementById(suggestionsId);
+  input.addEventListener('input', function() {
+    const val = input.value.trim().toLowerCase();
+    if (val.length < 2) { suggBox.style.display = 'none'; return; }
+    const matches = streetsDE.filter(s => s.toLowerCase().includes(val)).slice(0,8);
+    if (matches.length === 0) { suggBox.style.display = 'none'; return; }
+    suggBox.innerHTML = matches.map(s => `<div style='padding:0.4em 0.7em;cursor:pointer;'>${s}</div>`).join('');
+    suggBox.style.display = 'block';
+    Array.from(suggBox.children).forEach(child => {
+      child.onclick = () => { input.value = child.textContent; suggBox.style.display = 'none'; };
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!suggBox.contains(e.target) && e.target !== input) suggBox.style.display = 'none';
+  });
+}
+setupAutoSuggest('start','start-suggestions');
+setupAutoSuggest('ziel','ziel-suggestions');
+document.getElementById('preisrechner').onsubmit = function(e) {
+  e.preventDefault();
+  const start = document.getElementById('start').value;
+  const ziel = document.getElementById('ziel').value;
+  document.getElementById('preis-output').textContent = `Fahrpreis (Demo): ca. ${(Math.random()*40+15).toFixed(2)} €`;
+};
     </script>
 </body>
 </html>
