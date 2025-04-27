@@ -607,90 +607,20 @@
     </main>
 
     <script>
-        // Enhanced Mobile menu functionality
-        const header = document.querySelector('.header');
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('.nav');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Handle mobile menu
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-        });
-
-        // Handle scroll
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            // Add scrolled class to header
-            if (currentScroll > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Handle navigation
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Remove active class from all links
-                navLinks.forEach(l => l.classList.remove('active'));
-                // Add active class to clicked link
-                link.classList.add('active');
-                // Close mobile menu
-                nav.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-                // Kein preventDefault und kein Scrollen mehr
-            });
-        });
-
-        // Set active nav link based on scroll position
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const scroll = window.scrollY;
-                const id = section.getAttribute('id');
-                
-                if (scroll >= sectionTop && scroll < sectionBottom) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-
-        // FAQ Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                
-                // Close all answers
-                document.querySelectorAll('.faq-answer').forEach(a => {
-                    a.style.display = 'none';
-                });
-                
-                // Open clicked answer if it was closed
-                if (!isOpen) {
-                    answer.style.display = 'block';
-                }
-            });
-        });
-
-        // Hide all FAQ answers initially
-        document.querySelectorAll('.faq-answer').forEach(answer => {
-            answer.style.display = 'none';
-        });
+    // Mobile Menü-Button Funktionalität
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuBtn.classList.toggle('active');
+    });
+    // Schließt das Menü beim Klick auf einen Link (mobile UX)
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuBtn.classList.remove('active');
+      });
+    });
     </script>
 </body>
 </html>

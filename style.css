@@ -181,59 +181,84 @@ body {
     font-size: 0.98rem;
   }
 }
-body { padding-bottom: 44px; }
-input, textarea, select {
-  font-family: inherit;
-  font-size: 1rem;
-  border-radius: 0.7rem;
-  border: 1px solid #cfd8dc;
-  padding: 0.7rem 0.9rem;
-  background: #fff;
-  color: var(--text);
-  margin-bottom: 0.7rem;
-  box-sizing: border-box;
-  transition: border-color .15s;
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+  body {
+    padding-bottom: 70px;
+  }
+  .header, .navbar {
+    min-height: 3.5rem;
+    padding: 0.5rem 0;
+  }
+  .logo {
+    font-size: 1.1rem !important;
+  }
+  .nav, .nav-links {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    width: 100vw !important;
+    left: 0;
+    top: 3.5rem;
+    background: #fff !important;
+    position: fixed !important;
+    z-index: 2000;
+    padding: 2.5rem 0 2rem 0 !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    display: none;
+    align-items: center;
+    text-align: center;
+  }
+  .nav.active, .nav-links.active {
+    display: flex !important;
+  }
+  .mobile-menu-btn, .nav-toggle {
+    display: block !important;
+    font-size: 2.2rem !important;
+    padding: 0.2em 0.7em !important;
+    position: fixed !important;
+    right: 1.2rem;
+    top: 0.7rem;
+    z-index: 2501;
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    border-radius: 0.7em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .cta-buttons {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    width: 100%;
+  }
+  .btn, .btn-primary, .btn-app, .btn-whatsapp {
+    width: 100%;
+    font-size: 1.1rem !important;
+    padding: 1rem 0.2rem !important;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .service-card, .testimonial-card {
+    padding: 0.7rem 0.2rem !important;
+    font-size: 0.98rem !important;
+  }
+  .section-title, .hero h1 {
+    font-size: 1.05rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+    text-align: center !important;
+  }
+  .footer-section h3 {
+    font-size: 1.1rem !important;
+  }
+  .footer-section ul li {
+    margin-bottom: 0.5rem !important;
+  }
 }
-input:focus, textarea:focus, select:focus {
-  border-color: var(--accent);
-  outline: none;
-}
-form {
-  background: var(--gray);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.5rem 1.2rem;
-  max-width: 500px;
-  margin: 1.5rem auto;
-}
-label {
-  font-weight: 500;
-  color: var(--primary);
-  margin-bottom: 0.3rem;
-  display: block;
-  font-size: 1rem;
-}
-button[type="submit"], .btn[type="submit"] {
-  width: 100%;
-  margin-top: 0.7rem;
-  font-size: 1.05rem;
-  padding: 0.7rem 0;
-  border-radius: 1.2rem;
-  background: var(--accent);
-  color: var(--primary);
-  font-weight: 700;
-  border: none;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: background var(--transition), color var(--transition);
-}
-button[type="submit"]:hover, .btn[type="submit"]:hover {
-  background: var(--accent-dark);
-  color: var(--primary);
-}
-@media (max-width: 700px) {
-  .container { padding: 0 0.3rem; }
-  .hero h1 { font-size: 1.3rem; }
-  .section-title { font-size: 1.05rem; }
-  section { padding: 1.2rem 0; }
+
+/* Verbesserte Touch-Flächen für Buttons */
+.btn, .btn-primary, .btn-whatsapp, .mobile-menu-btn, .nav-toggle {
+  min-height: 48px;
+  min-width: 48px;
 }
