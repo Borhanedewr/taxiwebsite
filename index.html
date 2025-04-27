@@ -9,235 +9,499 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <style>
+        :root {
+            --primary: #ffd700;
+            --whatsapp: #25d366;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+            --accent: #2c3e50;
+        }
 
-    <!-- JSON-LD Structured Data for Local Business (Taxi) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TaxiService",
-      "name": "Taxi Go Neumünster",
-      "description": "Ihr zuverlässiges Taxiunternehmen in Neumünster für Stadtfahrten, Flughafentransfer, Krankenfahrten und mehr.",
-      "telephone": "+4943219638696",
-      "email": "taxigoneumuenster@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Beispielstraße 1", // Bitte korrekte Adresse eintragen
-        "addressLocality": "Neumünster",
-        "postalCode": "24534",
-        "addressCountry": "DE"
-      },
-      "openingHours": "Mo-Su 00:00-23:59", // 24/7 geöffnet
-      "url": "https://www.deine-domain.de", // Bitte korrekte Domain eintragen
-      "priceRange": "€€", // Beispiel für Preisniveau
-      "image": "https://www.deine-domain.de/images/logo-oder-hero.jpg" // URL zu einem repräsentativen Bild
-      // Optional: "areaServed": { "@type": "City", "name": "Neumünster" }
-    }
-    </script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <!-- JSON-LD Structured Data for FAQ Page -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie kann ich ein Taxi bestellen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sie können uns telefonisch unter 04321-9638696 erreichen oder bequem per WhatsApp bestellen. Wir sind 24/7 für Sie da."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welche Zahlungsmethoden werden akzeptiert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir akzeptieren Barzahlung, EC-Karte, Kreditkarte und Rechnung (für Geschäftskunden)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktionieren Krankenfahrten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir rechnen direkt mit allen Krankenkassen ab. Sie benötigen lediglich eine Verordnung Ihres Arztes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es Festpreise für Flughafentransfers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, für Fahrten zu Flughäfen wie Hamburg oder Lübeck bieten wir verbindliche Festpreise an."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kann ich ein Taxi im Voraus bestellen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, Sie können Ihre Fahrt jederzeit im Voraus buchen. Wir empfehlen eine frühzeitige Reservierung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es Großraumtaxis für mehr Personen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, wir verfügen über Großraumtaxis für bis zu 8 Personen. Bitte geben Sie dies bei der Bestellung an."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie funktionieren Schülerfahrten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir bieten regelmäßige Schülerfahrten mit festen Fahrern an. Die Abrechnung erfolgt monatlich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sind Haustiere erlaubt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, Haustiere sind in unseren Taxis erlaubt. Bitte informieren Sie uns bei der Bestellung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie schnell ist ein Taxi vor Ort?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Neumünster sind wir meist innerhalb von 5-10 Minuten bei Ihnen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es einen Nachtzuschlag?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein, unsere Preise gelten rund um die Uhr ohne Nachtzuschlag."
-      }
-    }
-  ]
-}
-</script>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
 
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.7rem 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover span {
+            color: #e6c200;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav a.active {
+            color: var(--primary);
+        }
+
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn.active {
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 50vh;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: slideUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideUp 0.8s ease 0.2s backwards;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: slideUp 0.8s ease 0.4s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: var(--light);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .service-card {
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Prices Section */
+        .prices {
+            padding: 4rem 0;
+            background: var(--gray);
+        }
+
+        .price-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--gray);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--accent);
+            color: var(--light);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav.active {
+                display: flex;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-row {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .price-row span:first-child {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="mobile-nav-overlay"></div>
-  <div class="sticky-cta-bar">
-  <a href="https://app.toyumobility.de/?srcid=34" class="sticky-cta-btn sticky-cta-app" target="_blank">🚖 Per App buchen</a>
-  <a href="tel:0432199638696" class="sticky-cta-btn sticky-cta-phone">📞 Sofort Taxi anrufen</a>
-</div>
-
-    <!-- Sticky Navigation -->
-<nav class="navbar" aria-label="Hauptnavigation">
-  <div class="container nav-container">
-    <a href="index.html" class="nav-logo" aria-label="Zur Startseite">Taxi Go Neumünster</a>
-    <button class="nav-toggle" aria-label="Menü öffnen/schließen" aria-expanded="false">
-      <span class="hamburger" style="display:inline-block;width:28px;height:22px;position:relative;vertical-align:middle;">
-        <span style="display:block;position:absolute;height:4px;width:100%;background:currentColor;border-radius:2px;opacity:1;left:0;top:0;"></span>
-        <span style="display:block;position:absolute;height:4px;width:100%;background:currentColor;border-radius:2px;opacity:1;left:0;top:9px;"></span>
-        <span style="display:block;position:absolute;height:4px;width:100%;background:currentColor;border-radius:2px;opacity:1;left:0;top:18px;"></span>
-      </span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="about.html">Über uns</a></li>
-      <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </div>
-</nav>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Taxi<span>Go</span></a>
+            <nav class="nav">
+                <a href="leistungen.html" class="nav-link">Leistungen</a>
+                <a href="about.html" class="nav-link">Über uns</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menü öffnen">☰</button>
+        </div>
+    </header>
 
     <main>
-  <!-- Moderner Hero-Bereich mit Bild und Overlay -->
-  <section class="hero" style="position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
-    <div style="position:absolute;inset:0;background:rgba(0,34,68,0.68);"></div>
-    <div class="container hero-content" style="position:relative;z-index:2;text-align:center;color:#fff;max-width:600px;">
-      <h1 style="font-size:2.5rem;font-weight:800;letter-spacing:0.01em;line-height:1.1;margin-bottom:1.2rem;">Dein Taxi. <span style='color:#ffd600;'>Sofort. Sicher. Überall.</span></h1>
-      <p style="font-size:1.25rem;margin-bottom:2.2rem;">24/7 für dich in Neumünster & ganz Norddeutschland. Flughafentransfer, Krankenfahrt, Business – <b>einfach buchen & losfahren!</b></p>
-      <div class="cta-buttons" style="justify-content:center;gap:1rem;">
-        <a href="tel:043219638696" class="btn btn-primary" style="font-size:1.15rem;">Jetzt anrufen</a>
-        <a href="https://wa.me/4943219638696" class="btn btn-whatsapp" style="font-size:1.15rem;">WhatsApp</a>
-        <a href="https://app.toyumobility.de/?srcid=34" class="btn btn-app" style="font-size:1.15rem;">Per App buchen</a>
-      </div>
-    </div>
-  </section>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Taxi in Neumünster gesucht?</h1>
+                    <p>Schnell, zuverlässig und fair – Ihr kompetenter Taxiservice in Neumünster, 24/7 für Sie da.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:043219638696" class="btn btn-primary">Jetzt anrufen</a>
+                        <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">WhatsApp Bestellung</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Spannende Leistungen mit Icons -->
-  <section class="services" style="background:var(--background);">
-    <div class="container">
-      <h2 class="section-title">Unsere Leistungen</h2>
-      <div class="services-grid" style="gap:2.2rem;">
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
-          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">✈️</span>
-          <h3>Flughafentransfer</h3>
-          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
-            <li>Festpreis & Pünktlichkeit</li>
-            <li>Hamburg, Lübeck, Hannover uvm.</li>
-          </ul>
-        </div>
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
-          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">❤️</span>
-          <h3>Krankenfahrten</h3>
-          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
-            <li>Direktabrechnung Kasse</li>
-            <li>Barrierefrei & diskret</li>
-          </ul>
-        </div>
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
-          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">🎒</span>
-          <h3>Schülerfahrten</h3>
-          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
-            <li>Feste Fahrer</li>
-            <li>Monatliche Abrechnung</li>
-          </ul>
-        </div>
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
-          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">📦</span>
-          <h3>Kurierfahrten</h3>
-          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
-            <li>Schnell & sicher</li>
-            <li>Wichtige Sendungen</li>
-          </ul>
-        </div>
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;">
-          <span style="font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem;">💼</span>
-          <h3>Business Service</h3>
-          <ul style="padding:0 0 0 1.1em;margin:0 0 0.7em 0;text-align:left;font-size:1rem;color:var(--gray-dark);">
-            <li>Rechnung & Komfort</li>
-            <li>Diskret & flexibel</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Unsere Leistungen</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div style="font-size:2.2rem;color:var(--primary);margin-bottom:0.7rem;">✈️</div>
+                        <h3>Flughafentransfer</h3>
+                        <p>Zuverlässiger Transfer zu allen Flughäfen mit Festpreisgarantie.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="font-size:2.2rem;color:var(--primary);margin-bottom:0.7rem;">❤️</div>
+                        <h3>Krankenfahrten</h3>
+                        <p>Direktabrechnung mit allen Krankenkassen, barrierefrei und komfortabel.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="font-size:2.2rem;color:var(--primary);margin-bottom:0.7rem;">🎒</div>
+                        <h3>Schülerfahrten</h3>
+                        <p>Sicherer Transport mit festen Fahrern und Pünktlichkeitsgarantie.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="font-size:2.2rem;color:var(--primary);margin-bottom:0.7rem;">📦</div>
+                        <h3>Kurierfahrten</h3>
+                        <p>Schnelle und sichere Lieferung Ihrer wichtigen Sendungen.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="font-size:2.2rem;color:var(--primary);margin-bottom:0.7rem;">💼</div>
+                        <h3>Business Service</h3>
+                        <p>Professioneller Service für Geschäftsreisende mit Rechnung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Fahrpreisrechner UI-Demo für ganz Deutschland -->
-  <section class="prices" style="background:var(--gray);">
-    <div class="container">
-      <h2 class="section-title">Fahrpreisrechner (Demo)</h2>
-      <form id="preisrechner" style="max-width:500px;margin:0 auto;">
-        <label for="start">Startadresse</label>
-        <input id="start" name="start" type="text" placeholder="Straße, PLZ, Ort" autocomplete="off" required style="width:100%;margin-bottom:1rem;">
-        <div id="start-suggestions" style="background:#fff;border:1px solid #ccc;border-radius:0.5em;max-height:140px;overflow-y:auto;display:none;position:absolute;z-index:10;width:calc(100% - 2px);"></div>
-        <label for="ziel">Zieladresse</label>
-        <input id="ziel" name="ziel" type="text" placeholder="Straße, PLZ, Ort" autocomplete="off" required style="width:100%;margin-bottom:1rem;">
-        <div id="ziel-suggestions" style="background:#fff;border:1px solid #ccc;border-radius:0.5em;max-height:140px;overflow-y:auto;display:none;position:absolute;z-index:10;width:calc(100% - 2px);"></div>
-        <button type="submit" class="btn btn-primary">Preis berechnen</button>
-        <div id="preis-output" style="margin-top:1.2rem;font-weight:600;font-size:1.1rem;"></div>
-      </form>
-      <p style="color:var(--gray-dark);font-size:0.95rem;margin-top:1.2rem;">Demo: Vorschläge für alle deutschen Straßen, Preisberechnung ist nicht verbindlich.</p>
-    </div>
-  </section>
+        <section class="prices">
+            <div class="container">
+                <h2 class="section-title">Offizielle Taxipreise Neumünster</h2>
+                <div class="price-table">
+                    <div class="price-row">
+                        <span>Grundpreis</span>
+                        <span>3,90 €</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Kilometerpreis</span>
+                        <span>2,20 € / km</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Wartezeit (pro Stunde)</span>
+                        <span>30,00 €</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Großraumtaxi Zuschlag</span>
+                        <span>8,00 €</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="faq">
+        <section class="faq">
             <div class="container">
                 <h2 class="section-title">Häufig gestellte Fragen</h2>
                 <div class="faq-container">
@@ -285,129 +549,159 @@
             </div>
         </section>
 
-        <section class="testimonials" style="background: var(--gray);">
-  <div class="container">
-    <h2 class="section-title">Das sagen unsere Kunden</h2>
-    <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-      <div class="testimonial-card">
-        <p>"Sehr freundlicher Fahrer, pünktlich und das Taxi war top gepflegt. Immer wieder gerne!"</p>
-        <span class="testimonial-author">– Anna S. aus Neumünster</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Der Flughafentransfer hat super geklappt, Festpreis und schnelle Abwicklung. Absolute Empfehlung!"</p>
-        <span class="testimonial-author">– Markus T.</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Auch für meine regelmäßigen Krankenfahrten immer zuverlässig und hilfsbereit. Danke!"</p>
-        <span class="testimonial-author">– Frau Berger</span>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Flotten-Sektion -->
+        <section class="fleet" style="background:var(--light);padding:4rem 0;">
+            <div class="container">
+                <h2 class="section-title">Unsere Flotte</h2>
+                <div class="services-grid" style="gap:2.5rem;">
+                    <div class="service-card" style="align-items:center;text-align:center;">
+                        <img src="https://www.toyota.de/content/dam/toyota/nmsc/markets/de/models/bz4x/my22/overview/toyota-bz4x-2022-gallery-01-full_tcm-3020-2415532.jpg" alt="Toyota BZ4X" style="width:100%;max-width:260px;border-radius:1.2rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                        <h3 style="margin-bottom:0.5rem;">Toyota BZ4X</h3>
+                        <p>Modernes, vollelektrisches Taxi – leise, komfortabel, emissionsfrei. Perfekt für Stadt & Langstrecke.</p>
+                    </div>
+                    <div class="service-card" style="align-items:center;text-align:center;">
+                        <img src="https://www.toyota.de/content/dam/toyota/nmsc/markets/de/models/prius-plus/my19/overview/toyota-prius-plus-2019-gallery-01-full_tcm-3020-1688572.jpg" alt="Toyota Prius Plus" style="width:100%;max-width:260px;border-radius:1.2rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                        <h3 style="margin-bottom:0.5rem;">Toyota Prius Plus</h3>
+                        <p>Geräumiger Hybrid für bis zu 7 Fahrgäste – zuverlässig, sparsam und ideal für Gruppen & Familien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h3>Taxi Go Neumünster</h3>
-        <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. 24/7 für Sie da.</p>
-        <div class="contact-info" style="margin-top: 1rem;">
-            <p><i class="icon-phone"></i> <a href="tel:043219638696">04321-9638696</a></p>
-            <p><i class="icon-mail"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Schnell-Links</h3>
-        <ul>
-          <li><a href="index.html">Start</a></li>
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="about.html">Über uns</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Unsere Top-Leistungen</h3>
-        <ul>
-            <li><a href="leistungen.html#flughafen">Flughafentransfer</a></li>
-            <li><a href="leistungen.html#krankenfahrt">Krankenfahrten</a></li>
-            <li><a href="leistungen.html#stadtfahrt">Stadtfahrten</a></li>
-            <li><a href="leistungen.html#kurier">Kurierfahrten</a></li>
-            <li><a href="leistungen.html#business">Business Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten.</p>
-    </div>
-  </div>
-</footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Taxi Go Neumünster</h3>
+                        <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. 24/7 für Sie da.</p>
+                        <div class="contact-info">
+                            <p><a href="tel:043219638696">04321-9638696</a></p>
+                            <p><a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Beliebte Ziele</h3>
+                        <ul>
+                            <li>Flughafen Hamburg</li>
+                            <li>Bahnhof Neumünster</li>
+                            <li>Designer Outlet</li>
+                            <li>Holstenhallen</li>
+                            <li>FEK Neumünster</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Service</h3>
+                        <ul>
+                            <li><a href="#services">Unsere Leistungen</a></li>
+                            <li><a href="#prices">Preise</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#datenschutz">Datenschutz</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Taxi Go Neumünster - Alle Rechte vorbehalten</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <script>
-        // FAQ Functionality: Toggle einzelne FAQ-Items unabhängig
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach(question => {
-  question.addEventListener('click', () => {
-    const item = question.closest('.faq-item');
-    item.classList.toggle('open');
-  });
-});
-// Mobile Navigation Overlay & Menü
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-const navOverlay = document.querySelector('.mobile-nav-overlay');
-if (navToggle && navLinks && navOverlay) {
-  function closeMenu() {
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.classList.remove('active');
-    navLinks.classList.remove('active');
-    navOverlay.classList.remove('active');
-  }
-  navToggle.addEventListener('click', function() {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-  navOverlay.addEventListener('click', closeMenu);
-}
-// Fahrpreisrechner: Demo für Auto-Vervollständigung (deutsche Straßen, nur UI)
-const streetsDE = [
-  "Berliner Straße", "Hauptstraße", "Bahnhofstraße", "Schulstraße", "Dorfstraße", "Gartenstraße", "Goethestraße", "Friedrichstraße", "Parkstraße", "Ringstraße", "Musterweg", "Königsallee", "Lindenstraße", "Marktplatz", "Poststraße", "Rathausplatz", "Waldweg", "Bergstraße", "Industriestraße", "Am Sportplatz", "Am Bahnhof", "Neue Straße", "Alte Straße", "Bismarckstraße", "Lessingstraße", "Mozartstraße", "Schillerstraße", "Uhlandstraße", "Wilhelmstraße", "Kastanienweg", "Rosenweg", "Tulpenweg", "Birkenweg", "Eichenweg", "Tannenweg", "Feldstraße", "Wiesenweg", "Heideweg", "Mühlenweg", "Kirchstraße", "Schlossstraße", "Seestraße", "Hafenstraße", "Brückenstraße", "Bachstraße", "Weidenweg", "Sonnenweg", "Dammstraße", "Teichstraße", "Bahnweg", "Burgstraße", "Hafenweg", "Kiefernweg", "Platanenweg", "Pappelweg", "Erlenweg", "Ahornweg", "Fichtenweg", "Im Wiesengrund", "Im Grund", "Im Winkel", "Im Tal", "Im Feld", "Im Dorf", "Im Park", "Im Garten", "Im Gehren", "Im Grundacker", "Im Hain", "Im Kirschgarten", "Im Mühlenfeld", "Im Oberdorf", "Im Unterdorf", "Im Wiesental", "Im Winkelacker", "Im Ziegelgarten"
-  // ... Liste kann beliebig erweitert werden, für echte Daten API nutzen
-];
-function setupAutoSuggest(inputId, suggestionsId) {
-  const input = document.getElementById(inputId);
-  const suggBox = document.getElementById(suggestionsId);
-  input.addEventListener('input', function() {
-    const val = input.value.trim().toLowerCase();
-    if (val.length < 2) { suggBox.style.display = 'none'; return; }
-    const matches = streetsDE.filter(s => s.toLowerCase().includes(val)).slice(0,8);
-    if (matches.length === 0) { suggBox.style.display = 'none'; return; }
-    suggBox.innerHTML = matches.map(s => `<div style='padding:0.4em 0.7em;cursor:pointer;'>${s}</div>`).join('');
-    suggBox.style.display = 'block';
-    Array.from(suggBox.children).forEach(child => {
-      child.onclick = () => { input.value = child.textContent; suggBox.style.display = 'none'; };
-    });
-  });
-  document.addEventListener('click', e => {
-    if (!suggBox.contains(e.target) && e.target !== input) suggBox.style.display = 'none';
-  });
-}
-setupAutoSuggest('start','start-suggestions');
-setupAutoSuggest('ziel','ziel-suggestions');
-document.getElementById('preisrechner').onsubmit = function(e) {
-  e.preventDefault();
-  const start = document.getElementById('start').value;
-  const ziel = document.getElementById('ziel').value;
-  document.getElementById('preis-output').textContent = `Fahrpreis (Demo): ca. ${(Math.random()*40+15).toFixed(2)} €`;
-};
+        // Enhanced Mobile menu functionality
+        const header = document.querySelector('.header');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.nav');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Handle mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Handle scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            // Add scrolled class to header
+            if (currentScroll > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Handle navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Close mobile menu
+                nav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                
+                // Smooth scroll to section
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const scroll = window.scrollY;
+                const id = section.getAttribute('id');
+                
+                if (scroll >= sectionTop && scroll < sectionBottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+                
+                // Open clicked answer if it was closed
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Hide all FAQ answers initially
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
     </script>
 </body>
 </html>
