@@ -14,21 +14,17 @@
 </head>
 <body>
 
-<nav class="navbar" aria-label="Hauptnavigation">
-  <div class="container nav-container">
-    <a href="index.html" class="nav-logo" aria-label="Zur Startseite">Taxi Go Neumünster</a>
-    <button class="nav-toggle" aria-label="Menü öffnen/schließen" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="about.html">Über uns</a></li>
-      <li><a href="leistungen.html" class="active">Leistungen</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </div>
-</nav>
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">Taxi<span>Go</span></a>
+        <nav class="nav">
+            <a href="leistungen.html" class="nav-link active">Leistungen</a>
+            <a href="about.html" class="nav-link">Über uns</a>
+            <a href="kontakt.html" class="nav-link">Kontakt</a>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Menü öffnen">☰</button>
+    </div>
+</header>
 
 <main>
   <section class="page-header" style="background: var(--gray); padding: 3rem 0; text-align: center;">
@@ -144,24 +140,30 @@
 </footer>
 
 <script>
-// Burger-Menü für mobile Navigation
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', function() {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
+// Mobile Menü für alle Seiten vereinheitlichen
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+if(menuBtn && nav) {
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuBtn.classList.toggle('active');
   });
-  navLinks.querySelectorAll('a').forEach(link => {
+  nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
+      nav.classList.remove('active');
+      menuBtn.classList.remove('active');
     });
   });
 }
+// Aktiven Link hervorheben
+const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+  if(link.getAttribute('href') === location.pathname.split('/').pop()) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
 </script>
 
 </body>
