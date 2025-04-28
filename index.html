@@ -121,8 +121,21 @@
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 1.7rem;
             margin-bottom: 20px;
+            text-align: left;
+            max-width: 500px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.2rem;
+                text-align: left;
+                max-width: 90vw;
+                margin-left: 0;
+                margin-right: auto;
+            }
         }
         
         .hero p {
@@ -551,7 +564,7 @@
         <section id="home" class="page" style="display: block;">
             <div class="hero">
                 <div class="container">
-                    <h1>Ihr zuverlässiger Taxiservice in Neumünster</h1>
+                    <h1>Ihr Taxi in Neumünster</h1>
                     <p>Schnell, komfortabel und sicher ans Ziel mit TaxiGo Neumünster</p>
                     
                     <div class="cta-buttons">
