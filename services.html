@@ -3,17 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Leistungen</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TaxiGo Neumünster - Unsere Leistungen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1A1F2C;
+            --secondary-color: #4A6FA5;
+            --accent-color: #9b87f5;
+            --background-color: #F1F0FB;
+            --text-color: #333333;
+            --light-text: #FFFFFF;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        * { 
+            font-family: 'Poppins', sans-serif; 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+        body { 
+            line-height: 1.6; 
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a { 
+            text-decoration: none; 
+            color: white; 
+            margin: 0 15px; 
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 100px 0 40px;
+        }
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+        section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .feature-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--accent-color);
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 40px 0;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        
+        .footer-contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-icon {
+            min-width: 25px;
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #8E9196;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                top: 70px;
+                left: 0;
+                right: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            nav li {
+                margin: 0;
+            }
+            
+            nav a {
+                display: block;
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                margin: 0;
+            }
+            
+            #menu-toggle:checked ~ nav ul {
+                max-height: 300px;
+            }
+        }
+
+        /* Desktop Styles - Hide mobile menu on larger screens */
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            nav ul {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                background-color: transparent;
+                max-height: none;
+                overflow: visible;
+            }
+            
+            nav li {
+                margin-left: 20px;
+            }
+            
+            nav a {
+                display: inline;
+                padding: 0;
+                border-bottom: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Willkommen bei unserem Fahrservice</h1>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Taxi<span>Go</span> Neumünster</a>
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+            <label for="menu-toggle" class="mobile-menu-btn">☰</label>
             <nav>
                 <ul>
                     <li><a href="index.html">Startseite</a></li>
                     <li><a href="services.html">Leistungen</a></li>
+                    <li><a href="fleet.html">Unsere Flotte</a></li>
                     <li><a href="about.html">Über uns</a></li>
                     <li><a href="contact.html">Kontakt</a></li>
                 </ul>
@@ -110,8 +375,46 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Unser Fahrservice. Alle Rechte vorbehalten.</p>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Kontakt</h3>
+                <div class="footer-contact-item">
+                    <span class="footer-icon">📞</span>
+                    <span>04321-9638696</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="footer-icon">✉️</span>
+                    <span>taxigoneumuenster@gmail.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="footer-icon">📍</span>
+                    <span>Neumünster, Schleswig-Holstein</span>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Service</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#airport">Flughafentransfer</a></li>
+                    <li><a href="services.html#courier">Kurierfahrten</a></li>
+                    <li><a href="services.html#school">Schülerfahrten</a></li>
+                    <li><a href="services.html#shopping">Einkaufsfahrten</a></li>
+                    <li><a href="services.html#business">Businessfahrten</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Über uns</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">Unser Team</a></li>
+                    <li><a href="fleet.html">Unsere Fahrzeuge</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 </body>
