@@ -350,18 +350,38 @@
         /* Section Titles */
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
+            font-size: 3.2rem;
+            margin-bottom: 70px;
             color: var(--primary-color);
-            letter-spacing: 0.02em;
-            line-height: 1.2;
+            letter-spacing: 0.03em;
+            line-height: 1.15;
+            font-weight: 700;
         }
         .services-section, .fleet-preview, .faq-section {
-            padding-top: 80px;
-            padding-bottom: 80px;
+            padding-top: 100px;
+            padding-bottom: 100px;
         }
         .services-container, .fleet-preview-container, .faq-container {
-            margin-top: 40px;
+            margin-top: 60px;
+        }
+        .service-card, .fleet-card {
+            min-height: 220px;
+        }
+        .service-content, .fleet-content {
+            padding: 30px;
+        }
+        @media (max-width: 900px) {
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+            }
+            .services-section, .fleet-preview, .faq-section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .services-container, .fleet-preview-container, .faq-container {
+                margin-top: 25px;
+            }
         }
         
         /* Footer */
