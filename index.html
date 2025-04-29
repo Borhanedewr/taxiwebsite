@@ -371,54 +371,37 @@
             padding: 15px 20px;
         }
 
-        /* Noch mehr Abstand und optische Trennung zwischen den Hauptabschnitten */
+        /* Weniger Abstand zwischen den Hauptabschnitten */
         .services-section,
         .fleet-preview,
         .prices-section,
         .about-section,
         .faq-section {
-            position: relative;
+            margin-bottom: 40px;
+            padding-top: 32px;
+            padding-bottom: 32px;
         }
         .services-section::after,
         .fleet-preview::after,
         .prices-section::after,
         .about-section::after {
-            content: '';
-            display: block;
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(90deg, #9b87f5 0%, #4A6FA5 100%);
-            margin: 60px auto 0 auto;
-            border-radius: 2px;
-            opacity: 0.5;
+            margin: 32px auto 0 auto;
         }
-        .faq-section::after {
-            display: none;
-        }
-
-        .section-title {
-            font-size: 2.3rem;
-            margin-bottom: 48px;
-            color: var(--primary-color);
-            font-weight: 800;
-            letter-spacing: 0.03em;
-            text-align: center;
-        }
-
         @media (max-width: 700px) {
             .services-section,
             .fleet-preview,
             .prices-section,
             .about-section,
             .faq-section {
-                margin-bottom: 80px;
-                padding-top: 36px;
-                padding-bottom: 36px;
-                border-radius: 16px;
-            }
-            .section-title {
-                font-size: 1.3rem;
                 margin-bottom: 24px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+            .services-section::after,
+            .fleet-preview::after,
+            .prices-section::after,
+            .about-section::after {
+                margin: 16px auto 0 auto;
             }
         }
         
