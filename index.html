@@ -215,7 +215,7 @@
             background-color: #fff;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--box
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -467,8 +467,12 @@
         /* Mobile Styles */
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                right: 8px !important;
-                left: auto !important;
+                display: block !important;
+                position: fixed !important;
+                right: 16px !important;
+                top: 18px !important;
+                z-index: 2000 !important;
+                background: none;
             }
         }
 
