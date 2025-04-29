@@ -546,12 +546,39 @@
 .scroll-arrow:hover {
   transform: translateX(-50%) scale(1.1);
 }
+.header-call-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 24px;
+            padding: 6px 16px;
+            margin-left: 18px;
+            text-decoration: none;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border: none;
+            white-space: nowrap;
+        }
+        .header-call-btn:hover {
+            background: #1ebe5d;
+        }
+        @media (max-width: 600px) {
+            .header-call-btn {
+                font-size: 0.98rem;
+                padding: 5px 10px;
+                margin-left: 8px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">Taxi<span>Go</span> Neumünster</a>
+            <a href="tel:043219638696" class="header-call-btn" title="Jetzt anrufen">📞 04321 9638696</a>
             <input type="checkbox" id="menu-toggle" style="display: none;">
             <label for="menu-toggle" class="mobile-menu-btn">☰</label>
             <nav>
