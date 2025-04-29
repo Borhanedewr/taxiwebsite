@@ -112,12 +112,13 @@
             background: none;
         }
         .hero {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color)) !important;
+            color: var(--light-text) !important;
             padding-top: 0 !important;
+            margin-top: 0 !important;
         }
-        .hero .container {
-            padding-top: 0 !important;
-        }
-        .hero h1 {
+        .hero h1, .hero p {
+            color: var(--light-text) !important;
             margin-top: 0 !important;
         }
         @media (max-width: 700px) {
