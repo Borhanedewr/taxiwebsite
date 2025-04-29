@@ -529,22 +529,23 @@
             }
         }
 
-        .scroll-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 30px;
-  z-index: 10;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
+        .scroll-arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+.scroll-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 .scroll-arrow:hover {
-  transform: translateX(-50%) scale(1.1);
+    transform: scale(1.1);
 }
 .header-call-btn {
             display: inline-flex;
@@ -609,7 +610,6 @@
                             </svg>
                             Jetzt anrufen
                         </a>
-                        <!-- Button WhatsApp Farbe anwenden -->
                         <a href="https://wa.me/4943219638696" class="cta-button cta-button-whatsapp">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
@@ -619,15 +619,14 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Scroll-to-section Pfeil -->
-<a href="#home-scroll-target" class="scroll-arrow" aria-label="Nach unten scrollen">
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="20" r="20" fill="transparent"/>
-    <path d="M12 18l8 8 8-8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</a>
-
+            <div class="scroll-arrow-wrapper">
+    <a href="#home-scroll-target" class="scroll-arrow" aria-label="Nach unten scrollen">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="20" fill="transparent"/>
+        <path d="M12 18l8 8 8-8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+</div>
             <!-- Ziel-Element für den Scroll -->
 <div id="home-scroll-target" style="position: absolute; top: 100vh;"></div>
             
