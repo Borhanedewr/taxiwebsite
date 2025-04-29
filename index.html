@@ -550,6 +550,29 @@
                 border-bottom: none;
             }
         }
+
+        /* Preise Tabelle */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #8E9196;
+        }
+
+        .price-table th {
+            background-color: #1A1F2C;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -670,25 +693,25 @@
                 </div>
             </section> <!-- Ende .fleet-preview -->
             <!-- Preise Section -->
-            <section class="prices-section" style="background: #fff; padding: 40px 0;">
+            <section class="prices-section">
                 <div class="container">
                     <h2 class="section-title">Unsere Preise</h2>
-                    <table style="width:100%;border-collapse:collapse;background-color:white;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;">
+                    <table class="price-table">
                         <tr>
-                            <th style="background-color:#1A1F2C;color:white;padding:12px;text-align:left;">Leistung</th>
-                            <th style="background-color:#1A1F2C;color:white;padding:12px;text-align:left;">Preis</th>
+                            <th>Leistung</th>
+                            <th>Preis</th>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #8E9196;padding:12px;">Grundpreis</td>
-                            <td style="border:1px solid #8E9196;padding:12px;">3,90 €</td>
+                            <td>Grundpreis</td>
+                            <td>3,90 €</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #8E9196;padding:12px;">Kilometerpreis</td>
-                            <td style="border:1px solid #8E9196;padding:12px;">2,20 € / km</td>
+                            <td>Kilometerpreis</td>
+                            <td>2,20 € / km</td>
                         </tr>
                         <tr>
-                            <td style="border:1px solid #8E9196;padding:12px;">Wartezeit (pro Stunde)</td>
-                            <td style="border:1px solid #8E9196;padding:12px;">30,00 €</td>
+                            <td>Wartezeit (pro Stunde)</td>
+                            <td>30,00 €</td>
                         </tr>
                     </table>
                 </div>
