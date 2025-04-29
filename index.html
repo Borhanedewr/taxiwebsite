@@ -354,7 +354,7 @@
             padding: 15px 20px;
         }
 
-        /* Weniger Abstand über den Überschriften der Abschnitte */
+        /* Entferne jeglichen Abstand über den Überschriften und sorge für einen nahtlosen Übergang */
         .services-section,
         .fleet-preview,
         .prices-section,
@@ -362,8 +362,17 @@
         .faq-section {
             padding-top: 0 !important;
             margin-top: 0 !important;
+            border-top: none !important;
         }
         .section-title {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        .hero + .services-section,
+        .services-section + .fleet-preview,
+        .fleet-preview + .prices-section,
+        .prices-section + .about-section,
+        .about-section + .faq-section {
             margin-top: 0 !important;
         }
 
