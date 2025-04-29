@@ -109,60 +109,42 @@
         }
         
         section {
-            padding: 0;
-            background: none;
+            padding: 60px 0;
         }
         
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
         .hero {
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: var(--light-text);
-            padding: 80px 0 40px 0;
-        }
-        .hero .container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            max-width: 700px;
-            margin-left: 0;
-            margin-right: auto;
-        }
-        /* Hero-Überschrift direkt unter dem Header, kein Abstand nach oben */
-        .hero h1 {
-            margin-top: 0 !important;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
             text-align: left;
-            font-weight: 700;
+            padding: 100px 0 50px;
         }
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 3.5rem;
-                margin-top: 0 !important;
-            }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: left;
         }
-
-        /* Andere Abschnittsüberschriften: sehr viel Abstand und sehr große Schrift */
-        .section-title {
-            margin-top: 120px;
-            font-size: 4rem;
-            margin-bottom: 60px;
-            color: var(--primary-color);
-            font-weight: 900;
-            letter-spacing: 0.03em;
-            text-align: center;
-        }
-        @media (max-width: 700px) {
-            .section-title {
-                font-size: 2.7rem;
-                margin-top: 80px;
-                margin-bottom: 36px;
-            }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 0 30px 0;
+            text-align: left;
         }
         
         /* CTA Buttons */
         .cta-buttons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 20px;
             flex-wrap: wrap;
             margin-bottom: 40px;
@@ -374,29 +356,7 @@
             max-height: 1000px;
             padding: 15px 20px;
         }
-
-        /* Entferne jeglichen Abstand über den Überschriften und sorge für einen nahtlosen Übergang */
-        .services-section,
-        .fleet-preview,
-        .prices-section,
-        .about-section,
-        .faq-section {
-            padding-top: 0 !important;
-            margin-top: 0 !important;
-            border-top: none !important;
-        }
-        .section-title {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        .hero + .services-section,
-        .services-section + .fleet-preview,
-        .fleet-preview + .prices-section,
-        .prices-section + .about-section,
-        .about-section + .faq-section {
-            margin-top: 0 !important;
-        }
-
+        
         /* Footer */
         footer {
             background-color: var(--primary-color);
@@ -538,29 +498,6 @@
                 border-bottom: none;
             }
         }
-
-        /* Preise Tabelle */
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .price-table th,
-        .price-table td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #8E9196;
-        }
-
-        .price-table th {
-            background-color: #1A1F2C;
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -586,7 +523,7 @@
         <section id="home" class="page" style="display: block;">
             <div class="hero">
                 <div class="container">
-                    <h1>Taxi in Neumünster gesucht?</h1>
+                    <h1>Ihr zuverlässiger Taxiservice in Neumünster</h1>
                     <p>Schnell, komfortabel und sicher ans Ziel mit TaxiGo Neumünster</p>
                     
                     <div class="cta-buttons">
@@ -661,8 +598,7 @@
                     <h2 class="section-title">Unsere Flotte</h2>
                     <div class="fleet-preview-container">
                         <div class="fleet-card">
-                            <img src="https://cdn.pixabay.com/photo/2022/11/10/13/44/car-7583382_1280.png" alt="3D-Rendering Toyota BZ4X" style="width:100%;max-width:320px;display:block;margin:24px auto 16px auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                            <div class="fleet-image" style="display:none;">Toyota BZ4X</div>
+                            <div class="fleet-image">Toyota BZ4X</div>
                             <div class="fleet-content">
                                 <h3>Toyota BZ4X</h3>
                                 <p>Modernes, vollelektrisches Taxi – leise und komfortabel.</p>
@@ -670,8 +606,7 @@
                         </div>
                         
                         <div class="fleet-card">
-                            <img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg" alt="3D-Rendering Toyota Prius Plus" style="width:100%;max-width:320px;display:block;margin:24px auto 16px auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                            <div class="fleet-image" style="display:none;">Toyota Prius Plus</div>
+                            <div class="fleet-image">Toyota Prius Plus</div>
                             <div class="fleet-content">
                                 <h3>Toyota Prius Plus</h3>
                                 <p>Geräumiger Hybrid für bis zu 7 Fahrgäste.</p>
@@ -679,108 +614,93 @@
                         </div>
                     </div>
                 </div>
-            </section> <!-- Ende .fleet-preview -->
-            <!-- Preise Section -->
-            <section class="prices-section">
-                <div class="container">
-                    <h2 class="section-title">Unsere Preise</h2>
-                    <table class="price-table">
-                        <tr>
-                            <th>Leistung</th>
-                            <th>Preis</th>
-                        </tr>
-                        <tr>
-                            <td>Grundpreis</td>
-                            <td>3,90 €</td>
-                        </tr>
-                        <tr>
-                            <td>Kilometerpreis</td>
-                            <td>2,20 € / km</td>
-                        </tr>
-                        <tr>
-                            <td>Wartezeit (pro Stunde)</td>
-                            <td>30,00 €</td>
-                        </tr>
-                    </table>
-                </div>
             </section>
+            
             <!-- About Us Preview -->
             <section class="about-section">
                 <div class="container">
                     <h2 class="section-title">Über uns</h2>
                     
                     <div class="about-content">
-                        <p>TaxiGo Neumünster steht für modernen, zuverlässigen und komfortablen Taxiservice. Mit unserer Flotte aus umweltfreundlichen Toyota-Fahrzeugen bieten wir Ihnen ein angenehmes Fahrerlebnis zu fairen Preisen.</p>
+                        <p>TaxiGo Neumünster steht für modernen, zuverlässigen und komfortablen Taxiservice. Mit unserer Flotte aus umweltfreundlichen Toyota-Fahrzeugen bieten wir Ihnen ein angenehmes Fahrerlebnis zu fairen Preisen. Unser Unternehmen wurde 2025 gegründet.</p>
                         <a href="about.html" class="read-more-btn">Mehr erfahren</a>
                     </div>
                 </div>
-            </section> <!-- About Us Section Ende -->
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title">Häufig gestellte Fragen</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-1">
-                        <label class="faq-question" for="faq-1">Wie kann ich ein Taxi bestellen?</label>
-                        <div class="faq-answer">
-                            <p>Sie können uns einfach anrufen unter 04321-9638696 oder uns per WhatsApp kontaktieren. Wir stehen Ihnen 24/7 zur Verfügung.</p>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="container">
+                    <h2 class="section-title">Häufig gestellte Fragen</h2>
+                    
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-1">
+                            <label class="faq-question" for="faq-1">Wie kann ich ein Taxi bestellen?</label>
+                            <div class="faq-answer">
+                                <p>Sie können uns einfach anrufen unter 04321-9638696 oder uns per WhatsApp kontaktieren. Wir stehen Ihnen 24/7 zur Verfügung.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-2">
-                        <label class="faq-question" for="faq-2">Bieten Sie Festpreise für Flughafentransfers an?</label>
-                        <div class="faq-answer">
-                            <p>Ja, für Flughafentransfers und längere Strecken bieten wir Festpreise an. Bitte fragen Sie bei der Buchung nach.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-2">
+                            <label class="faq-question" for="faq-2">Bieten Sie Festpreise für Flughafentransfers an?</label>
+                            <div class="faq-answer">
+                                <p>Ja, für Flughafentransfers und längere Strecken bieten wir Festpreise an. Bitte fragen Sie bei der Buchung nach.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-3">
-                        <label class="faq-question" for="faq-3">Können Sie größere Gruppen befördern?</label>
-                        <div class="faq-answer">
-                            <p>Mit unserem Toyota Prius Plus können wir bis zu 7 Personen gleichzeitig befördern. Für größere Gruppen können wir mehrere Fahrzeuge zur Verfügung stellen.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-3">
+                            <label class="faq-question" for="faq-3">Können Sie größere Gruppen befördern?</label>
+                            <div class="faq-answer">
+                                <p>Mit unserem Toyota Prius Plus können wir bis zu 7 Personen gleichzeitig befördern. Für größere Gruppen können wir mehrere Fahrzeuge zur Verfügung stellen.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-4">
-                        <label class="faq-question" for="faq-4">Akzeptieren Sie auch Kartenzahlung?</label>
-                        <div class="faq-answer">
-                            <p>Ja, wir akzeptieren neben Bargeld auch Kartenzahlung und bei Vorbestellung auch Rechnungsstellung für Unternehmen.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-4">
+                            <label class="faq-question" for="faq-4">Akzeptieren Sie auch Kartenzahlung?</label>
+                            <div class="faq-answer">
+                                <p>Ja, wir akzeptieren neben Bargeld auch Kartenzahlung und bei Vorbestellung auch Rechnungsstellung für Unternehmen.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-5">
-                        <label class="faq-question" for="faq-5">Können Fahrten im Voraus gebucht werden?</label>
-                        <div class="faq-answer">
-                            <p>Selbstverständlich können Sie Fahrten bei uns im Voraus buchen. Dies empfehlen wir besonders für Flughafentransfers und wichtige Termine.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-5">
+                            <label class="faq-question" for="faq-5">Können Fahrten im Voraus gebucht werden?</label>
+                            <div class="faq-answer">
+                                <p>Selbstverständlich können Sie Fahrten bei uns im Voraus buchen. Dies empfehlen wir besonders für Flughafentransfers und wichtige Termine.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-6">
-                        <label class="faq-question" for="faq-6">Sind Ihre Fahrzeuge barrierefrei?</label>
-                        <div class="faq-answer">
-                            <p>Unser Toyota Prius Plus ist gut zugänglich und bietet ausreichend Platz für Gehhilfen. Für spezielle Anforderungen kontaktieren Sie uns bitte vorab.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-6">
+                            <label class="faq-question" for="faq-6">Sind Ihre Fahrzeuge barrierefrei?</label>
+                            <div class="faq-answer">
+                                <p>Unser Toyota Prius Plus ist gut zugänglich und bietet ausreichend Platz für Gehhilfen. Für spezielle Anforderungen kontaktieren Sie uns bitte vorab.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-7">
-                        <label class="faq-question" for="faq-7">Fahren Sie auch längere Strecken oder nur innerhalb von Neumünster?</label>
-                        <div class="faq-answer">
-                            <p>Wir fahren sowohl kurze als auch lange Strecken. Ob innerhalb von Neumünster oder zu weit entfernten Zielen – wir bringen Sie sicher ans Ziel.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-7">
+                            <label class="faq-question" for="faq-7">Fahren Sie auch längere Strecken oder nur innerhalb von Neumünster?</label>
+                            <div class="faq-answer">
+                                <p>Wir fahren sowohl kurze als auch lange Strecken. Ob innerhalb von Neumünster oder zu weit entfernten Zielen – wir bringen Sie sicher ans Ziel.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <input type="checkbox" id="faq-8">
-                        <label class="faq-question" for="faq-8">Bieten Sie Kindersitze an?</label>
-                        <div class="faq-answer">
-                            <p>Ja, bei Bedarf können wir Kindersitze zur Verfügung stellen. Bitte teilen Sie uns diesen Wunsch bei Ihrer Buchung mit.</p>
+                        
+                        <div class="faq-item">
+                            <input type="checkbox" id="faq-8">
+                            <label class="faq-question" for="faq-8">Bieten Sie Kindersitze an?</label>
+                            <div class="faq-answer">
+                                <p>Ja, bei Bedarf können wir Kindersitze zur Verfügung stellen. Bitte teilen Sie uns diesen Wunsch bei Ihrer Buchung mit.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section> <!-- FAQ Section Ende -->
+            </section>
+        </section>
     </main>
 
     <footer>
@@ -789,15 +709,15 @@
                 <h3>Kontakt</h3>
                 <div class="footer-contact-item">
                     <span class="footer-icon">📞</span>
-                    <span>04321-9638696</span>
+                    <a href="tel:043219638696" style="color:inherit;text-decoration:underline;">04321-9638696</a>
                 </div>
                 <div class="footer-contact-item">
                     <span class="footer-icon">✉️</span>
-                    <span>taxigoneumuenster@gmail.com</span>
+                    <a href="mailto:taxigoneumuenster@gmail.com" style="color:inherit;text-decoration:underline;">taxigoneumuenster@gmail.com</a>
                 </div>
                 <div class="footer-contact-item">
                     <span class="footer-icon">📍</span>
-                    <span>Neumünster, Schleswig-Holstein</span>
+                    <a href="https://maps.google.com/?q=Neumünster, Schleswig-Holstein" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Neumünster, Schleswig-Holstein</a>
                 </div>
             </div>
             
@@ -828,5 +748,7 @@
     </footer>
     
     <a href="#home" class="home-btn">↑</a>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
