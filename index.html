@@ -34,93 +34,10 @@
         
         body {
             color: var(--text-color);
-            background-color: var(--primary-color); /* Hintergrund wie Header, damit kein weißer Balken sichtbar ist */
+            background-color: var(--light-bg); /* Wieder auf die helle Hintergrundfarbe setzen */
             line-height: 1.6;
             margin: 0;
         }
-        main {
-            margin-top: 0;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header and Navigation */
-        header {
-            background-color: var(--primary-color);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            box-shadow: var(--box-shadow);
-            border-bottom: none;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        .logo {
-            color: var(--light-text);
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--accent-color);
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        
-        nav li {
-            margin-left: 20px;
-        }
-        
-        nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        nav a:hover {
-            color: var(--accent-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Main Content Styles */
-        section {
-            padding-top: 0;
-        }
-        
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-        }
-        
-        /* Hero Section */
         .hero {
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: var(--light-text);
@@ -129,6 +46,7 @@
             margin-top: 70px;
         }
         .hero .container {
+            background: var(--light-bg); /* Gleicher Hintergrund wie body */
             padding-top: 0;
         }
         .hero h1 {
