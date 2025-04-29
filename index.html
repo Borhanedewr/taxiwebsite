@@ -515,23 +515,12 @@
             }
         }
 
-        /* Scroll-to-Action Pfeil */
-        .scroll-down-arrow {
-            position: absolute;
-            left: 50%;
-            bottom: 24px;
-            transform: translateX(-50%);
-            z-index: 10;
-            animation: bounce 1.5s infinite;
-            cursor: pointer;
-            transition: transform 0.2s;
+        /* Scroll-to-Action Pfeil transparent */
+        .scroll-down-arrow svg circle {
+            fill: rgba(155, 135, 245, 0.18) !important;
         }
-        .scroll-down-arrow:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(12px); }
+        .scroll-down-arrow svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
         }
         .hero {
             position: relative;
