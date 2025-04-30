@@ -632,6 +632,15 @@
                 border-bottom: none;
             }
         }
+        .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: none;
+}
     </style>
 </head>
 <body>
@@ -947,5 +956,22 @@
     <a href="#home" class="home-btn">↑</a>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+<script>
+// Scroll-Animationen für Elemente beim Scrollen ins Sichtfeld
+function animateOnScroll() {
+  const animatedEls = document.querySelectorAll('.animate-on-scroll');
+  const windowHeight = window.innerHeight;
+  animatedEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < windowHeight - 60) {
+      el.classList.add('in-view');
+    } else {
+      el.classList.remove('in-view');
+    }
+  });
+}
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('DOMContentLoaded', animateOnScroll);
+</script>
 </body>
 </html>
