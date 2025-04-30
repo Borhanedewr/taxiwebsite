@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>s
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaxiGo Neumünster - Start</title>
@@ -11,6 +11,7 @@
             --primary-color: #1A1F2C;
             --secondary-color: #4A6FA5;
             --accent-color: #9b87f5;
+            --whatsapp-color: #25D366;
             --light-bg: #F5F7FA;
             --text-color: #333333;
             --light-text: #FFFFFF;
@@ -33,8 +34,8 @@
         }
         
         body {
-            color: #fff;
-            background: linear-gradient(135deg, #1A1F2C 0%, #4A6FA5 100%);
+            color: var(--text-color);
+            background-color: var(--light-bg);
             line-height: 1.6;
         }
         
@@ -61,6 +62,31 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .call-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .call-button:hover {
+            background-color: #8a76e4;
+            transform: scale(1.05);
         }
         
         .logo {
@@ -101,16 +127,11 @@
             color: var(--light-text);
             font-size: 1.5rem;
             cursor: pointer;
-            left: 0;
         }
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                left: 0;
-            }
-        }
+        
         /* Main Content Styles */
         main {
-            margin-top: 0;
+            padding-top: 70px; /* Adjusted to eliminate white space */
         }
         
         section {
@@ -127,32 +148,24 @@
         
         /* Hero Section */
         .hero {
-            background: transparent;
-            color: #fff;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
             text-align: left;
-            padding: 0 0 50px 0;
-            margin-top: 70px;
+            padding: 80px 0 50px; /* Adjusted to reduce space */
+            position: relative;
         }
-        .hero .container {
-            background: none;
-            padding-top: 0;
-        }
+        
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: left;
-            margin-top: 90px;
-            line-height: 1.05;
         }
-        main {
-            margin-top: 0;
-        }
-        section#home {
-            padding-top: 0 !important;
-            margin-top: 0 !important;
-        }
-        body {
-            background-color: var(--light-bg);
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 0 30px 0;
+            text-align: left;
         }
         
         /* CTA Buttons */
@@ -162,7 +175,6 @@
             gap: 20px;
             flex-wrap: wrap;
             margin-bottom: 40px;
-            margin-top: 40px;
         }
         
         .cta-button {
@@ -180,6 +192,14 @@
             min-width: 220px;
         }
         
+        .cta-whatsapp {
+            background: var(--whatsapp-color);
+        }
+
+        .cta-whatsapp:hover {
+            background: #1da851;
+        }
+        
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -190,18 +210,11 @@
             height: 20px;
             width: 20px;
         }
-
-        .cta-button-whatsapp {
-            background: #25D366 !important;
-            color: #fff !important;
-        }
-        .cta-button-whatsapp:hover {
-            background: #1ebe5d !important;
-        }
         
         /* Services Section */
         .services-section {
             background-color: var(--light-bg);
+            padding-top: 30px; /* Reduced padding */
         }
         
         .services-container {
@@ -218,6 +231,8 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            /* Reduced height for better mobile display */
+            max-height: 250px;
         }
         
         .service-card:hover {
@@ -229,26 +244,63 @@
             background-color: rgba(155, 135, 245, 0.1);
             color: var(--accent-color);
             font-size: 2rem;
-            height: 100px;
+            height: 60px; /* Reduced from 80px */
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
         .service-content {
-            padding: 20px;
+            padding: 12px; /* Reduced from 15px */
             flex: 1;
         }
         
         .service-content h3 {
-            margin-bottom: 10px;
+            margin-bottom: 6px; /* Reduced from 8px */
             color: var(--primary-color);
+            font-size: 1.1rem; /* Smaller title */
+        }
+
+        .service-content p {
+            font-size: 0.9rem; /* Smaller text */
+            line-height: 1.4;
+        }
+
+        /* Prices Section */
+        .prices-section {
+            padding: 30px 0; /* Reduced padding */
+            background-color: white;
+        }
+
+        .prices-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .prices-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px; /* Reduced padding */
+            text-align: left;
+        }
+
+        .prices-table td {
+            padding: 8px 15px; /* Reduced padding */
+            border-bottom: 1px solid #eee;
+        }
+
+        .prices-table tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
         /* Fleet Preview Styles */
         .fleet-preview {
-            padding: 40px 0;
-            background-color: white;
+            padding: 30px 0; /* Reduced padding */
+            background-color: var(--light-bg);
         }
 
         .fleet-preview-container {
@@ -259,7 +311,7 @@
         }
 
         .fleet-card {
-            background: var(--light-bg);
+            background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
@@ -271,7 +323,7 @@
         }
 
         .fleet-image {
-            height: 200px;
+            height: 180px; /* Reduced height */
             background-color: var(--primary-color);
             display: flex;
             align-items: center;
@@ -282,18 +334,24 @@
         }
 
         .fleet-content {
-            padding: 20px;
+            padding: 15px; /* Reduced padding */
         }
 
         .fleet-content h3 {
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Reduced margin */
+            font-size: 1.1rem; /* Smaller title */
+        }
+        
+        .fleet-content p {
+            font-size: 0.9rem; /* Smaller text */
         }
         
         /* About Us Section */
         .about-section {
             text-align: center;
             background-color: #fff;
+            padding: 30px 0; /* Reduced padding */
         }
         
         .about-content {
@@ -320,6 +378,7 @@
         /* FAQ Section */
         .faq-section {
             background-color: var(--light-bg);
+            padding: 30px 0; /* Reduced padding */
         }
         
         .faq-container {
@@ -328,7 +387,7 @@
         }
         
         .faq-item {
-            margin-bottom: 15px;
+            margin-bottom: 12px; /* Reduced margin */
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
@@ -336,13 +395,14 @@
         
         .faq-question {
             background-color: #fff;
-            padding: 15px 20px;
+            padding: 12px 15px; /* Reduced padding */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 500;
             color: var(--primary-color);
+            font-size: 1rem; /* Smaller text */
         }
         
         .faq-question:hover {
@@ -361,6 +421,7 @@
             max-height: 0;
             overflow: hidden;
             transition: padding 0.3s ease, max-height 0.5s ease;
+            font-size: 0.9rem; /* Smaller text */
         }
         
         .faq-item input {
@@ -377,38 +438,31 @@
         
         .faq-item input:checked ~ .faq-answer {
             max-height: 1000px;
-            padding: 15px 20px;
-        }
-
-        .services-section,
-        .fleet-preview,
-        .about-section,
-        .faq-section {
-            color: var(--text-color);
+            padding: 12px 15px; /* Reduced padding */
         }
         
         /* Footer */
         footer {
             background-color: var(--primary-color);
             color: var(--light-text);
-            padding: 50px 0 20px;
+            padding: 40px 0 20px; /* Reduced padding */
         }
         
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
+            gap: 30px; /* Reduced gap */
+            margin-bottom: 20px; /* Reduced margin */
         }
         
         .footer-col h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Reduced margin */
             font-size: 1.2rem;
             color: var(--accent-color);
         }
         
         .footer-contact-item {
-            margin-bottom: 15px;
+            margin-bottom: 12px; /* Reduced margin */
             display: flex;
             align-items: center;
         }
@@ -424,7 +478,7 @@
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Reduced margin */
         }
         
         .footer-links a {
@@ -439,8 +493,8 @@
         
         .copyright {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 20px; /* Reduced margin */
+            padding-top: 15px; /* Reduced padding */
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
             color: #8E9196;
@@ -501,6 +555,28 @@
             #menu-toggle:checked ~ nav ul {
                 max-height: 300px;
             }
+
+            .service-card {
+                max-height: 220px; /* Even smaller on mobile */
+            }
+
+            .service-icon {
+                height: 50px; /* Even smaller on mobile */
+            }
+
+            .service-content {
+                padding: 10px;
+            }
+
+            .service-content p {
+                font-size: 0.85rem;
+            }
+            
+            .call-button {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
         }
 
         /* Desktop Styles - Hide mobile menu on larger screens */
@@ -528,53 +604,19 @@
                 border-bottom: none;
             }
         }
-
-        .scroll-arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8px;
-}
-@media (max-width: 600px) {
-    .scroll-arrow-wrapper {
-        margin-left: 0;
-        margin-top: 6px;
-    }
-}
-.header-call-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    text-decoration: none;
-    transition: background 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    border: none;
-    margin-right: 16px;
-}
-.header-call-btn:hover {
-    background: #1ebe5d;
-}
-@media (max-width: 600px) {
-    .header-call-btn {
-        width: 32px;
-        height: 32px;
-        margin-right: 8px;
-    }
-}
     </style>
 </head>
 <body>
     <header>
         <div class="container header-container">
-            <a href="tel:043219638696" class="header-call-btn" title="Jetzt anrufen" style="margin-right:16px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </a>
-            <a href="index.html" class="logo">Taxi<span>Go</span> Neumünster</a>
+            <div class="logo-container">
+                <a href="tel:043219638696" class="call-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </a>
+                <a href="index.html" class="logo">Taxi<span>Go</span> Neumünster</a>
+            </div>
             <input type="checkbox" id="menu-toggle" style="display: none;">
             <label for="menu-toggle" class="mobile-menu-btn">☰</label>
             <nav>
@@ -594,8 +636,8 @@
         <section id="home" class="page" style="display: block;">
             <div class="hero">
                 <div class="container">
-                    <h1>Taxi in Neumünster gesucht?</h1>
-                    <p>Ihr zuverlässiger Taxiservice in Neumünster – pünktlich, freundlich und rund um die Uhr für Sie da</p>
+                    <h1>Ihr zuverlässiger Taxiservice in Neumünster</h1>
+                    <p>Schnell, komfortabel und sicher ans Ziel mit TaxiGo Neumünster</p>
                     
                     <div class="cta-buttons">
                         <a href="tel:043219638696" class="cta-button">
@@ -604,28 +646,45 @@
                             </svg>
                             Jetzt anrufen
                         </a>
-                        <a href="https://wa.me/4943219638696" class="cta-button cta-button-whatsapp">
+                        <a href="https://wa.me/4943219638696" class="cta-button cta-whatsapp">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                             </svg>
                             Per WhatsApp
                         </a>
                     </div>
-                    <div class="scroll-arrow-wrapper">
-                        <a href="#home-scroll-target" class="scroll-arrow" aria-label="Nach unten scrollen">
-                          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20" cy="20" r="20" fill="transparent"/>
-                            <path d="M12 18l8 8 8-8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </a>
-                    </div>
                 </div>
             </div>
-            <!-- Ziel-Element für den Scroll -->
-<div id="home-scroll-target" style="position: absolute; top: 100vh;"></div>
-            
-            <!-- Services Overview - Jetzt vor der Flotten-Vorschau -->
-            <section class="services-section">
+            <div class="scroll-arrow-wrapper">
+                <a href="#home-scroll-target" class="scroll-arrow" aria-label="Nach unten scrollen">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" fill="transparent"/>
+                    <path d="M12 18l8 8 8-8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+            </div>
+            <style>
+            .scroll-arrow-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 8px;
+            }
+            .scroll-arrow {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .scroll-arrow:hover {
+                transform: scale(1.1);
+            }
+            </style>
+            <!-- Services Overview -->
+            <section id="services" class="services-section">
                 <div class="container">
                     <h2 class="section-title">Unsere Leistungen</h2>
                     
@@ -672,9 +731,40 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Prices Section -->
+            <section id="prices" class="prices-section">
+                <div class="container">
+                    <h2 class="section-title">Unsere Preise</h2>
+                    <div class="overflow-x-auto">
+                        <table class="prices-table">
+                            <thead>
+                                <tr>
+                                    <th>Leistung</th>
+                                    <th>Preis</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Grundpreis</td>
+                                    <td>3,90 €</td>
+                                </tr>
+                                <tr>
+                                    <td>Kilometerpreis</td>
+                                    <td>2,20 € / km</td>
+                                </tr>
+                                <tr>
+                                    <td>Wartezeit (pro Stunde)</td>
+                                    <td>30,00 €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
             
-            <!-- Fleet Preview Section - Jetzt nach den Leistungen -->
-            <section class="fleet-preview">
+            <!-- Fleet Preview Section -->
+            <section id="fleet" class="fleet-preview">
                 <div class="container">
                     <h2 class="section-title">Unsere Flotte</h2>
                     <div class="fleet-preview-container">
@@ -698,7 +788,7 @@
             </section>
             
             <!-- About Us Preview -->
-            <section class="about-section">
+            <section id="about" class="about-section">
                 <div class="container">
                     <h2 class="section-title">Über uns</h2>
                     
@@ -710,7 +800,7 @@
             </section>
             
             <!-- FAQ Section -->
-            <section class="faq-section">
+            <section id="faq" class="faq-section">
                 <div class="container">
                     <h2 class="section-title">Häufig gestellte Fragen</h2>
                     
@@ -816,7 +906,6 @@
             <div class="footer-col">
                 <h3>Über uns</h3>
                 <ul class="footer-links">
-                    <li><a href="about.html">Unser Team</a></li>
                     <li><a href="fleet.html">Unsere Fahrzeuge</a></li>
                     <li><a href="contact.html">Kontakt</a></li>
                 </ul>
@@ -831,5 +920,23 @@
     <a href="#home" class="home-btn">↑</a>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+        // Smooth scroll for the arrow and other anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
