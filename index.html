@@ -231,8 +231,9 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            /* Reduced height for better mobile display */
-            max-height: 250px;
+            min-height: 320px;
+            max-height: none;
+            padding: 24px 18px;
         }
         
         .service-card:hover {
@@ -243,27 +244,37 @@
         .service-icon {
             background-color: rgba(155, 135, 245, 0.1);
             color: var(--accent-color);
-            font-size: 2rem;
-            height: 60px; /* Reduced from 80px */
+            font-size: 2.5rem;
+            height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
         .service-content {
-            padding: 12px; /* Reduced from 15px */
-            flex: 1;
+            padding: 18px 0 0 0;
         }
         
         .service-content h3 {
             margin-bottom: 6px; /* Reduced from 8px */
             color: var(--primary-color);
-            font-size: 1.1rem; /* Smaller title */
+            font-size: 1.25rem; /* Smaller title */
         }
 
         .service-content p {
-            font-size: 0.9rem; /* Smaller text */
+            font-size: 1.05rem; /* Smaller text */
             line-height: 1.4;
+        }
+
+        @media (max-width: 900px) {
+            .service-card {
+                min-height: 220px;
+                padding: 16px 8px;
+            }
+            .service-icon {
+                height: 60px;
+                font-size: 2rem;
+            }
         }
 
         /* Prices Section */
