@@ -947,46 +947,5 @@
     <a href="#home" class="home-btn">↑</a>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-
-    <script>
-        // Sanfte Scroll-Animation mit zusätzlichem Effekt für den Scroll-Pfeil
-function scrollToTargetWithAnimation(targetSelector) {
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-    const headerOffset = 70;
-    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
-
-    // Zusätzlicher Effekt: Pfeil wackelt beim Klicken
-    const arrow = document.querySelector('.scroll-arrow');
-    if (arrow) {
-        arrow.animate([
-            { transform: 'translateY(0)' },
-            { transform: 'translateY(8px)' },
-            { transform: 'translateY(-4px)' },
-            { transform: 'translateY(0)' }
-        ], {
-            duration: 400,
-            easing: 'ease-in-out'
-        });
-    }
-
-    window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-    });
-}
-
-// Für alle internen Links mit # sanftes Scrollen
-[...document.querySelectorAll('a[href^="#"]')].forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.length > 1 && document.querySelector(href)) {
-            e.preventDefault();
-            scrollToTargetWithAnimation(href);
-        }
-    });
-});
-    </script>
 </body>
 </html>
