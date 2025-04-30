@@ -206,8 +206,8 @@
             align-items: center;
             justify-content: center;
             padding: 15px 30px;
-            background: var(--accent-color);
-            color: var(--light-text);
+            background: #2d3a5a; /* dunkleres Blau für besseren Kontrast */
+            color: #fff;
             text-decoration: none;
             font-weight: 600;
             border-radius: 50px;
@@ -215,18 +215,16 @@
             box-shadow: var(--box-shadow);
             min-width: 220px;
         }
-        
-        .cta-whatsapp {
-            background: var(--whatsapp-color);
-        }
-
-        .cta-whatsapp:hover {
-            background: #1da851;
-        }
-        
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: #1A1F2C;
+        }
+        .cta-whatsapp {
+            background: #25D366;
+            color: #1A1F2C; /* sehr dunkles Blau für maximalen Kontrast auf WhatsApp-Grün */
+        }
+        .cta-whatsapp:hover {
+            background: #1ebe5d;
+            color: #fff;
         }
         
         .cta-button svg {
