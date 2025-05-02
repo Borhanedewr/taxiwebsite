@@ -37,3 +37,18 @@ body {
 * {
   border: 1px solid var(--border);
 }
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.cta-button, .cta-whatsapp {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
