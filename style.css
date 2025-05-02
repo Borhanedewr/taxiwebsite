@@ -105,11 +105,12 @@ footer {
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
     border-radius: var(--border-radius);
-    padding: 8px 15px; /* Reduce button size */
-    font-size: 0.9rem; /* Adjust font size */
+    padding: 5px 10px; /* Smaller buttons */
+    font-size: 0.8rem; /* Adjust font size */
     font-weight: bold;
     text-transform: uppercase;
     transition: var(--transition);
+    margin-top: 10px; /* Reduce margin */
 }
 
 .cta-button:hover {
@@ -136,29 +137,56 @@ nav a:hover {
 
 /* Adjust service boxes for mobile-friendly design */
 section {
-    margin-bottom: 20px; /* Reduce margin for compact layout */
-    padding: 15px; /* Reduce padding for smaller boxes */
-    border-left: 3px solid var(--accent-color); /* Adjust border size */
+    margin-bottom: 15px; /* Reduce margin for compact layout */
+    padding: 10px; /* Further reduce padding */
+    border-left: 2px solid var(--accent-color); /* Slimmer border */
 }
 
 .service-image {
-    height: 120px; /* Reduce height for smaller screens */
-    font-size: 1.5rem; /* Adjust font size */
-    margin: 10px 0; /* Reduce margin */
+    height: 80px; /* Significantly reduce height */
+    font-size: 1rem; /* Smaller font size */
+    margin: 5px 0; /* Reduce margin */
+}
+
+section h2 {
+    font-size: 1.2rem; /* Smaller heading size */
+    margin-bottom: 10px; /* Reduce spacing */
+}
+
+section p {
+    font-size: 0.9rem; /* Smaller text size */
+    margin-bottom: 10px; /* Reduce spacing */
+}
+
+.feature-list li {
+    font-size: 0.9rem; /* Smaller list items */
+    margin-bottom: 5px; /* Reduce spacing */
 }
 
 @media (max-width: 768px) {
     section {
-        padding: 10px; /* Further reduce padding for mobile */
+        padding: 8px; /* Further reduce padding for mobile */
     }
 
     .service-image {
-        height: 100px; /* Smaller height for mobile */
-        font-size: 1.2rem; /* Smaller font size */
+        height: 60px; /* Smaller height for mobile */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    section h2 {
+        font-size: 1rem; /* Smaller heading size for mobile */
+    }
+
+    section p {
+        font-size: 0.8rem; /* Smaller text size for mobile */
+    }
+
+    .feature-list li {
+        font-size: 0.8rem; /* Smaller list items for mobile */
     }
 
     .cta-button {
-        padding: 6px 10px; /* Smaller buttons for mobile */
-        font-size: 0.8rem; /* Adjust font size */
+        padding: 4px 8px; /* Smaller buttons for mobile */
+        font-size: 0.7rem; /* Adjust font size */
     }
 }
