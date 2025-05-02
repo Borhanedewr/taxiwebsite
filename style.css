@@ -27,6 +27,16 @@
   --sidebar-accent-foreground: #181a20;
   --sidebar-border: #e5e7eb;
   --sidebar-ring: #6366f1;
+  --primary-color: #FFD700; /* Taxi yellow */
+  --secondary-color: #333333; /* Dark gray for contrast */
+  --accent-color: #000000; /* Black for strong accents */
+  --whatsapp-color: #25D366; /* WhatsApp green */
+  --light-bg: #FFF8DC; /* Light yellowish background */
+  --text-color: #333333; /* Dark gray for text */
+  --light-text: #FFFFFF; /* White for light text */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
 }
 
 body {
@@ -52,4 +62,32 @@ body {
     max-width: 600px;
     text-align: center;
     padding: 15px 0;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.cta-button:hover, .cta-whatsapp:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+
+.footer-links a {
+    color: var(--primary-color);
+}
+
+.footer-links a:hover {
+    color: var(--light-text);
 }
