@@ -150,6 +150,27 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .cta-whatsapp {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--secondary-color);
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+        .cta-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
         footer {
             background-color: var(--primary-color);
             color: var(--light-text);
@@ -371,6 +392,11 @@
                 <p>Für Unternehmen bieten wir spezielle Konditionen bei regelmäßiger Buchung. Sprechen Sie uns an für ein individuelles Angebot.</p>
                 <a href="tel:043219638696" class="cta-button">Business-Transfer anfragen</a>
             </section>
+            
+            <div class="cta-buttons">
+                <a href="tel:043219638696" class="cta-button">Jetzt anrufen</a>
+                <a href="https://wa.me/043219638696" class="cta-whatsapp">Per WhatsApp kontaktieren</a>
+            </div>
         </div>
     </main>
 
