@@ -153,9 +153,12 @@ section {
     margin: 5px 0; /* Reduce margin */
 }
 
+/* Removed the border-bottom style for the h2 element to eliminate the horizontal line under the heading */
 section h2 {
-    font-size: 1.2rem; /* Smaller heading size */
-    margin-bottom: 10px; /* Reduce spacing */
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    padding-bottom: 10px; /* Removed border-bottom */
 }
 
 section p {
