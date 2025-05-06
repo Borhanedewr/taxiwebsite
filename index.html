@@ -6,225 +6,18 @@
     <title>TaxiGo Neumünster</title>
     <meta name="description" content="Ihr zuverlässiger Taxi-Service in Neumünster" />
     
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-      /* Base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       
-      body {
-        background-color: #ffffff;
-        color: #111827;
-        line-height: 1.6;
-      }
-      
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      
-      /* Hero Section */
-      .hero {
-        position: relative;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-      }
-      
-      .hero-bg {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right, #111827, #000000);
-        z-index: -1;
-      }
-      
-      .hero-pattern {
-        position: absolute;
-        inset: 0;
-        opacity: 0.2;
-        background-image: 
-          radial-gradient(circle at 25% 25%, rgba(255, 218, 0, 0.3) 0%, transparent 50%), 
-          radial-gradient(circle at 75% 75%, rgba(255, 218, 0, 0.2) 0%, transparent 50%);
-      }
-      
-      .hero-content {
-        max-width: 800px;
-        margin-left: 5%;
-        z-index: 1;
-      }
-      
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        animation: fadeIn 0.6s ease-out forwards;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.75rem;
-        color: #ffffff;
-        margin-bottom: 2rem;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        animation: fadeIn 0.6s ease-out 0.2s forwards;
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
         opacity: 0;
-      }
-      
-      .button-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        animation: fadeIn 0.6s ease-out 0.4s forwards;
-        opacity: 0;
-      }
-      
-      @media (min-width: 640px) {
-        .button-group {
-          flex-direction: row;
-        }
-        
-        .hero-title {
-          font-size: 4.5rem;
-        }
-      }
-      
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 1rem 1.5rem;
-        font-weight: 700;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 2px solid #ffffff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        font-size: 1.25rem;
-      }
-      
-      .btn-call {
-        background-color: #EAB308;
-        color: #111827;
-      }
-      
-      .btn-call:hover {
-        background-color: #CA8A04;
-      }
-      
-      .btn-whatsapp {
-        background-color: #10B981;
-        color: #ffffff;
-      }
-      
-      .btn-whatsapp:hover {
-        background-color: #059669;
-      }
-      
-      /* Services */
-      .services {
-        padding: 4rem 0;
-        background: linear-gradient(to bottom, #f9fafb, #ffffff);
-      }
-      
-      .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-      
-      .divider {
-        width: 6rem;
-        height: 0.25rem;
-        background-color: #EAB308;
-        margin: 1rem auto;
-      }
-      
-      .services-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      @media (min-width: 768px) {
-        .services-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      
-      @media (min-width: 1024px) {
-        .services-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      
-      .service-card {
-        background-color: #ffffff;
-        padding: 2rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        border-bottom: 4px solid #EAB308;
-        transition: all 0.3s ease;
-      }
-      
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-      
-      .service-icon {
-        display: inline-flex;
-        padding: 1rem;
-        background: linear-gradient(to right, #EAB308, #F59E0B);
-        border-radius: 9999px;
-        margin-bottom: 1.5rem;
-      }
-      
-      .service-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-      
-      .service-description {
-        color: #4B5563;
-      }
-      
-      /* Utilities */
-      .text-center {
-        text-align: center;
-      }
-      
-      .mt-3 {
-        margin-top: 1.5rem;
-      }
-      
-      /* Animations */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
       
       .animate-on-scroll {
@@ -237,23 +30,26 @@
         opacity: 1;
         transform: translateY(0);
       }
-      
-      /* Accessibility improvements */
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
+
+      .scrollToTop {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 20;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
       }
       
-      :focus {
-        outline: 2px solid #EAB308;
-        outline-offset: 2px;
+      .scrollToTop.visible {
+        opacity: 1;
       }
       
       html {
@@ -263,27 +59,313 @@
   </head>
 
   <body>
-    <div id="root">
-      <!-- Hero Section with larger text -->
-      <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-pattern"></div>
+    <div class="min-h-screen">
+      <!-- Header -->
+      <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-4">
+          <div class="flex items-center">
+            <a 
+              href="tel:043219638696" 
+              class="mr-3 bg-yellow-400 rounded-full h-10 w-10 flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              aria-label="Anrufen"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-black"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <div class="text-2xl font-bold">
+              Taxi<span class="text-yellow-400">Go</span> Neumünster
+            </div>
+          </div>
+          
+          <div class="lg:hidden">
+            <button class="text-black hover:text-yellow-500" id="menuToggle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+          
+          <nav class="hidden lg:block">
+            <ul class="flex space-x-6">
+              <li><a href="/" class="font-semibold hover:text-yellow-500 transition-colors">Startseite</a></li>
+              <li><a href="leistungen.html" class="font-semibold hover:text-yellow-500 transition-colors">Leistungen</a></li>
+              <li><a href="ueber-uns.html" class="font-semibold hover:text-yellow-500 transition-colors">Über uns</a></li>
+              <li><a href="kontakt.html" class="font-semibold hover:text-yellow-500 transition-colors">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white h-auto p-5 w-64 ml-auto">
+          <div class="flex justify-between items-center mb-5">
+            <div class="text-xl font-bold">
+              Taxi<span class="text-yellow-400">Go</span>
+            </div>
+            <button id="closeMenu" class="text-black hover:text-yellow-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <ul class="space-y-4">
+            <li><a href="/" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Startseite</a></li>
+            <li><a href="leistungen.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Leistungen</a></li>
+            <li><a href="ueber-uns.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Über uns</a></li>
+            <li><a href="kontakt.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Enhanced Hero Section -->
+      <section class="relative h-[70vh] flex items-center pt-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-black z-0">
+          <div class="absolute inset-0 opacity-20" 
+               style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 218, 0, 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 218, 0, 0.2) 0%, transparent 50%);">
+          </div>
+        </div>
         
-        <div class="container">
-          <div class="hero-content">
-            <h1 class="hero-title">Taxi in Neumünster</h1>
-            <p class="hero-subtitle">
-              Ihr sicherer und bequemer Taxi-Service, Tag und Nacht.
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="max-w-3xl text-left ml-[5%]">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-white 
+                           animate-fade-in" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+              Taxi in Neumünster gesucht?
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-white animate-fade-in" style="animation-delay: 0.2s; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+              Ihr sicherer und bequemer Taxi-Service in Neumünster, Tag und Nacht.
             </p>
-            <div class="button-group">
-              <a href="tel:043219638696" class="btn btn-call">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.4s;">
+              <a 
+                href="tel:043219638696" 
+                class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-colors flex items-center justify-center gap-2 border-2 border-white shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <span>Jetzt anrufen</span>
               </a>
-              <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon">
+              <a 
+                href="https://wa.me/4943219638696" 
+                class="py-3 px-6 bg-green-500 text-white font-bold rounded hover:bg-green-600 transition-colors flex items-center justify-center gap-2 border-2 border-white shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="h-5 w-5" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+                <span>Per WhatsApp bestellen</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#services" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white opacity-80 hover:opacity-100 transition-opacity bg-black/30 w-12 h-12 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+      </section>
+
+      <!-- Services Section - Enhanced -->
+      <section id="services" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Unsere Leistungen</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
+              <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Flughafen-Transfer</h3>
+              <p class="text-gray-600">Zuverlässiger Transfer zu allen Flughäfen in der Region. Pünktlich und stressfrei.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
+              <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Kurierfahrten</h3>
+              <p class="text-gray-600">Schnelle und sichere Lieferung Ihrer wichtigen Dokumente und Pakete.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
+              <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Schülerfahrten</h3>
+              <p class="text-gray-600">Sicherer Transport für Schüler mit besonderem Augenmerk auf Pünktlichkeit.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
+              <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Einkaufsfahrten</h3>
+              <p class="text-gray-600">Bequeme Unterstützung beim Transport Ihrer Einkäufe.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
+              <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Businessfahrten</h3>
+              <p class="text-gray-600">Professioneller Service für Geschäftstermine und Konferenzen.</p>
+            </div>
+          </div>
+          
+          <div class="text-center mt-10">
+            <a href="leistungen.html" class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-colors inline-block shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">Alle Leistungen ansehen</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fleet Section - Enhanced -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Unsere Flotte</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-yellow-400 animate-on-scroll">
+              <div class="text-yellow-400 text-3xl mb-6">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4 border-2 border-yellow-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">Toyota BZ4X</h3>
+              <p class="text-gray-600 text-center">Modern, komfortabel und umweltfreundlich - unser Toyota BZ4X garantiert Ihnen eine angenehme Fahrt.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-yellow-400 animate-on-scroll">
+              <div class="text-yellow-400 text-3xl mb-6">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4 border-2 border-yellow-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">Toyota Prius Plus</h3>
+              <p class="text-gray-600 text-center">Geräumig und effizient - ideal für Gruppen oder wenn Sie mehr Platz für Ihr Gepäck benötigen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prices Section - Enhanced -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Unsere Preise</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+            <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Alle Preise entsprechen den offiziellen Tarifen in der Stadt Neumünster</p>
+          </div>
+          
+          <div class="max-w-2xl mx-auto overflow-hidden rounded-lg animate-on-scroll">
+            <table class="w-full bg-white shadow-xl border-collapse">
+              <thead class="bg-gray-800 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left font-bold uppercase">Leistung</th>
+                  <th class="px-6 py-4 text-right font-bold uppercase">Preis</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium">Grundpreis</td>
+                  <td class="px-6 py-4 text-right">3,50 €</td>
+                </tr>
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium">Preis pro Kilometer</td>
+                  <td class="px-6 py-4 text-right">2,20 €</td>
+                </tr>
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium">Wartezeit pro Stunde</td>
+                  <td class="px-6 py-4 text-right">30,00 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section - Enhanced -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Über Uns</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+          </div>
+          
+          <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg border border-gray-100 animate-on-scroll">
+            <p class="mb-4 text-gray-700 leading-relaxed">Willkommen bei TaxiGo Neumünster, Ihrem zuverlässigen Partner für Taxifahrten in Neumünster und Umgebung.</p>
+            <p class="mb-4 text-gray-700 leading-relaxed">Seit 2025 bieten wir professionelle Taxidienstleistungen mit Fokus auf Kundenzufriedenheit, Pünktlichkeit und Komfort.</p>
+            <p class="mb-4 text-gray-700 leading-relaxed">Unser Team besteht aus erfahrenen Fahrern, die die Region bestens kennen und Sie sicher und zuverlässig an Ihr Ziel bringen.</p>
+            <p class="mb-4 text-gray-700 leading-relaxed">Wir legen großen Wert auf moderne, gepflegte Fahrzeuge und einen freundlichen Service, damit Ihre Fahrt so angenehm wie möglich wird.</p>
+            
+            <div class="text-center mt-8">
+              <a href="ueber-uns.html" class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-colors inline-block shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">Mehr über uns erfahren</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section - Enhanced -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Häufig gestellte Fragen</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+          </div>
+          
+          <div class="max-w-3xl mx-auto animate-on-scroll">
+            <div class="space-y-4 faq-container">
+              <!-- FAQ Items will be inserted here by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action - Enhanced -->
+      <section class="py-16 bg-gradient-to-r from-gray-900 to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" 
+             style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 218, 0, 0.2) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 218, 0, 0.1) 0%, transparent 50%);">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Bereit, ein Taxi anzurufen?</h2>
+            <p class="text-xl mb-8">Kontaktieren Sie uns jetzt für eine schnelle und zuverlässige Fahrt!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="tel:043219638696" 
+                class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center gap-2 border-2 border-white shadow-xl transform hover:scale-105"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Jetzt anrufen</span>
+              </a>
+              <a 
+                href="https://wa.me/4943219638696" 
+                class="py-3 px-6 bg-green-500 text-white font-bold rounded hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2 border-2 border-white shadow-xl transform hover:scale-105"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="h-5 w-5" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
                 <span>Per WhatsApp bestellen</span>
@@ -293,72 +375,246 @@
         </div>
       </section>
 
-      <!-- Services Section -->
-      <section id="services" class="services">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Unsere Leistungen</h2>
-            <div class="divider"></div>
-          </div>
-          
-          <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-              <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                </svg>
-              </div>
-              <h3 class="service-title">Flughafen-Transfer</h3>
-              <p class="service-description">Zuverlässiger Transfer zu allen Flughäfen in der Region. Pünktlich und stressfrei.</p>
+      <!-- Footer - Enhanced -->
+      <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4 border-b-2 border-yellow-400 pb-2 inline-block">Über uns</h3>
+              <p class="text-gray-300 mb-4">TaxiGo Neumünster ist Ihr zuverlässiger Partner für Taxifahrten in Neumünster und Umgebung. Wir bieten professionellen Service zu fairen Preisen.</p>
             </div>
             
-            <div class="service-card animate-on-scroll">
-              <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 class="service-title">Kurierfahrten</h3>
-              <p class="service-description">Schnelle und sichere Lieferung Ihrer wichtigen Dokumente und Pakete.</p>
+            <div>
+              <h3 class="text-xl font-bold mb-4 border-b-2 border-yellow-400 pb-2 inline-block">Schnelllinks</h3>
+              <ul class="space-y-2">
+                <li><a href="/" class="text-gray-300 hover:text-yellow-400 transition-colors">Startseite</a></li>
+                <li><a href="leistungen.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Leistungen</a></li>
+                <li><a href="ueber-uns.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Über uns</a></li>
+                <li><a href="kontakt.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Kontakt</a></li>
+              </ul>
             </div>
             
-            <div class="service-card animate-on-scroll">
-              <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 class="service-title">Schülerfahrten</h3>
-              <p class="service-description">Sicherer Transport für Schüler mit besonderem Augenmerk auf Pünktlichkeit.</p>
+            <div>
+              <h3 class="text-xl font-bold mb-4 border-b-2 border-yellow-400 pb-2 inline-block">Kontakt</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="tel:043219638696" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>04321-9638696</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:taxigoneumuenster@gmail.com" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>taxigoneumuenster@gmail.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/4943219638696" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           
-          <div class="text-center mt-3">
-            <a href="leistungen.html" class="btn btn-call">Alle Leistungen ansehen</a>
+          <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+            <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
           </div>
         </div>
-      </section>
+      </footer>
+
+      <!-- Mobile Menu - Fixed Bottom Navigation -->
+      <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50">
+        <div class="flex justify-around items-center py-2">
+          <a href="tel:043219638696" class="flex flex-col items-center p-2 text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span class="text-xs mt-1">Anrufen</span>
+          </a>
+          <a href="https://wa.me/4943219638696" class="flex flex-col items-center p-2 text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            <span class="text-xs mt-1">WhatsApp</span>
+          </a>
+          <a href="/" class="flex flex-col items-center p-2 text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="text-xs mt-1">Home</span>
+          </a>
+          <a href="kontakt.html" class="flex flex-col items-center p-2 text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span class="text-xs mt-1">Kontakt</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll to top button -->
+      <div class="scrollToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+      </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
-      // Animation on scroll
+      // FAQ data
+      const faqItems = [
+        {
+          question: "Wie kann ich ein Taxi bestellen?",
+          answer: "Sie können uns telefonisch unter 04321-9638696 erreichen, per WhatsApp kontaktieren oder über unser Kontaktformular auf der Website eine Anfrage stellen."
+        },
+        {
+          question: "Kann ich ein Taxi im Voraus buchen?",
+          answer: "Ja, Sie können Ihre Fahrt gerne im Voraus buchen. Dies empfehlen wir besonders für Flughafentransfers oder wenn Sie zu einem bestimmten Zeitpunkt abgeholt werden möchten."
+        },
+        {
+          question: "Welche Zahlungsmethoden akzeptieren Sie?",
+          answer: "Wir akzeptieren Barzahlung sowie Kartenzahlung (EC und Kreditkarte) direkt im Fahrzeug."
+        },
+        {
+          question: "Bieten Sie auch Fahrten außerhalb von Neumünster an?",
+          answer: "Ja, wir fahren auch überregional und bieten Langstreckenfahrten an, z.B. zu Flughäfen oder in andere Städte. Kontaktieren Sie uns für ein individuelles Angebot."
+        },
+        {
+          question: "Kann ich ein größeres Taxi für mehrere Personen bestellen?",
+          answer: "Ja, unser Toyota Prius Plus bietet Platz für bis zu 6 Personen. Bitte geben Sie bei der Bestellung an, wie viele Personen mitfahren."
+        },
+        {
+          question: "Wie berechnen sich die Fahrpreise?",
+          answer: "Die Preise berechnen sich nach dem offiziellen Taxitarif der Stadt Neumünster, bestehend aus Grundpreis und Kilometerpreis. Für bestimmte Strecken wie Flughafentransfers bieten wir auch Festpreise an."
+        },
+        {
+          question: "Fahren Sie 24 Stunden am Tag?",
+          answer: "Ja, unser Service steht Ihnen rund um die Uhr zur Verfügung, auch an Wochenenden und Feiertagen."
+        },
+        {
+          question: "Kann ich spezielle Anforderungen angeben (z.B. Kindersitz)?",
+          answer: "Selbstverständlich. Bitte teilen Sie uns bei der Buchung Ihre speziellen Wünsche mit, damit wir diese berücksichtigen können."
+        },
+        {
+          question: "Wie viel Gepäck kann ich mitnehmen?",
+          answer: "Unsere Fahrzeuge bieten Platz für Standardgepäck. Bei größerem Gepäckaufkommen empfehlen wir, dies bei der Bestellung anzugeben, damit wir ein passendes Fahrzeug für Sie bereitstellen können."
+        },
+        {
+          question: "Fahren Sie auch zum Flughafen Hamburg?",
+          answer: "Ja, wir bieten regelmäßige Fahrten zum Flughafen Hamburg und anderen Flughäfen in der Region an. Für Flughafentransfers empfehlen wir eine frühzeitige Buchung."
+        }
+      ];
+
+      // Create FAQ Elements
       document.addEventListener('DOMContentLoaded', function() {
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        const faqContainer = document.querySelector('.faq-container');
         
-        const checkVisibility = () => {
-          animateElements.forEach(element => {
-            const rect = element.getBoundingClientRect();
+        // Generate FAQ items
+        faqItems.forEach((item, index) => {
+          const faqElement = document.createElement('div');
+          faqElement.className = 'bg-white rounded-lg shadow-md overflow-hidden border border-gray-200';
+          faqElement.innerHTML = `
+            <button 
+              class="w-full flex justify-between items-center p-5 text-left font-semibold hover:bg-gray-50 transition-colors focus:outline-none" 
+              onclick="toggleFaq(${index})"
+            >
+              ${item.question}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="h-5 w-5 transition-transform faq-chevron" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                data-faq-index="${index}"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div 
+              class="transition-all duration-300 overflow-hidden max-h-0 faq-answer"
+              data-faq-index="${index}"
+            >
+              <p class="text-gray-600 px-5 pb-5">${item.answer}</p>
+            </div>
+          `;
+          faqContainer.appendChild(faqElement);
+        });
+        
+        // Handle scroll animations
+        const handleScroll = () => {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          
+          elements.forEach((element, index) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
             const windowHeight = window.innerHeight;
             
-            if (rect.top < windowHeight - 100) {
+            if (elementTop < windowHeight - 100 && elementBottom > 0) {
               element.classList.add('is-visible');
             }
           });
+          
+          // Show/hide scroll to top button
+          const scrollToTopBtn = document.querySelector('.scrollToTop');
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+          } else {
+            scrollToTopBtn.classList.remove('visible');
+          }
         };
         
-        window.addEventListener('scroll', checkVisibility);
-        checkVisibility(); // Initial check
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+        
+        // Mobile menu functionality
+        document.getElementById('menuToggle').addEventListener('click', function() {
+          document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMenu').addEventListener('click', function() {
+          document.getElementById('mobileMenu').classList.add('hidden');
+        });
+        
+        // Scroll to top functionality
+        document.querySelector('.scrollToTop').addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       });
+      
+      // FAQ toggle function
+      function toggleFaq(index) {
+        const answer = document.querySelector(`.faq-answer[data-faq-index="${index}"]`);
+        const chevron = document.querySelector(`.faq-chevron[data-faq-index="${index}"]`);
+        
+        const allAnswers = document.querySelectorAll('.faq-answer');
+        const allChevrons = document.querySelectorAll('.faq-chevron');
+        
+        allAnswers.forEach((element, idx) => {
+          if (parseInt(element.getAttribute('data-faq-index')) !== index) {
+            element.style.maxHeight = '0';
+          }
+        });
+        
+        allChevrons.forEach((element, idx) => {
+          if (parseInt(element.getAttribute('data-faq-index')) !== index) {
+            element.classList.remove('rotate-180');
+          }
+        });
+        
+        if (answer.style.maxHeight === '500px') {
+          answer.style.maxHeight = '0';
+          chevron.classList.remove('rotate-180');
+        } else {
+          answer.style.maxHeight = '500px';
+          chevron.classList.add('rotate-180');
+        }
+      }
     </script>
   </body>
 </html>
