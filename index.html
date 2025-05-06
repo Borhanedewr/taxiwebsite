@@ -7,7 +7,7 @@
     <meta name="description" content="Ihr zuverlässiger Taxi-Service in Neumünster" />
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
     <style>
       @keyframes fade-in {
@@ -33,7 +33,7 @@
 
       .scrollToTop {
         position: fixed;
-        bottom: 100px;
+        bottom: 30px;
         right: 30px;
         z-index: 20;
         background-color: rgba(0, 0, 0, 0.5);
@@ -54,6 +54,35 @@
       
       html {
         scroll-behavior: smooth;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        
+        h1 {
+          font-size: 2.5rem !important;
+        }
+        
+        h2 {
+          font-size: 1.75rem !important;
+        }
+        
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .fleet-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mobile-menu {
+          width: 75%;
+          height: 100vh;
+        }
       }
     </style>
   </head>
@@ -86,10 +115,10 @@
           
           <nav class="hidden lg:block">
             <ul class="flex space-x-6">
-              <li><a href="/" class="font-semibold hover:text-yellow-500 transition-colors">Startseite</a></li>
-              <li><a href="leistungen.html" class="font-semibold hover:text-yellow-500 transition-colors">Leistungen</a></li>
-              <li><a href="ueber-uns.html" class="font-semibold hover:text-yellow-500 transition-colors">Über uns</a></li>
-              <li><a href="kontakt.html" class="font-semibold hover:text-yellow-500 transition-colors">Kontakt</a></li>
+              <li><a href="#" class="font-semibold hover:text-yellow-500 transition-colors">Startseite</a></li>
+              <li><a href="#services" class="font-semibold hover:text-yellow-500 transition-colors">Leistungen</a></li>
+              <li><a href="#about" class="font-semibold hover:text-yellow-500 transition-colors">Über uns</a></li>
+              <li><a href="#contact" class="font-semibold hover:text-yellow-500 transition-colors">Kontakt</a></li>
             </ul>
           </nav>
         </div>
@@ -97,7 +126,7 @@
 
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-        <div class="bg-white h-auto p-5 w-64 ml-auto">
+        <div class="bg-white h-auto p-5 mobile-menu ml-auto">
           <div class="flex justify-between items-center mb-5">
             <div class="text-xl font-bold">
               Taxi<span class="text-yellow-400">Go</span>
@@ -109,10 +138,10 @@
             </button>
           </div>
           <ul class="space-y-4">
-            <li><a href="/" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Startseite</a></li>
-            <li><a href="leistungen.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Leistungen</a></li>
-            <li><a href="ueber-uns.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Über uns</a></li>
-            <li><a href="kontakt.html" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Kontakt</a></li>
+            <li><a href="#" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Startseite</a></li>
+            <li><a href="#services" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Leistungen</a></li>
+            <li><a href="#about" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Über uns</a></li>
+            <li><a href="#contact" class="block font-semibold hover:text-yellow-500 transition-colors py-2">Kontakt</a></li>
           </ul>
         </div>
       </div>
@@ -126,7 +155,7 @@
         </div>
         
         <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-3xl text-left ml-[5%]">
+          <div class="max-w-3xl text-left ml-[5%] md:ml-[5%]">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-white 
                            animate-fade-in" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
               Taxi in Neumünster gesucht?
@@ -172,7 +201,7 @@
             <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 service-grid">
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-yellow-400 hover:translate-y-[-5px] animate-on-scroll">
               <div class="inline-block p-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -223,10 +252,6 @@
               <p class="text-gray-600">Professioneller Service für Geschäftstermine und Konferenzen.</p>
             </div>
           </div>
-          
-          <div class="text-center mt-10">
-            <a href="leistungen.html" class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-colors inline-block shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">Alle Leistungen ansehen</a>
-          </div>
         </div>
       </section>
 
@@ -238,7 +263,7 @@
             <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fleet-grid">
             <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-yellow-400 animate-on-scroll">
               <div class="text-yellow-400 text-3xl mb-6">
                 <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4 border-2 border-yellow-400">
@@ -276,34 +301,36 @@
           </div>
           
           <div class="max-w-2xl mx-auto overflow-hidden rounded-lg animate-on-scroll">
-            <table class="w-full bg-white shadow-xl border-collapse">
-              <thead class="bg-gray-800 text-white">
-                <tr>
-                  <th class="px-6 py-4 text-left font-bold uppercase">Leistung</th>
-                  <th class="px-6 py-4 text-right font-bold uppercase">Preis</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-200">
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 font-medium">Grundpreis</td>
-                  <td class="px-6 py-4 text-right">3,50 €</td>
-                </tr>
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 font-medium">Preis pro Kilometer</td>
-                  <td class="px-6 py-4 text-right">2,20 €</td>
-                </tr>
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 font-medium">Wartezeit pro Stunde</td>
-                  <td class="px-6 py-4 text-right">30,00 €</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white shadow-xl border-collapse">
+                <thead class="bg-gray-800 text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left font-bold uppercase">Leistung</th>
+                    <th class="px-6 py-4 text-right font-bold uppercase">Preis</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium">Grundpreis</td>
+                    <td class="px-6 py-4 text-right">3,50 €</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium">Preis pro Kilometer</td>
+                    <td class="px-6 py-4 text-right">2,20 €</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium">Wartezeit pro Stunde</td>
+                    <td class="px-6 py-4 text-right">30,00 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- About Section - Enhanced -->
-      <section class="py-16 bg-gray-50">
+      <section id="about" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold">Über Uns</h2>
@@ -315,10 +342,6 @@
             <p class="mb-4 text-gray-700 leading-relaxed">Seit 2025 bieten wir professionelle Taxidienstleistungen mit Fokus auf Kundenzufriedenheit, Pünktlichkeit und Komfort.</p>
             <p class="mb-4 text-gray-700 leading-relaxed">Unser Team besteht aus erfahrenen Fahrern, die die Region bestens kennen und Sie sicher und zuverlässig an Ihr Ziel bringen.</p>
             <p class="mb-4 text-gray-700 leading-relaxed">Wir legen großen Wert auf moderne, gepflegte Fahrzeuge und einen freundlichen Service, damit Ihre Fahrt so angenehm wie möglich wird.</p>
-            
-            <div class="text-center mt-8">
-              <a href="ueber-uns.html" class="py-3 px-6 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500 transition-colors inline-block shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">Mehr über uns erfahren</a>
-            </div>
           </div>
         </div>
       </section>
@@ -333,14 +356,14 @@
           
           <div class="max-w-3xl mx-auto animate-on-scroll">
             <div class="space-y-4 faq-container">
-              <!-- FAQ Items will be inserted here by JavaScript -->
+              <!-- FAQ Items will be dynamically created by JavaScript -->
             </div>
           </div>
         </div>
       </section>
 
       <!-- Call to Action - Enhanced -->
-      <section class="py-16 bg-gradient-to-r from-gray-900 to-black text-white relative overflow-hidden">
+      <section id="contact" class="py-16 bg-gradient-to-r from-gray-900 to-black text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-20" 
              style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 218, 0, 0.2) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 218, 0, 0.1) 0%, transparent 50%);">
         </div>
@@ -387,10 +410,10 @@
             <div>
               <h3 class="text-xl font-bold mb-4 border-b-2 border-yellow-400 pb-2 inline-block">Schnelllinks</h3>
               <ul class="space-y-2">
-                <li><a href="/" class="text-gray-300 hover:text-yellow-400 transition-colors">Startseite</a></li>
-                <li><a href="leistungen.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Leistungen</a></li>
-                <li><a href="ueber-uns.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Über uns</a></li>
-                <li><a href="kontakt.html" class="text-gray-300 hover:text-yellow-400 transition-colors">Kontakt</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Startseite</a></li>
+                <li><a href="#services" class="text-gray-300 hover:text-yellow-400 transition-colors">Leistungen</a></li>
+                <li><a href="#about" class="text-gray-300 hover:text-yellow-400 transition-colors">Über uns</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-yellow-400 transition-colors">Kontakt</a></li>
               </ul>
             </div>
             
@@ -429,43 +452,14 @@
         </div>
       </footer>
 
-      <!-- Mobile Menu - Fixed Bottom Navigation -->
-      <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50">
-        <div class="flex justify-around items-center py-2">
-          <a href="tel:043219638696" class="flex flex-col items-center p-2 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span class="text-xs mt-1">Anrufen</span>
-          </a>
-          <a href="https://wa.me/4943219638696" class="flex flex-col items-center p-2 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-            <span class="text-xs mt-1">WhatsApp</span>
-          </a>
-          <a href="/" class="flex flex-col items-center p-2 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            <span class="text-xs mt-1">Home</span>
-          </a>
-          <a href="kontakt.html" class="flex flex-col items-center p-2 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span class="text-xs mt-1">Kontakt</span>
-          </a>
-        </div>
-      </div>
-
       <!-- Scroll to top button -->
-      <div class="scrollToTop">
+      <div class="scrollToTop" id="scrollToTop">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
         </svg>
       </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
       // FAQ data
       const faqItems = [
@@ -488,34 +482,14 @@
         {
           question: "Kann ich ein größeres Taxi für mehrere Personen bestellen?",
           answer: "Ja, unser Toyota Prius Plus bietet Platz für bis zu 6 Personen. Bitte geben Sie bei der Bestellung an, wie viele Personen mitfahren."
-        },
-        {
-          question: "Wie berechnen sich die Fahrpreise?",
-          answer: "Die Preise berechnen sich nach dem offiziellen Taxitarif der Stadt Neumünster, bestehend aus Grundpreis und Kilometerpreis. Für bestimmte Strecken wie Flughafentransfers bieten wir auch Festpreise an."
-        },
-        {
-          question: "Fahren Sie 24 Stunden am Tag?",
-          answer: "Ja, unser Service steht Ihnen rund um die Uhr zur Verfügung, auch an Wochenenden und Feiertagen."
-        },
-        {
-          question: "Kann ich spezielle Anforderungen angeben (z.B. Kindersitz)?",
-          answer: "Selbstverständlich. Bitte teilen Sie uns bei der Buchung Ihre speziellen Wünsche mit, damit wir diese berücksichtigen können."
-        },
-        {
-          question: "Wie viel Gepäck kann ich mitnehmen?",
-          answer: "Unsere Fahrzeuge bieten Platz für Standardgepäck. Bei größerem Gepäckaufkommen empfehlen wir, dies bei der Bestellung anzugeben, damit wir ein passendes Fahrzeug für Sie bereitstellen können."
-        },
-        {
-          question: "Fahren Sie auch zum Flughafen Hamburg?",
-          answer: "Ja, wir bieten regelmäßige Fahrten zum Flughafen Hamburg und anderen Flughäfen in der Region an. Für Flughafentransfers empfehlen wir eine frühzeitige Buchung."
         }
       ];
 
-      // Create FAQ Elements
+      // Generate FAQ elements on DOM load
       document.addEventListener('DOMContentLoaded', function() {
         const faqContainer = document.querySelector('.faq-container');
         
-        // Generate FAQ items
+        // Create FAQ elements
         faqItems.forEach((item, index) => {
           const faqElement = document.createElement('div');
           faqElement.className = 'bg-white rounded-lg shadow-md overflow-hidden border border-gray-200';
@@ -523,6 +497,8 @@
             <button 
               class="w-full flex justify-between items-center p-5 text-left font-semibold hover:bg-gray-50 transition-colors focus:outline-none" 
               onclick="toggleFaq(${index})"
+              aria-expanded="false"
+              aria-controls="faq-content-${index}"
             >
               ${item.question}
               <svg 
@@ -531,26 +507,26 @@
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
-                data-faq-index="${index}"
+                id="faq-chevron-${index}"
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div 
-              class="transition-all duration-300 overflow-hidden max-h-0 faq-answer"
-              data-faq-index="${index}"
+              class="transition-all duration-300 overflow-hidden max-h-0"
+              id="faq-content-${index}"
             >
               <p class="text-gray-600 px-5 pb-5">${item.answer}</p>
             </div>
           `;
           faqContainer.appendChild(faqElement);
         });
-        
-        // Handle scroll animations
+
+        // Handle scroll animation
         const handleScroll = () => {
           const elements = document.querySelectorAll('.animate-on-scroll');
           
-          elements.forEach((element, index) => {
+          elements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             const elementBottom = element.getBoundingClientRect().bottom;
             const windowHeight = window.innerHeight;
@@ -562,7 +538,7 @@
           
           // Show/hide scroll to top button
           const scrollToTopBtn = document.querySelector('.scrollToTop');
-          if (window.scrollY > 300) {
+          if (window.pageYOffset > 300) {
             scrollToTopBtn.classList.add('visible');
           } else {
             scrollToTopBtn.classList.remove('visible');
@@ -582,37 +558,47 @@
         });
         
         // Scroll to top functionality
-        document.querySelector('.scrollToTop').addEventListener('click', function() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+
+        // Close mobile menu when clicking on an item
+        const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+          });
         });
       });
       
       // FAQ toggle function
       function toggleFaq(index) {
-        const answer = document.querySelector(`.faq-answer[data-faq-index="${index}"]`);
-        const chevron = document.querySelector(`.faq-chevron[data-faq-index="${index}"]`);
+        const content = document.getElementById(`faq-content-${index}`);
+        const chevron = document.getElementById(`faq-chevron-${index}`);
+        const button = chevron.parentElement;
         
-        const allAnswers = document.querySelectorAll('.faq-answer');
-        const allChevrons = document.querySelectorAll('.faq-chevron');
-        
-        allAnswers.forEach((element, idx) => {
-          if (parseInt(element.getAttribute('data-faq-index')) !== index) {
-            element.style.maxHeight = '0';
-          }
-        });
-        
-        allChevrons.forEach((element, idx) => {
-          if (parseInt(element.getAttribute('data-faq-index')) !== index) {
-            element.classList.remove('rotate-180');
-          }
-        });
-        
-        if (answer.style.maxHeight === '500px') {
-          answer.style.maxHeight = '0';
-          chevron.classList.remove('rotate-180');
+        if (content.style.maxHeight === '500px') {
+          content.style.maxHeight = '0';
+          chevron.classList.remove('transform', 'rotate-180');
+          button.setAttribute('aria-expanded', 'false');
         } else {
-          answer.style.maxHeight = '500px';
-          chevron.classList.add('rotate-180');
+          // Close all other FAQs
+          document.querySelectorAll('.faq-container > div > div').forEach(item => {
+            item.style.maxHeight = '0';
+          });
+          
+          document.querySelectorAll('.faq-chevron').forEach(item => {
+            item.classList.remove('transform', 'rotate-180');
+            item.parentElement.setAttribute('aria-expanded', 'false');
+          });
+          
+          // Open current FAQ
+          content.style.maxHeight = '500px';
+          chevron.classList.add('transform', 'rotate-180');
+          button.setAttribute('aria-expanded', 'true');
         }
       }
     </script>
