@@ -7,7 +7,7 @@
     <meta name="description" content="Ihr zuverlässiger Taxi-Service in Neumünster" />
     
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
       @keyframes fade-in {
@@ -64,21 +64,50 @@
         }
         
         h1 {
-          font-size: 2.5rem !important;
+          font-size: 2.25rem !important;
+          line-height: 1.2 !important;
         }
         
         h2 {
           font-size: 1.75rem !important;
         }
-        
-        .service-grid {
-          grid-template-columns: 1fr;
-        }
-        
-        .fleet-grid {
-          grid-template-columns: 1fr;
+
+        /* Fix for hero section on mobile */
+        .hero-section {
+          height: 100vh !important;
+          min-height: 550px;
+          padding-top: 80px !important;
         }
 
+        /* Adjust hero content position for mobile */
+        .hero-content {
+          margin-left: 0 !important;
+          padding: 0 16px !important;
+          text-align: center !important;
+        }
+
+        /* Make scroll indicator more visible */
+        .scroll-indicator {
+          bottom: 20px !important;
+          background: rgba(0, 0, 0, 0.5) !important;
+          width: 50px !important;
+          height: 50px !important;
+          animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+          0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+          50% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+          100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+        }
+
+        /* Better spacing for mobile */
+        .py-16 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+
+        /* Adjust mobile menu */
         .mobile-menu {
           width: 75%;
           height: 100vh;
@@ -147,7 +176,7 @@
       </div>
 
       <!-- Enhanced Hero Section -->
-      <section class="relative h-[70vh] flex items-center pt-16">
+      <section class="relative hero-section h-[70vh] flex items-center pt-16">
         <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-black z-0">
           <div class="absolute inset-0 opacity-20" 
                style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 218, 0, 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255, 218, 0, 0.2) 0%, transparent 50%);">
@@ -155,7 +184,7 @@
         </div>
         
         <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-3xl text-left ml-[5%] md:ml-[5%]">
+          <div class="max-w-3xl hero-content text-left ml-[5%] md:ml-[5%]">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-white 
                            animate-fade-in" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
               Taxi in Neumünster gesucht?
@@ -188,7 +217,7 @@
             </div>
           </div>
         </div>
-        <a href="#services" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white opacity-80 hover:opacity-100 transition-opacity bg-black/30 w-12 h-12 rounded-full flex items-center justify-center">
+        <a href="#services" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white opacity-80 hover:opacity-100 transition-opacity bg-black/30 w-12 h-12 rounded-full flex items-center justify-center scroll-indicator">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="m6 9 6 6 6-6"/></svg>
         </a>
       </section>
