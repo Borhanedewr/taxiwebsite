@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -270,6 +271,7 @@
         font-size: 3rem;
         margin-bottom: 1.5rem;
         color: #1A1F2C;
+        text-align: left;
       }
 
       .hero-text p {
@@ -281,6 +283,24 @@
       .hero-buttons {
         display: flex;
         gap: 1rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .hero-text h1 {
+          font-size: 2.2rem; /* Bigger heading on mobile */
+          text-align: left;
+        }
+        
+        .hero-text p {
+          font-size: 1.1rem;
+          text-align: left;
+        }
+        
+        .hero-buttons {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start; /* Align buttons to the left on mobile */
+        }
       }
 
       /* Services Section */
@@ -938,7 +958,7 @@
           <div class="hero-content">
             <div class="hero-text">
               <h1>Taxi in Neumünster gesucht?</h1>
-              <p>Ihr sicheres und bequemes Taxi in Neumünster.</p>
+              <p>Ihr Taxiunternehmen in Neumünster: sicher, bequem und pünktlich.</p>
               <div class="hero-buttons">
                 <a href="tel:043219638696" class="btn btn-primary">
                   <i class="fas fa-phone"></i> Jetzt anrufen
