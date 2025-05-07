@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -12,9 +11,734 @@
     <meta property="og:description" content="Sicheres und bequemes Taxi in Neumünster. Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr." />
     <meta property="og:type" content="website" />
     
-    <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+      /* Base Styles */
+      :root {
+        --primary-color: #FFD700;
+        --primary-dark: #E6C200;
+        --secondary-color: #1A1F2C;
+        --light-color: #F9F9F9;
+        --gray-color: #8E9196;
+        --gray-light: #F5F5F5;
+        --gray-dark: #4A4A4A;
+        --white: #FFFFFF;
+        --black: #000000;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --radius: 8px;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--secondary-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        padding: 0 1.5rem;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        position: relative;
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        padding: 0.875rem 1.75rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        border: none;
+        gap: 0.5rem;
+      }
+
+      .btn i {
+        font-size: 1.1rem;
+      }
+
+      .btn-primary {
+        background-color: #FFD700;
+        color: #1A1F2C;
+      }
+
+      .btn-primary:hover {
+        background-color: #E6C200;
+      }
+
+      .btn-secondary {
+        background-color: #1A1F2C;
+        color: #FFFFFF;
+      }
+
+      .btn-secondary:hover {
+        background-color: #2a303d;
+      }
+
+      .btn-whatsapp {
+        background-color: #25D366;
+        color: #FFFFFF;
+      }
+
+      .btn-whatsapp:hover {
+        background-color: #1da851;
+      }
+
+      /* Header Styles */
+      header {
+        position: sticky;
+        top: 0;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #1A1F2C;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Highlighted text for "Go" in TaxiGo */
+      .highlight {
+        color: #FFD700;
+        font-weight: 800;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-menu li {
+        margin-left: 1.75rem;
+      }
+
+      .nav-menu a {
+        font-weight: 600;
+        color: #1A1F2C;
+        position: relative;
+      }
+
+      .nav-menu a:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #FFD700;
+        transition: width 0.3s ease;
+      }
+
+      .nav-menu a:hover:after,
+      .nav-menu a.active:after {
+        width: 100%;
+      }
+
+      /* Mobile Navigation */
+      #nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: none;
+        cursor: pointer;
+      }
+
+      .nav-toggle-label span,
+      .nav-toggle-label span:before,
+      .nav-toggle-label span:after {
+        display: block;
+        background: #1A1F2C;
+        height: 2px;
+        width: 25px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-toggle-label span:before,
+      .nav-toggle-label span:after {
+        content: '';
+        position: absolute;
+      }
+
+      .nav-toggle-label span:before {
+        bottom: 8px;
+      }
+
+      .nav-toggle-label span:after {
+        top: 8px;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 6rem 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(249,249,249,1));
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-text {
+        flex: 0 0 60%;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: #1A1F2C;
+      }
+
+      .hero-text p {
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        color: #4A4A4A;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: #FFFFFF;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: #F9F9F9;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-icon {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        color: #FFD700;
+      }
+
+      .service-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      /* Pricing Section */
+      .pricing {
+        background-color: #F5F5F5;
+      }
+
+      .pricing-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-table {
+        flex: 0 0 70%;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .pricing-header {
+        background-color: #1A1F2C;
+        color: #FFFFFF;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .pricing-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .pricing-body {
+        padding: 1.5rem;
+      }
+
+      .pricing-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #F5F5F5;
+      }
+
+      .pricing-item:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-footer {
+        padding: 1rem 1.5rem;
+        background-color: #F5F5F5;
+      }
+
+      .pricing-note {
+        font-size: 0.875rem;
+        color: #4A4A4A;
+        font-style: italic;
+      }
+
+      /* Fleet Section */
+      .fleet {
+        background-color: #FFFFFF;
+      }
+
+      .fleet-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .vehicle-card {
+        background-color: #F9F9F9;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .vehicle-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .vehicle-icon {
+        font-size: 4rem;
+        color: #FFD700;
+        margin-bottom: 1.5rem;
+      }
+
+      .vehicle-info {
+        padding: 1.5rem 0;
+      }
+
+      .vehicle-info h3 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .vehicle-info ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+
+      .vehicle-info li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .vehicle-info i {
+        color: #FFD700;
+        margin-right: 0.5rem;
+        width: 20px;
+        text-align: center;
+      }
+
+      /* About Section */
+      .about {
+        background-color: #F5F5F5;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-text {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+      }
+
+      .about-text .section-title {
+        text-align: center;
+      }
+
+      /* FAQ Section */
+      .faq {
+        background-color: #FFFFFF;
+      }
+
+      .accordion {
+        background-color: #F9F9F9;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .accordion-item {
+        border-bottom: 1px solid #F5F5F5;
+      }
+
+      .accordion-item:last-child {
+        border-bottom: none;
+      }
+
+      .accordion-button {
+        background-color: #FFFFFF;
+        color: #1A1F2C;
+        cursor: pointer;
+        padding: 1.25rem;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .accordion-button:hover {
+        background-color: #F5F5F5;
+      }
+
+      .accordion-button:after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-button.active:after {
+        transform: rotate(180deg);
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #FFFFFF;
+      }
+
+      .accordion-content p {
+        padding: 1rem 1.25rem;
+        color: #4A4A4A;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #1A1F2C;
+        color: #F9F9F9;
+        padding: 4rem 0 1rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      .footer-section h3:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #FFD700;
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-info i {
+        color: #FFD700;
+        margin-right: 0.75rem;
+        width: 20px;
+        text-align: center;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-links a:hover {
+        color: #FFD700;
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: #FFD700;
+        color: #1A1F2C;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .legal-links a:hover {
+        color: #FFD700;
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        width: 50px;
+        height: 50px;
+        background-color: #FFD700;
+        color: #1A1F2C;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: #E6C200;
+        transform: translateY(-3px);
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 992px) {
+        .hero-content {
+          flex-direction: column;
+          gap: 2rem;
+          text-align: center;
+        }
+        
+        .hero-text {
+          flex: 0 0 100%;
+        }
+        
+        .hero-buttons {
+          justify-content: center;
+        }
+        
+        .pricing-table {
+          flex: 0 0 100%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        html {
+          font-size: 14px;
+        }
+        
+        .section-title {
+          font-size: 1.75rem;
+        }
+        
+        .nav-toggle-label {
+          display: block;
+        }
+        
+        .nav-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background-color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          clip-path: circle(0% at top right);
+          transition: clip-path 0.5s ease;
+          z-index: 1000;
+        }
+        
+        .nav-menu li {
+          margin: 0.75rem 0;
+        }
+        
+        #nav-toggle:checked ~ .nav-menu {
+          clip-path: circle(150% at top right);
+        }
+        
+        .hero-text h1 {
+          font-size: 2.25rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .legal-links {
+          justify-content: center;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        section {
+          padding: 3rem 0;
+        }
+        
+        .hero {
+          padding: 4rem 0;
+        }
+        
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+        
+        .services-grid,
+        .fleet-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -47,6 +771,7 @@
           <div class="hero-content">
             <div class="hero-text">
               <h1>Taxi in Neumünster gesucht?</h1>
+              <p>Ihr sicheres und bequemes Taxi in Neumünster.</p>
               <div class="hero-buttons">
                 <a href="tel:043219638696" class="btn btn-primary">
                   <i class="fas fa-phone"></i> Jetzt anrufen
