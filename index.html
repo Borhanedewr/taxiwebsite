@@ -41,6 +41,12 @@
         scroll-behavior: smooth;
         font-size: 16px;
       }
+      
+      @media screen and (max-width: 768px) {
+        html {
+          font-size: 18px; /* Increased base font size for mobile */
+        }
+      }
 
       body {
         font-family: 'Inter', sans-serif;
@@ -165,6 +171,12 @@
         display: flex;
         align-items: center;
       }
+      
+      @media screen and (max-width: 768px) {
+        .logo a {
+          font-size: 1.7rem; /* Increased logo font size for mobile */
+        }
+      }
 
       /* Highlighted text for "Go" in TaxiGo */
       .highlight {
@@ -278,13 +290,19 @@
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Smaller cards width but more space */
+        }
       }
 
       .service-card {
         background-color: #F9F9F9;
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
@@ -297,14 +315,42 @@
       }
 
       .service-icon {
-        margin-bottom: 1.5rem;
-        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+        font-size: 2.25rem;
         color: #FFD700;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .service-icon {
+          font-size: 2.5rem; /* Larger icons on mobile */
+        }
       }
 
       .service-card h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.15rem;
+      }
+
+      .service-card p {
         margin-bottom: 1rem;
-        font-size: 1.25rem;
+        font-size: 0.9rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .service-card p {
+          font-size: 1rem; /* Larger text on mobile */
+          line-height: 1.5;
+        }
+        
+        .service-card h3 {
+          font-size: 1.3rem; /* Larger heading on mobile */
+          margin-bottom: 1rem;
+        }
+      }
+
+      .service-card .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
       }
 
       /* Pricing Section */
@@ -348,6 +394,21 @@
         padding: 1rem 0;
         border-bottom: 1px solid #F5F5F5;
       }
+      
+      @media screen and (max-width: 768px) {
+        .pricing-item {
+          font-size: 1.1rem; /* Larger text on mobile */
+          padding: 1.2rem 0;
+        }
+        
+        .pricing-header h3 {
+          font-size: 1.7rem; /* Larger heading on mobile */
+        }
+        
+        .pricing-header p {
+          font-size: 1.1rem; /* Larger subheading on mobile */
+        }
+      }
 
       .pricing-item:last-child {
         border-bottom: none;
@@ -362,6 +423,12 @@
         font-size: 0.875rem;
         color: #4A4A4A;
         font-style: italic;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .pricing-note {
+          font-size: 1rem; /* Larger note text on mobile */
+        }
       }
 
       /* Fleet Section */
@@ -395,6 +462,12 @@
         color: #FFD700;
         margin-bottom: 1.5rem;
       }
+      
+      @media screen and (max-width: 768px) {
+        .vehicle-icon {
+          font-size: 4.5rem; /* Larger icon on mobile */
+        }
+      }
 
       .vehicle-info {
         padding: 1.5rem 0;
@@ -403,6 +476,16 @@
       .vehicle-info h3 {
         margin-bottom: 1rem;
         font-size: 1.25rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .vehicle-info h3 {
+          font-size: 1.5rem; /* Larger heading on mobile */
+        }
+        
+        .vehicle-info li {
+          font-size: 1.1rem; /* Larger list text on mobile */
+        }
       }
 
       .vehicle-info ul {
@@ -444,6 +527,13 @@
       .about-text p {
         margin-bottom: 1.5rem;
       }
+      
+      @media screen and (max-width: 768px) {
+        .about-text p {
+          font-size: 1.1rem; /* Larger paragraph text on mobile */
+          line-height: 1.7;
+        }
+      }
 
       .about-text .section-title {
         text-align: center;
@@ -483,6 +573,13 @@
         transition: all 0.3s ease;
         position: relative;
       }
+      
+      @media screen and (max-width: 768px) {
+        .accordion-button {
+          font-size: 1.15rem; /* Larger question text on mobile */
+          padding: 1.5rem; /* More padding for easier tapping */
+        }
+      }
 
       .accordion-button:hover {
         background-color: #F5F5F5;
@@ -512,6 +609,14 @@
         padding: 1rem 1.25rem;
         color: #4A4A4A;
       }
+      
+      @media screen and (max-width: 768px) {
+        .accordion-content p {
+          font-size: 1.1rem; /* Larger answer text on mobile */
+          line-height: 1.6;
+          padding: 1.25rem 1.5rem; /* More padding */
+        }
+      }
 
       /* Footer */
       footer {
@@ -532,6 +637,16 @@
         margin-bottom: 1.5rem;
         position: relative;
         padding-bottom: 0.75rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .footer-section h3 {
+          font-size: 1.5rem; /* Larger footer headings on mobile */
+        }
+        
+        .footer-section p, .contact-info p, .footer-links li {
+          font-size: 1.1rem; /* Larger footer text on mobile */
+        }
       }
 
       .footer-section h3:after {
@@ -596,6 +711,12 @@
         flex-wrap: wrap;
         gap: 1rem;
       }
+      
+      @media screen and (max-width: 768px) {
+        .footer-bottom p, .legal-links a {
+          font-size: 1.05rem; /* Larger copyright text on mobile */
+        }
+      }
 
       .legal-links {
         display: flex;
@@ -624,6 +745,19 @@
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 999;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .back-to-top {
+          width: 60px; /* Larger back to top button */
+          height: 60px;
+          right: 20px;
+          bottom: 20px;
+        }
+        
+        .back-to-top i {
+          font-size: 1.25rem; /* Larger icon */
+        }
       }
 
       .back-to-top.show {
@@ -658,12 +792,19 @@
       }
 
       @media screen and (max-width: 768px) {
-        html {
-          font-size: 14px;
+        section {
+          padding: 4rem 0; /* Slightly more padding on mobile */
         }
         
         .section-title {
-          font-size: 1.75rem;
+          font-size: 2.2rem; /* Larger section titles */
+          margin-bottom: 3rem;
+        }
+        
+        .section-title:after {
+          height: 6px; /* Thicker underline */
+          width: 100px; /* Longer underline */
+          bottom: -15px; /* Position further down */
         }
         
         .nav-toggle-label {
@@ -694,12 +835,33 @@
           clip-path: circle(150% at top right);
         }
         
+        .nav-menu a {
+          font-size: 1.2rem; /* Larger nav items on mobile */
+          padding: 0.5rem 0;
+        }
+        
         .hero-text h1 {
-          font-size: 2.25rem;
+          font-size: 2.5rem; /* Larger hero heading */
+          margin-bottom: 1.75rem;
+        }
+        
+        .hero-text p {
+          font-size: 1.35rem; /* Larger hero text */
+          margin-bottom: 2.75rem;
         }
 
         .hero-buttons {
           flex-direction: column;
+          gap: 1.25rem; /* More space between buttons */
+        }
+        
+        .btn {
+          padding: 1rem 2rem; /* Larger buttons */
+          font-size: 1.1rem;
+        }
+        
+        .btn i {
+          font-size: 1.25rem; /* Larger button icons */
         }
 
         .footer-bottom {
@@ -709,6 +871,7 @@
         
         .legal-links {
           justify-content: center;
+          margin-top: 1rem;
         }
 
         .cta-buttons {
@@ -718,15 +881,15 @@
 
       @media screen and (max-width: 576px) {
         section {
-          padding: 3rem 0;
+          padding: 3.5rem 0;
         }
         
         .hero {
-          padding: 4rem 0;
+          padding: 4.5rem 0;
         }
         
         .hero-text h1 {
-          font-size: 2rem;
+          font-size: 2.25rem;
         }
         
         .services-grid,
@@ -736,6 +899,10 @@
 
         .footer-content {
           grid-template-columns: 1fr;
+        }
+        
+        .container {
+          padding: 0 1.75rem; /* Slightly more horizontal padding */
         }
       }
     </style>
