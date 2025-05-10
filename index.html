@@ -241,7 +241,7 @@
 
       /* Hero Section */
       .hero {
-        padding: 3rem 0 7rem;
+        padding: 1.5rem 0 7rem;  /* Reduced top padding to move heading closer to header */
         background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(249,249,249,1));
       }
 
@@ -256,7 +256,7 @@
       }
 
       .hero-text h1 {
-        font-size: 3.5rem;  /* Increased font size */
+        font-size: 3.5rem;  /* Base font size */
         margin-bottom: 1.5rem;
         color: #1A1F2C;
       }
@@ -660,11 +660,11 @@
 
       @media screen and (max-width: 768px) {
         html {
-          font-size: 16px;  /* Increased from 14px */
+          font-size: 16px;  /* Base font size for mobile */
         }
         
         .section-title {
-          font-size: 1.85rem;  /* Increased font size */
+          font-size: 1.85rem;
         }
         
         .nav-toggle-label {
@@ -696,9 +696,12 @@
         }
         
         .hero-text h1 {
-          font-size: 2.6rem;  /* Increased font size */
+          font-size: 3.2rem;  /* Increased font size on mobile */
+          line-height: 1.1;
+          text-align: left;
+          padding-right: 10px;
         }
-
+        
         .hero-buttons {
           flex-direction: column;
         }
@@ -748,7 +751,7 @@
       /* Mobile-specific adjustments for better visibility */
       @media screen and (max-width: 768px) {
         .hero-text h1 {
-          font-size: 2.8rem;
+          font-size: 3.4rem;  /* Further increased for mobile */
           line-height: 1.1;
           text-align: left;
           padding-right: 10px;
@@ -768,7 +771,7 @@
       /* Even smaller screens */
       @media screen and (max-width: 576px) {
         .hero-text h1 {
-          font-size: 2.5rem;
+          font-size: 3.2rem;  /* Still larger on smallest screens */
           margin-bottom: 1rem;
         }
         
