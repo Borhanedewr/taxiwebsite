@@ -1,830 +1,130 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unsere Leistungen - TaxiGo Neumünster</title>
-    <meta name="description" content="Erfahren Sie mehr über unsere umfassenden Taxiservices in Neumünster: Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr." />
-    <meta name="author" content="TaxiGo Neumünster" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaxiGo Neumünster</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <meta property="og:title" content="Unsere Leistungen - TaxiGo Neumünster" />
-    <meta property="og:description" content="Erfahren Sie mehr über unsere umfassenden Taxiservices in Neumünster: Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr." />
-    <meta property="og:type" content="website" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-      /* Base Styles */
-      :root {
-        --primary-color: #FFD700;
-        --primary-dark: #E6C200;
-        --secondary-color: #1A1F2C;
-        --light-color: #F9F9F9;
-        --gray-color: #8E9196;
-        --gray-light: #F5F5F5;
-        --gray-dark: #4A4A4A;
-        --white: #FFFFFF;
-        --black: #000000;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --radius: 8px;
-        --transition: all 0.3s ease;
-      }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+      line-height: 1.6;
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    header {
+      background-color: #000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
 
-      html {
-        scroll-behavior: smooth;
-        font-size: 18px;
-      }
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.6;
-        color: var(--secondary-color);
-        background-color: var(--light-color);
-        overflow-x: hidden;
-      }
+    h1, h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        line-height: 1.2;
-      }
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
+    .box {
+      flex: 1 1 300px;
+      background-color: #f2f2f2;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-      ul {
-        list-style-type: none;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
 
-      .container {
-        width: 100%;
-        max-width: 100px;
-        padding: 0 1.5rem;
-        margin: 0 auto;
-      }
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
 
-      .section-title {
-        position: relative;
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
-        text-align: center;
-      }
+    .arrow {
+      display: block;
+      margin: 2rem auto;
+      width: 0; 
+      height: 0; 
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #000;
+    }
 
-      .section-title:after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: #FFD700;
-        border-radius: 2px;
-      }
-
-      section {
-        padding: 5rem 0;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        padding: 1rem 1.75rem;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        border: none;
-        gap: 0.5rem;
-        font-size: 1.1rem;
-      }
-
-      .btn i {
-        font-size: 1.1rem;
-      }
-
-      .btn-primary {
-        background-color: #FFD700;
-        color: #1A1F2C;
-      }
-
-      .btn-primary:hover {
-        background-color: #E6C200;
-      }
-
-      .btn-secondary {
-        background-color: #1A1F2C;
-        color: #FFFFFF;
-      }
-
-      .btn-secondary:hover {
-        background-color: #2a303d;
-      }
-
-      .btn-whatsapp {
-        background-color: #25D366;
-        color: #FFFFFF;
-      }
-
-      .btn-whatsapp:hover {
-        background-color: #1da851;
-      }
-
-      /* Header Styles */
-      header {
-        position: sticky;
-        top: 0;
-        background-color: #FFFFFF;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        padding: 1rem 0;
-      }
-
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo a {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 1.6rem;
-        color: #1A1F2C;
-        display: flex;
-        align-items: center;
-      }
-
-      /* Modified highlight class for "Go" with outlined text */
-      .highlight {
-        color: #FFD700;
-        font-weight: 800;
-        -webkit-text-stroke: 1px black;
-        text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
-      }
-
-      .nav-menu {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-menu li {
-        margin-left: 1.75rem;
-      }
-
-      .nav-menu a {
-        font-weight: 600;
-        color: #1A1F2C;
-        position: relative;
-      }
-
-      .nav-menu a:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background-color: #FFD700;
-        transition: width 0.3s ease;
-      }
-
-      .nav-menu a:hover:after,
-      .nav-menu a.active:after {
-        width: 100%;
-      }
-
-      /* Mobile Navigation */
-      #nav-toggle {
-        display: none;
-      }
-
-      .nav-toggle-label {
-        display: none;
-        cursor: pointer;
-      }
-
-      .nav-toggle-label span,
-      .nav-toggle-label span:before,
-      .nav-toggle-label span:after {
-        display: block;
-        background: #1A1F2C;
-        height: 2px;
-        width: 25px;
-        position: relative;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .nav-toggle-label span:before,
-      .nav-toggle-label span:after {
-        content: '';
-        position: absolute;
-      }
-
-      .nav-toggle-label span:before {
-        bottom: 8px;
-      }
-
-      .nav-toggle-label span:after {
-        top: 8px;
-      }
-
-      /* Detailed Services */
-      .detailed-services {
-        padding-top: 2rem;
-      }
-
-      .service-detail {
-        display: flex;
-        margin-bottom: 2.5rem;
-        padding: 1.8rem;
-        border-radius: 8px;
-        background-color: #FFFFFF;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    @media (max-width: 768px) {
+      .box-container {
         flex-direction: column;
+        align-items: stretch;
       }
+    }
+  </style>
+</head>
+<body>
 
-      .service-detail:last-child {
-        margin-bottom: 0;
-      }
+  <header>
+    <h1>TaxiGo Neumünster</h1>
+    <p>Ihr zuverlässiges Taxiunternehmen in Neumünster</p>
+  </header>
 
-      .service-detail-content {
-        padding: 1.2rem 0.7rem;
-      }
+  <div class="arrow"></div>
 
-      .service-icon {
-        font-size: 3rem;
-        color: #FFD700;
-        margin-bottom: 1.2rem;
-      }
-
-      .service-detail-content h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        position: relative;
-        padding-bottom: 0.75rem;
-      }
-
-      .service-detail-content h2:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background-color: #FFD700;
-      }
-
-      .service-detail-content p {
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-      }
-
-      .service-detail-content ul {
-        margin-bottom: 1.5rem;
-        padding-left: 1rem;
-      }
-
-      .service-detail-content ul li {
-        position: relative;
-        padding-left: 1.25rem;
-        margin-bottom: 0.5rem;
-        font-size: 1.05rem;
-      }
-
-      .service-detail-content ul li:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 6px;
-        height: 6px;
-        background-color: #FFD700;
-        border-radius: 50%;
-      }
-
-      /* Call to Action */
-      .call-to-action {
-        background-color: #1A1F2C;
-        color: #FFFFFF;
-        text-align: center;
-        padding: 3rem 0;
-      }
-
-      .call-to-action h2 {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-      }
-
-      .call-to-action p {
-        margin-bottom: 1.8rem;
-        opacity: 0.9;
-        font-size: 1.15rem;
-      }
-
-      .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      /* Footer */
-      footer {
-        background-color: #1A1F2C;
-        color: #F9F9F9;
-        padding: 4rem 0 1rem;
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-section h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.75rem;
-      }
-
-      .footer-section h3:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background-color: #FFD700;
-      }
-
-      .contact-info p {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.75rem;
-      }
-
-      .contact-info i {
-        color: #FFD700;
-        margin-right: 0.75rem;
-        width: 20px;
-        text-align: center;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.75rem;
-      }
-
-      .footer-links a:hover {
-        color: #FFD700;
-        padding-left: 5px;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .social-links a:hover {
-        background-color: #FFD700;
-        color: #1A1F2C;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .legal-links {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .legal-links a:hover {
-        color: #FFD700;
-      }
-
-      /* Back to top button */
-      .back-to-top {
-        position: fixed;
-        right: 25px;
-        bottom: 25px;
-        width: 50px;
-        height: 50px;
-        background-color: #FFD700;
-        color: #1A1F2C;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-      }
-
-      .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        background-color: #E6C200;
-        transform: translateY(-3px);
-      }
-
-      /* Media Queries */
-      @media screen and (max-width: 992px) {
-        .service-detail {
-          padding: 1.25rem;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        html {
-          font-size: 18px; /* Increased from 16px */
-        }
-        
-        .section-title {
-          font-size: 2rem; /* Increased from 1.7rem */
-          margin-bottom: 2.5rem; /* Increased from 2rem */
-        }
-        
-        .service-detail {
-          padding: 2rem; /* Increased from 1.5rem */
-          margin-bottom: 2.5rem; /* Increased from 1.8rem */
-        }
-        
-        .service-detail-content {
-          padding: 1.5rem 0.8rem; /* Increased from 1rem 0.5rem */
-        }
-        
-        .service-detail-content h2 {
-          font-size: 1.8rem; /* Increased from 1.5rem */
-        }
-        
-        .service-icon {
-          font-size: 3rem; /* Increased from 2.5rem */
-        }
-
-        .service-detail-content p {
-          font-size: 1.15rem; /* Increased from 0.95rem */
-        }
-        
-        .service-detail-content ul li {
-          font-size: 1.15rem; /* Increased from 1.05rem */
-          margin-bottom: 0.75rem; /* Increased from 0.5rem */
-        }
-
-        .nav-toggle-label {
-          display: block;
-        }
-        
-        .nav-menu {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          background-color: #FFFFFF;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 2rem 0; /* Increased from 1.5rem */
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          clip-path: circle(0% at top right);
-          transition: clip-path 0.5s ease;
-          z-index: 1000;
-        }
-        
-        .nav-menu li {
-          margin: 1rem 0; /* Increased from 0.75rem */
-        }
-        
-        .nav-menu a {
-          font-size: 1.2rem; /* Added larger font size */
-        }
-        
-        #nav-toggle:checked ~ .nav-menu {
-          clip-path: circle(150% at top right);
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center;
-        }
-        
-        .legal-links {
-          justify-content: center;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-        }
-        
-        .btn {
-          padding: 1rem 2rem; /* Increased from original */
-          font-size: 1.2rem; /* Larger font size */
-        }
-        
-        .logo a {
-          font-size: 1.8rem; /* Increased from 1.6rem */
-        }
-      }
-
-      @media screen and (max-width: 576px) {
-        section {
-          padding: 3.5rem 0; /* Increased from 3rem */
-        }
-        
-        html {
-          font-size: 20px; /* Further increased from 18px */
-        }
-        
-        .service-detail-content h2 {
-          font-size: 2rem; /* Increased from 1.8rem */
-        }
-        
-        .service-detail-content p,
-        .service-detail-content ul li {
-          font-size: 1.2rem; /* Increased font size */
-          line-height: 1.7; /* Improved readability */
-        }
-        
-        .call-to-action h2 {
-          font-size: 2.2rem; /* Increased from 2rem */
-        }
-        
-        .call-to-action p {
-          font-size: 1.3rem; /* Increased from 1.15rem */
-        }
-        
-        .footer-section h3 {
-          font-size: 1.6rem; /* Increased font size */
-        }
-        
-        .contact-info p,
-        .footer-links li {
-          font-size: 1.2rem; /* Increased font size */
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <a href="index.html">Taxi<span class="highlight">Go</span> Neu&shy;münster</a>
-          </div>
-          <nav>
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-              <span></span>
-            </label>
-            <ul class="nav-menu">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="leistungen.html" class="active">Leistungen</a></li>
-              <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-          </nav>
-        </div>
+  <section>
+    <h2>Unsere Leistungen</h2>
+    <div class="box-container">
+      <div class="box">
+        <h3>Stadtfahrten</h3>
+        <p>Schnelle und bequeme Fahrten innerhalb Neumünsters mit ortskundigen Fahrern.</p>
       </div>
-    </header>
-
-    <main>
-      <!-- Detailed Services -->
-      <section class="detailed-services">
-        <div class="container">
-          <div class="service-detail" id="business-fahrten">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-              <h2>Business-Fahrten</h2>
-              <p>Wir bieten Ihnen einen hochwertigen, zuverlässigen und pünktlichen Taxiservice für all Ihre geschäftlichen Fahrten. Unsere sauberen und komfortablen Fahrzeuge sorgen für eine angenehme Fahrt, damit Sie entspannt bei Ihren Terminen ankommen.</p>
-              <p>Nutzen Sie unseren Business-Service für:</p>
-              <ul>
-                <li>Fahrten zu Geschäftstreffen und Konferenzen</li>
-                <li>Transport von Kunden oder Geschäftspartnern</li>
-                <li>Regelmäßige Fahrten zu Ihrem Arbeitsplatz</li>
-                <li>Transfer zwischen verschiedenen Unternehmensstandorten</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-
-          <div class="service-detail reverse" id="schuelerfahrten">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-              <h2>Schülerfahrten</h2>
-              <p>Die Sicherheit und Zuverlässigkeit bei der Beförderung Ihrer Kinder steht bei uns an erster Stelle. Unsere speziell geschulten Fahrer sorgen für einen sicheren Transport zur Schule und zurück.</p>
-              <p>Vorteile unserer Schülerfahrten:</p>
-              <ul>
-                <li>Pünktliche und sichere Abholung und Rückfahrt</li>
-                <li>Fahrer mit polizeilichem Führungszeugnis</li>
-                <li>Auf Wunsch regelmäßige Status-Updates per SMS</li>
-                <li>Attraktive Konditionen für regelmäßige Fahrten</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-
-          <div class="service-detail" id="kurierfahrten">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-box"></i></div>
-              <h2>Kurierfahrten</h2>
-              <p>Benötigen Sie eine schnelle und zuverlässige Lieferung von Dokumenten oder Paketen? Unser Kurierdienst sorgt für eine sichere und termingerechte Zustellung Ihrer wichtigen Sendungen.</p>
-              <p>Unsere Kurierservices umfassen:</p>
-              <ul>
-                <li>Express-Lieferung innerhalb von Neumünster</li>
-                <li>Regionaler Kurierdienst für die umliegenden Gebiete</li>
-                <li>Sichere Beförderung von vertraulichen Dokumenten</li>
-                <li>Temperaturkontrollierter Transport empfindlicher Waren</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-
-          <div class="service-detail reverse" id="flughafentransfer">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-plane"></i></div>
-              <h2>Flughafentransfer</h2>
-              <p>Starten Sie Ihre Reise entspannt mit unserem zuverlässigen Flughafentransfer. Wir bringen Sie pünktlich zum Flughafen und holen Sie auch gerne wieder ab - egal zu welcher Tageszeit.</p>
-              <p>Vorteile unseres Flughafentransfers:</p>
-              <ul>
-                <li>Bequeme Fahrt zu allen Flughäfen in der Region</li>
-                <li>Flugverfolgung bei Abholungen</li>
-                <li>Genügend Platz für Ihr Gepäck</li>
-                <li>Keine versteckten Kosten - transparente Preise</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-
-          <div class="service-detail" id="krankenfahrten">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-wheelchair"></i></div>
-              <h2>Krankenfahrten</h2>
-              <p>Mit unserem speziellen Service für Krankenfahrten bieten wir einfühlsame und professionelle Beförderung zu medizinischen Terminen. Unsere Fahrer sind geschult im Umgang mit Menschen mit besonderen Bedürfnissen.</p>
-              <p>Unser Angebot umfasst:</p>
-              <ul>
-                <li>Transport zu Arztpraxen, Kliniken und Therapieeinrichtungen</li>
-                <li>Unterstützung beim Ein- und Aussteigen</li>
-                <li>Barrierefreie Fahrzeuge auf Anfrage</li>
-                <li>Bearbeitung der Kostenübernahme mit Krankenkassen</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-
-          <div class="service-detail reverse" id="event-transfers">
-            <div class="service-detail-content">
-              <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
-              <h2>Event-Transfers</h2>
-              <p>Machen Sie Ihr Event zu etwas Besonderem mit unserem Event-Transfer-Service. Ob Hochzeit, Firmenfeier oder Konzertbesuch - wir sorgen für eine stressfreie und stilvolle An- und Abreise.</p>
-              <p>Unser Event-Service bietet:</p>
-              <ul>
-                <li>Individuell anpassbare Transfer-Arrangements</li>
-                <li>Sorgfältig ausgewählte, gepflegte Fahrzeuge</li>
-                <li>Fahrer in angemessener Kleidung</li>
-                <li>Gruppentransfers mit mehreren Fahrzeugen möglich</li>
-              </ul>
-              <a href="tel:043219638696" class="btn btn-primary">
-                <i class="fas fa-phone"></i> Jetzt anrufen
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action -->
-      <section class="call-to-action">
-        <div class="container">
-          <h2>Überzeugen Sie sich selbst von unserem Service</h2>
-          <p>Kontaktieren Sie uns für eine persönliche Beratung oder buchen Sie gleich Ihre Fahrt.</p>
-          <div class="cta-buttons">
-            <a href="tel:043219638696" class="btn btn-primary">
-              <i class="fas fa-phone"></i> Jetzt anrufen
-            </a>
-            <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">
-              <i class="fab fa-whatsapp"></i> Per WhatsApp buchen
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>TaxiGo Neumünster</h3>
-            <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung.</p>
-            <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Am neuen kamp 38a, 24537 Neumünster</p>
-              <p><i class="fas fa-phone"></i> <a href="tel:043219638696">04321 9638696</a></p>
-              <p><i class="fas fa-envelope"></i> <a href="mailto:taxigoneumeunster@gmail.com">taxigoneumeunster@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h3>Schnelllinks</h3>
-            <ul class="footer-links">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="leistungen.html">Leistungen</a></li>
-              <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Service</h3>
-            <ul class="footer-links">
-              <li><a href="#business-fahrten">Business-Fahrten</a></li>
-              <li><a href="#schuelerfahrten">Schülerfahrten</a></li>
-              <li><a href="#flughafentransfer">Flughafentransfer</a></li>
-              <li><a href="#kurierfahrten">Kurierfahrten</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Folgen Sie uns</h3>
-            <div class="social-links">
-              <a href="https://www.facebook.com/share/1MvpUYXV4X/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.facebook.com/share/1MvpUYXV4X/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
-          <div class="legal-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">AGB</a>
-          </div>
-        </div>
+      <div class="box">
+        <h3>Flughafentransfer</h3>
+        <p>Zuverlässiger Transfer zu allen norddeutschen Flughäfen – pünktlich und komfortabel.</p>
       </div>
-    </footer>
+      <div class="box">
+        <h3>Krankenfahrten</h3>
+        <p>Wir bieten Krankenfahrten mit Abrechnung über Ihre Krankenkasse – sicher und freundlich.</p>
+      </div>
+    </div>
+  </section>
 
-    <a href="#" class="back-to-top" aria-label="Nach oben scrollen">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+  <section>
+    <h2>Über uns</h2>
+    <div class="box-container">
+      <div class="box">
+        <p>TaxiGo Neumünster ist ein regionales Taxiunternehmen mit Herz. Wir legen großen Wert auf Pünktlichkeit, Sauberkeit und Kundenservice.</p>
+        <img src="taxi.jpg" alt="Unser Taxi"/>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      // Back to top button
-      const backToTopButton = document.querySelector('.back-to-top');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add('show');
-        } else {
-          backToTopButton.classList.remove('show');
-        }
-      });
-      
-      backToTopButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
-  </body>
+  <footer>
+    <p>Kontakt: <a href="tel:043219638696" style="color: white;">04321-9638696</a> |
+    E-Mail: <a href="mailto:taxigoneumuenster@gmail.com" style="color: white;">taxigoneumuenster@gmail.com</a></p>
+    <p>&copy; 2025 TaxiGo Neumünster</p>
+  </footer>
+
+</body>
 </html>
