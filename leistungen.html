@@ -6,9 +6,7 @@
   <title>Leistungen - TaxiGo Neumünster</title>
 </head>
 <body>
-  <header>
-    <!-- ...existing code for header/navigation... -->
-  </header>
+  <div id="header"></div>
   <main>
     <h1>Leistungen</h1>
     <p>Hier finden Sie Informationen zu unseren Leistungen. Diese Seite ist ein Platzhalter.</p>
@@ -16,5 +14,14 @@
   <footer>
     <!-- ...existing code for footer... -->
   </footer>
+  <script>
+    // Header dynamisch laden
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+    // ...existing code...
+  </script>
 </body>
 </html>

@@ -1,2 +1,13 @@
 <!-- Datei wurde entfernt, da die Flotten-Infos jetzt auf der Startseite sind. -->
+<body>
+  <div id="header"></div>
+  <script>
+    // Header dynamisch laden
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+</body>
 

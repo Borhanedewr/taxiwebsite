@@ -7,20 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">TaxiGo Neumünster</div>
-                <div>
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Leistungen</a>
-                    <a href="fleet.html">Unsere Flotte</a>
-                    <a href="prices.html">Preise</a>
-                    <a href="contact.html">Kontakt</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div id="header"></div>
 
     <main>
         <div class="container">
@@ -68,5 +55,14 @@
             <p>&copy; 2024 TaxiGo Neumünster</p>
         </div>
     </footer>
+
+    <script>
+      // Header dynamisch laden
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+        });
+    </script>
 </body>
 </html>
