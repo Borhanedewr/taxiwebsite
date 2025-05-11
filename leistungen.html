@@ -611,6 +611,33 @@
       @media (max-width: 600px) {
         .services-grid {
           grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .service-detail {
+          max-width: 95vw;
+          margin: 0 auto;
+          padding: 0.7rem 0.3rem;
+          border-radius: 10px;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        }
+        .service-detail-content h2 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.3rem;
+        }
+        .service-icon {
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+        }
+        .service-detail-content p,
+        .service-detail-content ul li {
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .services-grid {
+          grid-template-columns: 1fr;
           gap: 1.2rem;
         }
         .service-detail {
