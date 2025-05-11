@@ -1,20 +1,223 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Über uns - TaxiGo Neumünster</title>
-</head>
-<body>
-  <header>
-    <!-- ...existing code for header/navigation... -->
-  </header>
-  <main>
-    <h1>Über uns</h1>
-    <p>Hier finden Sie Informationen über unser Unternehmen. Diese Seite ist ein Platzhalter.</p>
-  </main>
-  <footer>
-    <!-- ...existing code for footer... -->
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Über uns - TaxiGo Neumünster</title>
+    <meta name="description" content="Erfahren Sie mehr über TaxiGo Neumünster, unsere Geschichte, unsere Werte und unser Team von erfahrenen Taxifahrern." />
+    <meta name="author" content="TaxiGo Neumünster" />
+
+    <meta property="og:title" content="Über uns - TaxiGo Neumünster" />
+    <meta property="og:description" content="Erfahren Sie mehr über TaxiGo Neumünster, unsere Geschichte, unsere Werte und unser Team von erfahrenen Taxifahrern." />
+    <meta property="og:type" content="website" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+      /* ...existing styles from prompt... */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
+          </div>
+          <nav>
+            <input type="checkbox" id="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span></span>
+            </label>
+            <ul class="nav-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Story Section -->
+      <section class="story">
+        <div class="container">
+          <div class="story-content">
+            <div class="story-text">
+              <h2>Unsere Geschichte</h2>
+              <p>TaxiGo Neumünster wurde im Jahr 2025 mit einer klaren Vision gegründet: Den Taxiservice in Neumünster durch moderne Technologie, nachhaltigen Transport und exzellenten Kundenservice zu revolutionieren.</p>
+              <p>Was als kleine Idee begann, hat sich schnell zu einem führenden Taxiunternehmen in der Region entwickelt. Unser Gründer, ein erfahrener Taxifahrer mit über 15 Jahren Erfahrung, erkannte den Bedarf an einem zuverlässigen, transparenten und kundenorientierten Taxiservice in Neumünster.</p>
+              <p>Von Anfang an haben wir auf umweltfreundliche Fahrzeuge und digitale Buchungssysteme gesetzt, um den Bedürfnissen unserer Kunden bestmöglich gerecht zu werden und gleichzeitig unseren ökologischen Fußabdruck zu minimieren.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission">
+        <div class="container">
+          <h2 class="section-title">Unsere Mission</h2>
+          <div class="mission-grid">
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Sicherheit</h3>
+              <p>Wir priorisieren die Sicherheit unserer Fahrgäste durch regelmäßige Wartung unserer Fahrzeuge, umfassende Schulungen unserer Fahrer und strenge Qualitätskontrollen.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3>Nachhaltigkeit</h3>
+              <p>Mit unserer Hybrid- und Elektroflotte setzen wir auf umweltfreundliche Mobilität und leisten einen aktiven Beitrag zum Klimaschutz in unserer Stadt.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>Zuverlässigkeit</h3>
+              <p>Wir verstehen, wie wichtig Pünktlichkeit für unsere Kunden ist. Daher ist Zuverlässigkeit ein zentraler Wert in unserem täglichen Handeln.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Kundenservice</h3>
+              <p>Unser freundliches und professionelles Team ist stets bemüht, Ihre Erwartungen zu übertreffen und Ihnen ein angenehmes Fahrerlebnis zu bieten.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certification Section -->
+      <section class="certifications">
+        <div class="container">
+          <h2 class="section-title">Unsere Zertifizierungen</h2>
+          <div class="certification-grid">
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3>Lizenziertes Taxiunternehmen</h3>
+              <p>Wir erfüllen alle gesetzlichen Anforderungen und Vorschriften für den Taxibetrieb in Neumünster.</p>
+            </div>
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Qualifizierte Fahrer</h3>
+              <p>Alle unsere Fahrer besitzen den Personenbeförderungsschein und werden regelmäßig geschult.</p>
+            </div>
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>Geprüfte Fahrzeuge</h3>
+              <p>Unsere Fahrzeuge werden regelmäßig gewartet und erfüllen höchste Sicherheitsstandards.</p>
+            </div>
+            <div class="certification-card">
+              <div class="certification-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3>Ersthelfer-Training</h3>
+              <p>Alle unsere Fahrer sind ausgebildete Ersthelfer und können in Notfällen angemessen reagieren.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="call-to-action">
+        <div class="container">
+          <h2>Bereit für eine Fahrt mit uns?</h2>
+          <p>Kontaktieren Sie uns noch heute und erleben Sie unseren ausgezeichneten Service.</p>
+          <div class="cta-buttons">
+            <a href="tel:043219638696" class="btn btn-primary">
+              <i class="fas fa-phone"></i> Jetzt anrufen
+            </a>
+            <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> Per WhatsApp buchen
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>TaxiGo Neumünster</h3>
+            <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung.</p>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Am neuen kamp 38a, 24537 Neumünster</p>
+              <p><i class="fas fa-phone"></i> <a href="tel:043219638696">04321 9638696</a></p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Schnelllinks</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="ueber-uns.html">Über uns</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Service</h3>
+            <ul class="footer-links">
+              <li><a href="leistungen.html#business-fahrten">Business-Fahrten</a></li>
+              <li><a href="leistungen.html#schuelerfahrten">Schülerfahrten</a></li>
+              <li><a href="leistungen.html#flughafentransfer">Flughafentransfer</a></li>
+              <li><a href="leistungen.html#kurierfahrten">Kurierfahrten</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Folgen Sie uns</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
+          <div class="legal-links">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Nach oben scrollen">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+      // Back to top button
+      const backToTopButton = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+  </body>
 </html>
