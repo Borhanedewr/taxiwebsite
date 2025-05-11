@@ -39,7 +39,7 @@
 
       html {
         scroll-behavior: smooth;
-        font-size: 18px;
+        font-size: 20px; /* Increased base font size from 18px to 20px for better mobile visibility */
       }
 
       body {
@@ -75,7 +75,7 @@
 
       .section-title {
         position: relative;
-        font-size: 2rem;
+        font-size: 2.2rem; /* Increased from 2rem for better visibility */
         margin-bottom: 2.5rem;
         text-align: center;
       }
@@ -101,18 +101,18 @@
         align-items: center;
         justify-content: center;
         font-weight: 600;
-        padding: 0.85rem 1.5rem;
+        padding: 0.95rem 1.8rem; /* Increased padding for easier tapping */
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
         text-align: center;
         border: none;
         gap: 0.5rem;
-        font-size: 1rem;
+        font-size: 1.1rem; /* Increased font size from 1rem */
       }
 
       .btn i {
-        font-size: 1.1rem;
+        font-size: 1.2rem; /* Increased from 1.1rem */
       }
 
       .btn-primary {
@@ -163,7 +163,7 @@
       .logo a {
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-        font-size: 1.6rem;
+        font-size: 1.7rem; /* Increased from 1.6rem */
         color: #1A1F2C;
         display: flex;
         align-items: center;
@@ -174,7 +174,7 @@
         color: #FFD700;
         font-weight: 800;
         -webkit-text-stroke: 1px black;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        text-stroke: 1px black;
       }
 
       .nav-menu {
@@ -190,6 +190,7 @@
         font-weight: 600;
         color: #1A1F2C;
         position: relative;
+        font-size: 1.1rem; /* Increased font size for better visibility */
       }
 
       .nav-menu a:after {
@@ -223,8 +224,8 @@
       .nav-toggle-label span:after {
         display: block;
         background: #1A1F2C;
-        height: 2px;
-        width: 25px;
+        height: 3px; /* Increased from 2px for better visibility */
+        width: 28px; /* Increased from 25px */
         position: relative;
         transition: all 0.3s ease-in-out;
       }
@@ -243,9 +244,9 @@
         top: 8px;
       }
 
-      /* Hero Section - Moved closer to header */
+      /* Hero Section - Modified for better mobile spacing */
       .hero {
-        padding: 0.5rem 0 5rem; /* Reduced top padding significantly to move content up */
+        padding: 2rem 0 5rem; /* Increased top padding for better spacing on mobile from header */
       }
 
       .hero-content {
@@ -259,63 +260,63 @@
       }
 
       .hero-text h1 {
-        font-size: 2.6rem; /* Slightly reduced size */
-        margin-bottom: 1rem; /* Reduced margin to compact the layout */
+        font-size: 3rem; /* Base size for desktop */
+        margin-bottom: 1rem;
         color: #1A1F2C;
       }
 
       .hero-text p {
-        font-size: 1.3rem;
-        margin-bottom: 1.8rem; /* Reduced margin */
+        font-size: 1.5rem;
+        margin-bottom: 1.8rem;
         color: #4A4A4A;
       }
 
       .hero-buttons {
         display: flex;
-        gap: 0.8rem; /* Reduced gap for mobile */
+        gap: 0.8rem;
       }
 
-      /* Services Section - Adding mobile optimizations */
+      /* Services Section */
       .services {
         background-color: #FFFFFF;
-        padding: 3rem 0; /* Reduced padding for mobile */
+        padding: 3.5rem 0; /* Increased padding */
       }
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Smaller min-width for mobile */
-        gap: 1.5rem; /* Reduced gap for mobile */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased from 280px */
+        gap: 1.8rem; /* Increased gap */
       }
 
       .service-card {
         background-color: #F9F9F9;
-        padding: 1.5rem; /* Reduced padding for mobile */
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.8rem; /* Increased padding */
+        border-radius: 10px; /* Increased from 8px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow */
         text-align: center;
         transition: all 0.3s ease;
       }
 
       .service-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
       }
 
       .service-icon {
-        margin-bottom: 1.2rem; /* Reduced margin for mobile */
-        font-size: 2.2rem; /* Smaller icon size for mobile */
+        margin-bottom: 1.4rem;
+        font-size: 2.4rem; /* Increased from 2.2rem */
         color: #FFD700;
       }
 
       .service-card h3 {
-        margin-bottom: 0.8rem; /* Reduced margin for mobile */
-        font-size: 1.2rem; /* Smaller font size for mobile */
+        margin-bottom: 0.9rem;
+        font-size: 1.3rem; /* Increased from 1.2rem */
       }
 
       /* Pricing Section */
       .pricing {
         background-color: #F5F5F5;
-        padding: 3rem 0; /* Reduced padding for mobile */
+        padding: 3.5rem 0; /* Increased padding */
       }
 
       .pricing-content {
@@ -325,34 +326,35 @@
       }
 
       .pricing-table {
-        flex: 0 0 100%; /* Full width on mobile */
+        flex: 0 0 100%;
         background-color: #FFFFFF;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px; /* Increased from 8px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow */
         overflow: hidden;
       }
 
       .pricing-header {
         background-color: #1A1F2C;
         color: #FFFFFF;
-        padding: 1.2rem; /* Reduced padding for mobile */
+        padding: 1.4rem; /* Increased padding */
         text-align: center;
       }
 
       .pricing-header h3 {
-        font-size: 1.4rem; /* Smaller font size for mobile */
-        margin-bottom: 0.4rem; /* Reduced margin for mobile */
+        font-size: 1.6rem; /* Increased from 1.4rem */
+        margin-bottom: 0.5rem;
       }
 
       .pricing-body {
-        padding: 1.2rem; /* Reduced padding for mobile */
+        padding: 1.4rem; /* Increased padding */
       }
 
       .pricing-item {
         display: flex;
         justify-content: space-between;
-        padding: 0.8rem 0; /* Reduced padding for mobile */
+        padding: 1rem 0; /* Increased padding */
         border-bottom: 1px solid #F5F5F5;
+        font-size: 1.1rem; /* Increased font size */
       }
 
       .pricing-item:last-child {
@@ -360,12 +362,12 @@
       }
 
       .pricing-footer {
-        padding: 0.8rem 1.2rem; /* Reduced padding for mobile */
+        padding: 1rem 1.4rem; /* Increased padding */
         background-color: #F5F5F5;
       }
 
       .pricing-note {
-        font-size: 0.85rem; /* Smaller font size for mobile */
+        font-size: 0.95rem; /* Increased from 0.85rem */
         color: #4A4A4A;
         font-style: italic;
       }
@@ -373,68 +375,69 @@
       /* Fleet Section */
       .fleet {
         background-color: #FFFFFF;
-        padding: 3rem 0; /* Reduced padding for mobile */
+        padding: 3.5rem 0; /* Increased padding */
       }
 
       .fleet-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller min-width for mobile */
-        gap: 1.5rem; /* Reduced gap for mobile */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased from 280px */
+        gap: 1.8rem; /* Increased gap */
       }
 
       .vehicle-card {
         background-color: #F9F9F9;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px; /* Increased from 8px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow */
         overflow: hidden;
         transition: all 0.3s ease;
-        padding: 1.5rem; /* Reduced padding for mobile */
+        padding: 1.8rem; /* Increased padding */
         text-align: center;
       }
 
       .vehicle-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
       }
 
       .vehicle-icon {
-        font-size: 3.5rem; /* Smaller icon size for mobile */
+        font-size: 3.8rem; /* Increased from 3.5rem */
         color: #FFD700;
-        margin-bottom: 1.2rem; /* Reduced margin for mobile */
+        margin-bottom: 1.4rem;
       }
 
       .vehicle-info {
-        padding: 1.2rem 0; /* Reduced padding for mobile */
+        padding: 1.4rem 0;
       }
 
       .vehicle-info h3 {
-        margin-bottom: 0.8rem; /* Reduced margin for mobile */
-        font-size: 1.2rem; /* Smaller font size for mobile */
+        margin-bottom: 1rem;
+        font-size: 1.3rem; /* Increased from 1.2rem */
       }
 
       .vehicle-info ul {
         list-style: none;
         padding: 0;
         text-align: left;
+        font-size: 1.1rem; /* Increased font size */
       }
 
       .vehicle-info li {
-        margin-bottom: 0.4rem; /* Reduced margin for mobile */
+        margin-bottom: 0.6rem; /* Increased margin */
         display: flex;
         align-items: center;
       }
 
       .vehicle-info i {
         color: #FFD700;
-        margin-right: 0.4rem; /* Reduced margin for mobile */
-        width: 20px;
+        margin-right: 0.6rem; /* Increased margin */
+        width: 22px; /* Increased from 20px */
         text-align: center;
       }
 
       /* About Section */
       .about {
         background-color: #F5F5F5;
-        padding: 3rem 0; /* Reduced padding for mobile */
+        padding: 3.5rem 0; /* Increased padding */
       }
 
       .about-content {
@@ -444,13 +447,14 @@
       }
 
       .about-text {
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%;
         margin: 0 auto;
         text-align: center;
+        font-size: 1.1rem; /* Increased font size */
       }
 
       .about-text p {
-        margin-bottom: 1.2rem; /* Reduced margin for mobile */
+        margin-bottom: 1.4rem; /* Increased margin */
       }
 
       .about-text .section-title {
@@ -460,13 +464,13 @@
       /* FAQ Section */
       .faq {
         background-color: #FFFFFF;
-        padding: 3rem 0; /* Reduced padding for mobile */
+        padding: 3.5rem 0; /* Increased padding */
       }
 
       .accordion {
         background-color: #F9F9F9;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px; /* Increased from 8px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow */
         overflow: hidden;
       }
 
@@ -482,12 +486,12 @@
         background-color: #FFFFFF;
         color: #1A1F2C;
         cursor: pointer;
-        padding: 1.1rem; /* Reduced padding for mobile */
+        padding: 1.3rem; /* Increased padding */
         width: 100%;
         text-align: left;
         border: none;
         outline: none;
-        font-size: 1rem;
+        font-size: 1.1rem; /* Increased from 1rem */
         font-weight: 600;
         transition: all 0.3s ease;
         position: relative;
@@ -502,8 +506,9 @@
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         position: absolute;
-        right: 15px; /* Adjusted position for mobile */
+        right: 15px;
         transition: all 0.3s ease;
+        font-size: 1.2rem; /* Increased font size */
       }
 
       .accordion-button.active:after {
@@ -518,33 +523,141 @@
       }
 
       .accordion-content p {
-        padding: 0.8rem 1.1rem; /* Reduced padding for mobile */
+        padding: 1rem 1.3rem; /* Increased padding */
         color: #4A4A4A;
+        font-size: 1.05rem; /* Added font size */
       }
 
-      /* Footer - Hidden as requested */
+      /* Footer */
       footer {
-        display: none;
+        background-color: #1A1F2C;
+        color: #FFFFFF;
+        padding: 3rem 0;
+        display: block; /* Make footer visible */
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .footer-logo {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-logo .highlight {
+        color: #FFD700;
+      }
+
+      .footer-col {
+        flex: 1 0 250px;
+      }
+
+      .footer-heading {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .footer-heading:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 3px;
+        background-color: #FFD700;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #DDDDDD;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .footer-links a:hover {
+        color: #FFD700;
+      }
+
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        font-size: 1.05rem;
+      }
+
+      .footer-contact span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer-contact i {
+        color: #FFD700;
+        width: 20px;
+        text-align: center;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background-color: #FFD700;
+        color: #1A1F2C;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2.5rem;
+        margin-top: 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem;
       }
 
       /* Back to top button */
       .back-to-top {
         position: fixed;
-        right: 15px; /* Adjusted position for mobile */
-        bottom: 15px; /* Adjusted position for mobile */
-        width: 40px; /* Smaller button size for mobile */
-        height: 40px; /* Smaller button size for mobile */
+        right: 20px; /* Increased from 15px */
+        bottom: 20px; /* Increased from 15px */
+        width: 50px; /* Increased from 40px */
+        height: 50px; /* Increased from 40px */
         background-color: #FFD700;
         color: #1A1F2C;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 999;
+        font-size: 1.2rem; /* Added font size */
       }
 
       .back-to-top.show {
@@ -562,7 +675,7 @@
         .hero-content {
           flex-direction: column;
           gap: 1.5rem;
-          text-align: left; /* Aligned to left for better mobile UX */
+          text-align: left;
         }
         
         .hero-text {
@@ -570,17 +683,22 @@
         }
         
         .hero-buttons {
-          justify-content: flex-start; /* Aligned to left for better mobile UX */
+          justify-content: flex-start;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 2.5rem;
         }
       }
 
       @media screen and (max-width: 768px) {
         html {
-          font-size: 16px;
+          font-size: 18px; /* Adjusted for readability on medium screens */
         }
         
         .section-title {
-          font-size: 1.7rem;
+          font-size: 1.9rem;
           margin-bottom: 2rem;
         }
         
@@ -605,30 +723,30 @@
         }
         
         .nav-menu li {
-          margin: 0.7rem 0;
+          margin: 0.8rem 0;
         }
         
         #nav-toggle:checked ~ .nav-menu {
           clip-path: circle(150% at top right);
         }
         
-        /* Moved heading closer to header for mobile */
+        /* Moved heading further from header for mobile with more spacing */
         .hero {
-          padding-top: 0.2rem; /* Minimal top padding to move content right under header */
+          padding-top: 2.5rem; /* Increased spacing between header and hero section */
           padding-bottom: 3rem;
         }
         
         .hero-text h1 {
-          font-size: 2.4rem; /* Reduced font size for mobile */
+          font-size: 3.2rem; /* Increased size specifically for mobile from 2.7rem */
           line-height: 1.1;
           text-align: left;
-          margin-top: 0; /* Removed top margin to move closer to header */
+          margin-top: 0;
           margin-bottom: 0.8rem;
         }
         
         .hero-text p {
           text-align: left;
-          font-size: 1.2rem;
+          font-size: 1.4rem; /* Increased for mobile */
           margin-bottom: 1.5rem;
         }
         
@@ -638,31 +756,39 @@
         }
 
         .btn {
-          padding: 0.8rem 1.5rem;
-          width: 100%; /* Full width buttons on mobile for better tapping */
-          font-size: 1rem;
+          padding: 0.9rem 1.5rem;
+          width: 100%;
+          font-size: 1.1rem;
           justify-content: center;
+        }
+        
+        .footer-col {
+          flex: 0 0 100%;
         }
       }
 
       @media screen and (max-width: 576px) {
+        html {
+          font-size: 17px; /* Adjusted for smallest screens */
+        }
+        
         section {
-          padding: 2.5rem 0; /* Further reduced padding for smaller screens */
+          padding: 2.8rem 0; /* Increased padding */
         }
         
         .hero {
-          padding-top: 0.1rem; /* Minimal top padding to move content right under header */
-          padding-bottom: 2.5rem;
+          padding-top: 3rem; /* Further increased for smallest screens */
+          padding-bottom: 2.8rem;
         }
         
         .hero-text h1 {
-          font-size: 2.2rem; /* Further reduced font size for smaller screens */
-          margin-bottom: 0.6rem;
+          font-size: 3.4rem; /* Further increased for smallest screens from 2.5rem */
+          margin-bottom: 0.7rem;
         }
         
         .hero-text p {
-          font-size: 1.1rem;
-          margin-bottom: 1.2rem;
+          font-size: 1.3rem; /* Still larger than original */
+          margin-bottom: 1.3rem;
         }
         
         .services-grid,
@@ -671,7 +797,7 @@
         }
 
         .btn {
-          padding: 0.7rem 1.3rem;
+          padding: 0.9rem 1.3rem;
         }
       }
     </style>
@@ -704,7 +830,7 @@
     </header>
 
     <main>
-      <!-- Hero Section - Moved closer to header -->
+      <!-- Hero Section -->
       <section class="hero">
         <div class="container">
           <div class="hero-content">
@@ -862,12 +988,124 @@
         </div>
       </section>
 
+      <!-- FAQ Section -->
+      <section class="faq" id="faq">
+        <div class="container">
+          <h2 class="section-title">Häufig gestellte Fragen</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-button">Wie kann ich ein Taxi buchen?</button>
+              <div class="accordion-content">
+                <p>Sie können ein Taxi telefonisch unter 04321 9638696 bestellen, per WhatsApp eine Nachricht senden oder unsere Online-Buchungsfunktion nutzen. Für regelmäßige Fahrten empfehlen wir eine Vorbuchung.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Wann sollte ich mein Taxi vorbestellen?</button>
+              <div class="accordion-content">
+                <p>Für normale Fahrten reicht es aus, 15-30 Minuten im Voraus zu buchen. Bei wichtigen Terminen (z.B. Flughafentransfer) empfehlen wir eine Buchung mindestens 24 Stunden im Voraus.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Kann ich bargeldlos bezahlen?</button>
+              <div class="accordion-content">
+                <p>Ja, wir akzeptieren neben Bargeld auch EC-Karten, Kreditkarten und mobile Zahlungsmethoden wie Apple Pay und Google Pay. Bitte informieren Sie den Fahrer vor Fahrtbeginn über Ihre bevorzugte Zahlungsweise.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Gibt es einen Nachtzuschlag?</button>
+              <div class="accordion-content">
+                <p>Ja, zwischen 22:00 Uhr und 06:00 Uhr sowie an Sonn- und Feiertagen gilt der Tarif 2 mit erhöhtem Kilometerpreis. Der Grundpreis bleibt jedoch unverändert.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Können Sie Großraumtaxis für mehr als 4 Personen anbieten?</button>
+              <div class="accordion-content">
+                <p>Ja, wir verfügen über Toyota Prius Plus Fahrzeuge, die Platz für bis zu 6 Personen bieten. Bei größeren Gruppen können wir auch mehrere Fahrzeuge organisieren.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Bieten Sie Krankenfahrten mit Krankenkassenabrechnung an?</button>
+              <div class="accordion-content">
+                <p>Ja, wir bieten Krankenfahrten an und rechnen bei entsprechender Verordnung direkt mit den Krankenkassen ab. Bitte informieren Sie uns bei der Buchung über Ihre Bedürfnisse.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Kann ich ein Taxi für eine Stadtrundfahrt buchen?</button>
+              <div class="accordion-content">
+                <p>Selbstverständlich! Unsere erfahrenen Fahrer kennen sich bestens in Neumünster und Umgebung aus und bieten Stadtrundfahrten zum Stundensatz an. Bitte kontaktieren Sie uns für individuelle Angebote.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Fahren Sie auch über die Stadtgrenze von Neumünster hinaus?</button>
+              <div class="accordion-content">
+                <p>Ja, wir fahren Sie gerne zu jedem gewünschten Ziel, auch über die Stadtgrenzen hinaus. Für längere Strecken bieten wir auch Festpreise an, die Sie vorab anfragen können.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Kann ich Sonderwünsche äußern (z.B. Nichtraucherfahrzeug)?</button>
+              <div class="accordion-content">
+                <p>Alle unsere Fahrzeuge sind grundsätzlich Nichtraucherfahrzeuge. Weitere Sonderwünsche wie Kindersitze oder bestimmte Fahrzeugtypen können bei der Buchung angegeben werden.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button">Was passiert, wenn ich mein Taxi verpasse oder Verspätung habe?</button>
+              <div class="accordion-content">
+                <p>Bitte informieren Sie uns umgehend, wenn sich Ihre Pläne ändern. Wir warten in der Regel bis zu 10 Minuten kostenlos. Bei längeren Wartezeiten fällt die reguläre Wartegebühr an.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- JavaScript for mobile responsive features -->
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">Taxi<span class="highlight">Go</span></div>
+            <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung. Wir bringen Sie sicher und pünktlich ans Ziel.</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-heading">Schnelllinks</h3>
+            <div class="footer-links">
+              <a href="index.html">Startseite</a>
+              <a href="leistungen.html">Unsere Leistungen</a>
+              <a href="preise.html">Preise</a>
+              <a href="ueber-uns.html">Über uns</a>
+              <a href="kontakt.html">Kontakt</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-heading">Kontakt</h3>
+            <div class="footer-contact">
+              <span><i class="fas fa-map-marker-alt"></i> Hauptstraße 25, 24534 Neumünster</span>
+              <span><i class="fas fa-phone"></i> 04321 9638696</span>
+              <span><i class="fas fa-envelope"></i> info@taxi-go-neumuenster.de</span>
+              <span><i class="fas fa-clock"></i> 24/7 für Sie erreichbar</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript for responsive features -->
     <script>
-      // Mobile Navigation Toggle
       document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
         
@@ -878,26 +1116,38 @@
             navToggle.checked = false;
           });
         });
+
+        // FAQ Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
+          }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       });
     </script>
   </body>
 </html>
-<script>
-  // Back to Top Button
-  const backToTopButton = document.createElement('div');
-  backToTopButton.className = 'back-to-top';
-  backToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
-  document.body.appendChild(backToTopButton);
-
-  window.addEventListener('scroll', () => {
-    if (document.documentElement.scrollTop > 300) {
-      backToTopButton.classList.add('show');
-    } else {
-      backToTopButton.classList.remove('show');
-    }
-  });
-
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
