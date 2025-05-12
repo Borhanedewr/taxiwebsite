@@ -169,7 +169,7 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
         font-size: 1.4rem;
-        color: var(--secondary-color);
+        color: var (--secondary-color);
         display: flex;
         align-items: center;
       }
@@ -479,36 +479,37 @@
       /* Media Queries */
       @media screen and (max-width: 992px) {
         .container {
-          max-width: 98vw;
+          max-width: 100vw;
+        }
+        html {
+          font-size: 18px; /* größer auf Tablet/Mobile */
         }
         .service-detail {
-          padding: 0.9rem;
-          max-width: 100%;
+          padding: 1.5rem; /* mehr Innenabstand */
+          margin-bottom: 1.5rem;
+        }
+        .service-detail-content h2 {
+          font-size: 1.4rem;
+        }
+        .service-icon {
+          font-size: 2rem;
         }
       }
 
       @media screen and (max-width: 768px) {
         html {
-          font-size: 15px;
+          font-size: 17px; /* größer auf kleineren Geräten */
         }
-        
         .service-detail {
-          padding: 0.8rem;
-          margin-bottom: 0.8rem;
+          padding: 1.2rem;
+          margin-bottom: 1.2rem;
         }
-        
-        .service-detail-content {
-          padding: 0.4rem;
-        }
-        
         .service-detail-content h2 {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
         }
-        
         .service-icon {
-          font-size: 1.5rem;
+          font-size: 1.7rem;
         }
-
         .nav-toggle-label {
           display: block;
         }
@@ -563,38 +564,31 @@
       }
 
       @media screen and (max-width: 576px) {
+        html {
+          font-size: 16px; /* größer als vorher */
+        }
         section {
-          padding: 2rem 0;
+          padding: 2.2rem 0;
         }
-        
         .service-detail {
-          padding: 0.7rem;
-          margin-bottom: 0.7rem;
+          padding: 1rem;
+          margin-bottom: 1rem;
         }
-        
         .service-detail-content h2 {
-          font-size: 1rem;
-          padding-bottom: 0.3rem;
-          margin-bottom: 0.3rem;
+          font-size: 1.1rem;
         }
-        
         .service-detail-content p,
         .service-detail-content ul li {
-          font-size: 0.8rem;
-          line-height: 1.4;
+          font-size: 0.95rem;
         }
-        
         .service-icon {
-          font-size: 1.2rem;
-          margin-bottom: 0.3rem;
+          font-size: 1.4rem;
         }
-        
         .call-to-action h2 {
-          font-size: 1.3rem;
+          font-size: 1.15rem;
         }
-        
         .call-to-action p {
-          font-size: 0.85rem;
+          font-size: 0.95rem;
         }
       }
     </style>
