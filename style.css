@@ -475,15 +475,15 @@ body.ueber-uns-page,
 .ueber-uns-page .story-text,
 .ueber-uns-page .mission-card,
 .ueber-uns-page .certification-card {
-  font-size: 1.25rem;
-  line-height: 2;
+  font-size: 1.35rem;
+  line-height: 2.1;
 }
 .ueber-uns-page h2,
 .ueber-uns-page .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
 }
 .ueber-uns-page h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 @media screen and (max-width: 768px) {
   body.ueber-uns-page,
@@ -491,17 +491,16 @@ body.ueber-uns-page,
   .ueber-uns-page .story-text,
   .ueber-uns-page .mission-card,
   .ueber-uns-page .certification-card {
-    font-size: 1.1rem;
+    font-size: 1.18rem;
   }
   .ueber-uns-page h2,
   .ueber-uns-page .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .ueber-uns-page h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 }
-
 @media screen and (max-width: 992px) {
   .service-detail {
     flex-direction: column;
