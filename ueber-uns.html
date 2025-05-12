@@ -18,7 +18,50 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-      /* ...existing styles from prompt... */
+      /* Kompaktere Desktop-Styles */
+      .container {
+        max-width: 900px;
+        padding: 0 0.5rem;
+      }
+      section {
+        padding: 1.5rem 0;
+      }
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      .section-title {
+        font-size: 1.2rem;
+      }
+      .story-content, .mission-grid, .certification-grid {
+        gap: 1.2rem;
+      }
+      .mission-card, .certification-card {
+        padding: 0.7rem 1rem;
+        font-size: 0.92rem;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mission-card h3, .certification-card h3 {
+        font-size: 1rem;
+      }
+      .mission-icon, .certification-icon {
+        font-size: 1.2rem;
+      }
+      .call-to-action h2 {
+        font-size: 1.1rem;
+      }
+      .call-to-action p {
+        font-size: 0.9rem;
+      }
+      @media screen and (max-width: 992px) {
+        .container {
+          max-width: 98vw;
+        }
+        .mission-card, .certification-card {
+          max-width: 100%;
+        }
+      }
     </style>
   </head>
 
