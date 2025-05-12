@@ -469,6 +469,39 @@ footer {
   transform: translateY(-3px);
 }
 
+/* Verbesserte Lesbarkeit für die Seite Über uns */
+body.ueber-uns-page,
+.ueber-uns-page main,
+.ueber-uns-page .story-text,
+.ueber-uns-page .mission-card,
+.ueber-uns-page .certification-card {
+  font-size: 1.25rem;
+  line-height: 2;
+}
+.ueber-uns-page h2,
+.ueber-uns-page .section-title {
+  font-size: 2.5rem;
+}
+.ueber-uns-page h3 {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  body.ueber-uns-page,
+  .ueber-uns-page main,
+  .ueber-uns-page .story-text,
+  .ueber-uns-page .mission-card,
+  .ueber-uns-page .certification-card {
+    font-size: 1.1rem;
+  }
+  .ueber-uns-page h2,
+  .ueber-uns-page .section-title {
+    font-size: 2rem;
+  }
+  .ueber-uns-page h3 {
+    font-size: 1.25rem;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .service-detail {
     flex-direction: column;
