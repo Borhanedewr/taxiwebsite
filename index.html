@@ -828,27 +828,21 @@
                   <i class="fab fa-whatsapp"></i> Per WhatsApp buchen
                 </a>
               </div>
-              <!-- Sichtbarer, schwarzer Scroll-Down Arrow unter WhatsApp Button -->
+              <!-- Statischer, schwarzer Scroll-Down Arrow mit weißem Hintergrund unter WhatsApp Button -->
               <div style="display:flex;justify-content:center;margin-top:1.2rem;">
-                <button id="scroll-down-arrow" aria-label="Nach unten scrollen" style="background:transparent;border:none;outline:none;cursor:pointer;">
-                  <span style="display:inline-block;animation:arrow-bounce 1.5s infinite;">
-                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px #0007);">
-                      <defs>
-                        <linearGradient id="arrow-gradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="#000" stop-opacity="0.85"/>
-                          <stop offset="100%" stop-color="#333" stop-opacity="1"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M19 8V30M19 30L10 21M19 30L28 21" stroke="url(#arrow-gradient)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
+                <button id="scroll-down-arrow" aria-label="Nach unten scrollen" style="background:#fff;border:none;outline:none;cursor:pointer;border-radius:50%;padding:0.5rem;box-shadow:0 2px 8px #0002;">
+                  <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px #0007);">
+                    <defs>
+                      <linearGradient id="arrow-gradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#000" stop-opacity="0.85"/>
+                        <stop offset="100%" stop-color="#333" stop-opacity="1"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M19 8V30M19 30L10 21M19 30L28 21" stroke="url(#arrow-gradient)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </button>
               </div>
               <style>
-                @keyframes arrow-bounce {
-                  0%, 100% { transform: translateY(0); }
-                  50% { transform: translateY(10px); }
-                }
                 #scroll-down-arrow:hover svg path {
                   filter: drop-shadow(0 0 12px #0008);
                   stroke-opacity: 1;
