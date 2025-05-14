@@ -476,6 +476,33 @@
         transform: translateY(-2px);
       }
 
+      /* Scroll to Action Arrow */
+      .scroll-to-action {
+        position: fixed;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        z-index: 999;
+        background: rgba(255,255,255,0.0); /* komplett transparent */
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: bounce 1.5s infinite;
+      }
+      .scroll-to-action i {
+        font-size: 2.2rem;
+        color: #FFD700;
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(12px); }
+      }
+
       /* Media Queries */
       @media screen and (max-width: 992px) {
         .container {
@@ -790,7 +817,18 @@
       <i class="fas fa-arrow-up"></i>
     </a>
 
+    <button class="scroll-to-action" aria-label="Nach unten scrollen" onclick="scrollToAction()">
+      <i class="fas fa-arrow-down"></i>
+    </button>
     <script>
+      function scrollToAction() {
+        // Scrolle zur Call-to-Action Section
+        const cta = document.querySelector('.call-to-action');
+        if (cta) {
+          cta.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
       // Back to top button
       const backToTopButton = document.querySelector('.back-to-top');
       
