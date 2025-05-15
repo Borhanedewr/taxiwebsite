@@ -569,5 +569,14 @@ body.ueber-uns-page,
   .story-text h2 {
     font-size: 1.75rem;
   }
+  .logo a {
+    font-size: 1.1rem;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span:before,
+  .nav-toggle-label span:after {
+    width: 18px;
+    height: 2px;
+  }
 }
 /* ...existing code... */
