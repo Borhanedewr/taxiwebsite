@@ -849,31 +849,18 @@
   </head>
 
   <body>
-    <!-- Header: Sticky und direkt eingebunden -->
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
-          </div>
-          <nav>
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-              <span></span>
-            </label>
-            <ul class="nav-menu">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="leistungen.html">Leistungen</a></li>
-              <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <div id="header"></div>
     <div id="root"></div>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Header dynamisch laden
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+        });
+    </script>
     <main>
       <!-- Hero Section -->
       <section class="hero">
