@@ -447,6 +447,18 @@
         color: var (--primary-color);
       }
 
+      /* Besser sichtbarer Datenschutz-Link im Footer */
+      .legal-links a[href*="datenschutz"] {
+        color: #FFD700 !important; /* Hoher Kontrast: Gelb auf Dunkel */
+        text-decoration: underline;
+        font-weight: 700;
+      }
+      .legal-links a[href*="datenschutz"]:hover {
+        color: #fff700;
+        background: #333;
+        text-decoration: underline;
+      }
+
       /* Back to top button */
       .back-to-top {
         position: fixed;
