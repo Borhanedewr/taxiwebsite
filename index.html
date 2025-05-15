@@ -154,6 +154,12 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         padding: 0.8rem 0;
+        height: 110px;
+        transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
+      }
+      header.header-small {
+        height: 68px;
+        padding: 0.2rem 0;
       }
 
       .header-content {
@@ -1274,6 +1280,18 @@
             this.style.display = 'none';
             document.body.style.overflow = '';
           }
+        });
+
+        // Header dynamisch verkleinern/vergrößern beim Scrollen
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', function() {
+          if(window.scrollY > 10) {
+            header.classList.add('header-small');
+          } else {
+            header.classList.remove('header-small');
+          }
+          lastScrollY = window.scrollY;
         });
       });
     </script>
