@@ -19,7 +19,27 @@
   </head>
 
   <body class="ueber-uns-page">
-    <div id="header"></div>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
+          </div>
+          <nav>
+            <input type="checkbox" id="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span></span>
+            </label>
+            <ul class="nav-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="ueber-uns.html">Über uns</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
     <main>
       <section style="background: #FFD700; padding: 2rem 0 1rem 0; text-align: center;">
@@ -188,13 +208,6 @@
     </a>
 
     <script>
-      // Header dynamisch laden
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header').innerHTML = data;
-        });
-
       // Back to top button
       const backToTopButton = document.querySelector('.back-to-top');
       
