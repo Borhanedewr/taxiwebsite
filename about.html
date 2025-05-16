@@ -582,7 +582,27 @@
   </head>
 
   <body>
-    <div id="header"></div>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
+          </div>
+          <nav>
+            <input type="checkbox" id="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span></span>
+            </label>
+            <ul class="nav-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="ueber-uns.html">Über uns</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
     <main>
       <!-- Story Section -->
@@ -676,69 +696,63 @@
       <!-- Call to Action -->
       <section class="call-to-action">
         <div class="container">
-          <h2>Bereit für eine Fahrt mit uns?</h2>
-          <p>Kontaktieren Sie uns noch heute und erleben Sie unseren ausgezeichneten Service.</p>
+          <h2>Bereit für Ihre nächste Fahrt?</h2>
+          <p>Kontaktieren Sie uns noch heute und erleben Sie den besten Taxiservice in Neumünster.</p>
           <div class="cta-buttons">
-            <a href="tel:043219638696" class="btn btn-primary">
-              <i class="fas fa-phone"></i> Jetzt anrufen
-            </a>
-            <a href="https://wa.me/4943219638696" class="btn btn-whatsapp">
-              <i class="fab fa-whatsapp"></i> Per WhatsApp buchen
-            </a>
+            <a href="contact.html" class="btn btn-primary">Jetzt anfragen</a>
+            <a href="leistungen.html" class="btn btn-secondary">Unsere Leistungen</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>TaxiGo Neumünster</h3>
-            <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung.</p>
-            <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Am neuen kamp 38a, 24537 Neumünster</p>
-              <p><i class="fas fa-phone"></i> <a href="tel:043219638696">04321 9638696</a></p>
-              <p><i class="fas fa-envelope"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h3>Schnelllinks</h3>
-            <ul class="footer-links">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="leistungen.html">Leistungen</a></li>
-              <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Service</h3>
-            <ul class="footer-links">
-              <li><a href="leistungen.html#business-fahrten">Business-Fahrten</a></li>
-              <li><a href="leistungen.html#schuelerfahrten">Schülerfahrten</a></li>
-              <li><a href="leistungen.html#flughafentransfer">Flughafentransfer</a></li>
-              <li><a href="leistungen.html#kurierfahrten">Kurierfahrten</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Folgen Sie uns</h3>
-            <div class="social-links">
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TaxiGo Neumünster</h3>
+          <p>Ihr zuverlässiger Taxiservice in Neumünster und Umgebung.</p>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Am neuen kamp 38a, 24537 Neumünster</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:043219638696">04321 9638696</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:taxigoneumuenster@gmail.com">taxigoneumuenster@gmail.com</a></p>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
-          <div class="legal-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">AGB</a>
+        <div class="footer-section">
+          <h3>Schnelllinks</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Service</h3>
+          <ul class="footer-links">
+            <li><a href="leistungen.html#business-fahrten">Business-Fahrten</a></li>
+            <li><a href="leistungen.html#schuelerfahrten">Schülerfahrten</a></li>
+            <li><a href="leistungen.html#flughafentransfer">Flughafentransfer</a></li>
+            <li><a href="leistungen.html#kurierfahrten">Kurierfahrten</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Folgen Sie uns</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
-    </footer>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
+        <div class="legal-links">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+        </div>
+      </div>
+    </div>
 
     <a href="#" class="back-to-top" aria-label="Nach oben scrollen">
       <i class="fas fa-arrow-up"></i>
