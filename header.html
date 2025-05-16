@@ -4,51 +4,126 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </noscript>
 
-<!-- Moderner, professioneller Header -->
-<header style="backdrop-filter: blur(10px); background: rgba(255,255,255,0.85); box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 0 0 18px 18px; margin: 0 0 1.2rem 0;">
-  <div class="container" style="padding-top:0.3rem;padding-bottom:0.3rem;">
-    <div class="header-content" style="display:flex;align-items:center;justify-content:space-between;gap:1.5rem;">
-      <!-- Logo modern -->
-      <div class="logo" style="display:flex;align-items:center;gap:0.5rem;">
-        <a href="index.html" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.1rem;letter-spacing:-1px;color:#1A1F2C;display:flex;align-items:center;gap:0.4rem;text-shadow:0 2px 8px #ffd70033;">
-          <span style="background:linear-gradient(90deg,#FFD700 60%,#fff700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;">Taxi</span><span class="highlight" style="color:#003399;font-weight:900;">Go</span>
-          <span style="font-size:1.1rem;font-weight:600;color:#888;margin-left:0.5rem;">Neumünster</span>
-        </a>
-      </div>
-      <!-- Navigation modern -->
-      <nav style="flex:1;display:flex;align-items:center;justify-content:center;">
-        <input type="checkbox" id="nav-toggle" style="display:none;">
-        <label for="nav-toggle" class="nav-toggle-label" style="display:none;cursor:pointer;">
-          <span style="display:block;width:32px;height:4px;background:#003399;border-radius:2px;position:relative;transition:all 0.3s;"></span>
-        </label>
-        <ul class="nav-menu" style="display:flex;gap:2.2rem;align-items:center;list-style:none;margin:0;">
-          <li><a href="index.html" style="font-weight:600;font-size:1.08rem;display:flex;align-items:center;gap:0.5rem;color:#1A1F2C;transition:color 0.2s;"><i class="fas fa-home" style="color:#FFD700;"></i>Startseite</a></li>
-          <li><a href="leistungen.html" style="font-weight:600;font-size:1.08rem;display:flex;align-items:center;gap:0.5rem;color:#1A1F2C;transition:color 0.2s;"><i class="fas fa-taxi" style="color:#FFD700;"></i>Leistungen</a></li>
-          <li><a href="ueber-uns.html" style="font-weight:600;font-size:1.08rem;display:flex;align-items:center;gap:0.5rem;color:#1A1F2C;transition:color 0.2s;"><i class="fas fa-users" style="color:#FFD700;"></i>Über uns</a></li>
-          <li><a href="contact.html" style="font-weight:600;font-size:1.08rem;display:flex;align-items:center;gap:0.5rem;color:#1A1F2C;transition:color 0.2s;"><i class="fas fa-envelope" style="color:#FFD700;"></i>Kontakt</a></li>
-        </ul>
-      </nav>
-      <!-- Call-to-Action Buttons modern -->
-      <div class="header-cta" style="display:flex;gap:0.7rem;align-items:center;">
-        <a href="tel:043219638696" style="background:#FFD700;color:#003399;font-weight:700;padding:0.7em 1.3em;border-radius:7px;box-shadow:0 2px 8px #ffd70033;display:flex;align-items:center;gap:0.5em;font-size:1.08rem;transition:background 0.2s, color 0.2s;"><i class="fas fa-phone"></i> Anrufen</a>
-        <a href="https://wa.me/4943219638696" style="background:#25D366;color:#fff;font-weight:700;padding:0.7em 1.3em;border-radius:7px;box-shadow:0 2px 8px #25d36633;display:flex;align-items:center;gap:0.5em;font-size:1.08rem;transition:background 0.2s, color 0.2s;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      </div>
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <a href="index.html"><span class="logo-yellow">Taxi</span><span class="logo-blue">Go</span> Neumünster</a>
     </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+
 <style>
+.main-header {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(30,31,44,0.07);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 58px;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1.2rem;
+}
+.logo-area a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -1px;
+  color: #1A1F2C;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.logo-yellow { color: #FFD700; font-weight: 900; }
+.logo-blue { color: #1A1F2C; font-weight: 900; margin-left:2px; }
+
+.nav-menu {
+  display: flex;
+  gap: 2.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu li a {
+  color: #1A1F2C;
+  font-weight: 600;
+  font-size: 1.01rem;
+  text-decoration: none;
+  padding: 0.2em 0.1em;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #FFD700;
+}
+
+/* Burger Menü */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  gap: 5px;
+}
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  width: 28px;
+  background: #1A1F2C;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
 @media (max-width: 900px) {
-  header .header-content { flex-direction: column; gap: 0.7rem; }
-  header nav { justify-content: flex-start; }
-  .header-cta { justify-content: flex-start; }
+  .header-inner { padding: 0.2rem 0.7rem; }
+  .nav-menu { gap: 1.2rem; }
 }
 @media (max-width: 700px) {
-  header .header-content { flex-direction: column; gap: 0.7rem; }
-  .header-cta { flex-direction: column; gap: 0.5rem; width:100%; }
-  nav .nav-menu { flex-direction: column; gap: 1.2rem; background:rgba(255,255,255,0.98); border-radius:12px; box-shadow:0 2px 8px #00339922; padding:1.2rem 0; position:absolute; top:60px; left:0; right:0; display:none; }
-  #nav-toggle:checked ~ .nav-menu { display:flex; }
-  .nav-toggle-label { display:block !important; }
+  .header-inner { flex-wrap: wrap; }
+  .nav-toggle-label { display: flex; }
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(30,31,44,0.09);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: none;
+    padding: 1.2rem 0 1.2rem 0;
+    z-index: 999;
+  }
+  .nav-toggle:checked + .nav-toggle-label + nav .nav-menu {
+    display: flex;
+  }
 }
-header .nav-menu a:hover, header .nav-menu a:focus { color: #003399 !important; }
-.header-cta a:hover { background:#003399 !important; color:#FFD700 !important; }
 </style>
