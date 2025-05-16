@@ -11,840 +11,134 @@
     <meta property="og:description" content="Sicheres und bequemes Taxi in Neumünster. Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr." />
     <meta property="og:type" content="website" />
     
+    <!-- Font Awesome: Preload und asynchron laden -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </noscript>
-    
+
+    <header class="main-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <a href="index.html"><span class="logo-yellow">Taxi</span><span class="logo-blue">Go</span> Neumünster</a>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <style>
-      /* Base Styles */
-      :root {
-        --primary-color: #FFD700;
-        --primary-dark: #E6C200;
-        --secondary-color: #1A1F2C;
-        --light-color: #F9F9F9;
-        --gray-color: #8E9196;
-        --gray-light: #F5F5F5;
-        --gray-dark: #4A4A4A;
-        --white: #FFFFFF;
-        --black: #000000;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --radius: 8px;
-        --transition: all 0.3s ease;
-      }
+    .main-header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(30,31,44,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      min-height: 58px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.2rem 1.2rem;
+    }
+    .logo-area a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.45rem;
+      letter-spacing: -1px;
+      color: #1A1F2C;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.2em;
+    }
+    .logo-yellow { color: #FFD700; font-weight: 900; }
+    .logo-blue { color: #1A1F2C; font-weight: 900; margin-left:2px; }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    .nav-menu {
+      display: flex;
+      gap: 2.1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu li a {
+      color: #1A1F2C;
+      font-weight: 600;
+      font-size: 1.01rem;
+      text-decoration: none;
+      padding: 0.2em 0.1em;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+      color: #FFD700;
+    }
 
-      html {
-        scroll-behavior: smooth;
-        font-size: 16px; /* Base font size adjusted for better scaling */
-      }
+    /* Burger Menü */
+    .nav-toggle {
+      display: none;
+    }
+    .nav-toggle-label {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      height: 32px;
+      width: 32px;
+      gap: 5px;
+    }
+    .nav-toggle-label span {
+      display: block;
+      height: 3px;
+      width: 28px;
+      background: #1A1F2C;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
 
-      body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.6;
-        color: var(--secondary-color);
-        background-color: var(--light-color);
-        overflow-x: hidden;
-      }
-
-      h1, h2, h3, h4, h5, h5 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      ul {
-        list-style-type: none;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1280px;
-        padding: 0 1.5rem;
-        margin: 0 auto;
-      }
-
-      .section-title {
-        position: relative;
-        font-size: 2.2rem;
-        margin-bottom: 2.5rem;
-        text-align: center;
-      }
-
-      .section-title:after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: var(--primary-color);
-        border-radius: 2px;
-      }
-
-      section {
-        padding: 5rem 0;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        border: none;
-        gap: 0.6rem;
-        font-size: 1.15rem;
-      }
-
-      .btn i {
-        font-size: 1.2rem;
-      }
-
-      .btn-primary {
-        background-color: #E6B400;
-        color: #000000;
-        font-weight: 700;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-      }
-
-      .btn-primary:hover {
-        background-color: #D9A500;
-      }
-
-      .btn-secondary {
-        background-color: #1A1F2C;
-        color: #FFFFFF;
-      }
-
-      .btn-secondary:hover {
-        background-color: #2a303d;
-      }
-
-      .btn-whatsapp {
-        background-color: #25D366;
-        color: #FFFFFF;
-      }
-
-      .btn-whatsapp:hover {
-        background-color: #1da851;
-      }
-
-      /* Header Styles */
-      header {
-        position: sticky;
-        top: 0;
-        background-color: #FFFFFF;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        height: 58px;
-        padding: 0.1rem 0;
-        transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
-      }
-      header.header-small {
-        height: 48px;
-        padding: 0.05rem 0;
-      }
-
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo a {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 1.9rem;
-        color: #1A1F2C;
-        display: flex;
-        align-items: center;
-      }
-
-      /* Highlighted text for "Go" in TaxiGo */
-      .highlight {
-        color: #FFD700;
-        font-weight: 800;
-        -webkit-text-stroke: 0.5px black; /* Reduced outline for "Go" */
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      }
-
+    @media (max-width: 900px) {
+      .header-inner { padding: 0.2rem 0.7rem; }
+      .nav-menu { gap: 1.2rem; }
+    }
+    @media (max-width: 700px) {
+      .header-inner { flex-wrap: wrap; }
+      .nav-toggle-label { display: flex; }
       .nav-menu {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-menu li {
-        margin-left: 1.75rem;
-      }
-
-      .nav-menu a {
-        font-weight: 600;
-        color: #1A1F2C;
-        position: relative;
-        font-size: 0.98rem;
-      }
-
-      .nav-menu a:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 1.5px;
-        bottom: -4px;
-        left: 0;
-        background-color: #FFD700;
-        transition: width 0.3s ease;
-      }
-
-      .nav-menu a:hover:after,
-      .nav-menu a.active:after {
-        width: 100%;
-      }
-
-      /* Mobile Navigation */
-      #nav-toggle {
-        display: none;
-      }
-
-      .nav-toggle-label {
-        display: none;
-        cursor: pointer;
-      }
-
-      .nav-toggle-label span,
-      .nav-toggle-label span:before,
-      .nav-toggle-label span:after {
-        display: block;
-        background: #1A1F2C;
-        height: 3px; /* dünner */
-        width: 28px;   /* kürzer */
-        position: relative;
-        border-radius: 2px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .nav-toggle-label span:before,
-      .nav-toggle-label span:after {
-        content: '';
-        position: absolute;
-      }
-
-      .nav-toggle-label span:before {
-        bottom: 8px; /* weniger Abstand */
-      }
-
-      .nav-toggle-label span:after {
-        top: 8px; /* weniger Abstand */
-      }
-
-      /* Hero Section - Adjusted for better mobile display */
-      .hero {
-        padding-top: 0.1rem; /* Noch weniger Padding für mehr Nähe zum Header */
-        padding-bottom: 3.5rem;
-      }
-
-      .hero-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 0;
-      }
-
-      .hero-text {
-        flex: 0 0 60%;
-      }
-
-      .hero-text h1 {
-        font-size: 2.9rem; /* Slightly smaller heading */
-        margin-bottom: 1.2rem;
-        color: #1A1F2C;
-      }
-
-      .hero-text p {
-        font-size: 1.4rem;
-        margin-bottom: 1.8rem;
-        color: #4A4A4A;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-      }
-
-      /* Services Section */
-      .services {
-        background-color: #FFFFFF;
-        padding: 3.5rem 0;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.8rem;
-      }
-
-      .service-card {
-        background-color: #F9F9F9;
-        padding: 1.8rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      }
-
-      .service-icon {
-        margin-bottom: 1.4rem;
-        font-size: 2.4rem;
-        color: #FFD700;
-      }
-
-      .service-card h3 {
-        margin-bottom: 0.9rem;
-        font-size: 1.3rem;
-      }
-
-      /* Pricing Section */
-      .pricing {
-        background-color: #F5F5F5;
-        padding: 3.5rem 0;
-      }
-
-      .pricing-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .pricing-table {
-        flex: 0 0 100%;
-        background-color: #FFFFFF;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
-      }
-
-      .pricing-header {
-        background-color: #1A1F2C;
-        color: #FFFFFF;
-        padding: 1.4rem;
-        text-align: center;
-      }
-
-      .pricing-header h3 {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .pricing-body {
-        padding: 1.4rem;
-      }
-
-      .pricing-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 0;
-        border-bottom: 1px solid #F5F5F5;
-        font-size: 1.1rem;
-      }
-
-      .pricing-item:last-child {
-        border-bottom: none;
-      }
-
-      .pricing-footer {
-        padding: 1rem 1.4rem;
-        background-color: #F5F5F5;
-      }
-
-      .pricing-note {
-        font-size: 0.95rem;
-        color: #4A4A4A;
-        font-style: italic;
-      }
-
-      /* Fleet Section */
-      .fleet {
-        background-color: #FFFFFF;
-        padding: 3.5rem 0;
-      }
-
-      .fleet-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.8rem;
-      }
-
-      .vehicle-card {
-        background-color: #F9F9F9;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        padding: 1.8rem;
-        text-align: center;
-      }
-
-      .vehicle-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      }
-
-      .vehicle-icon {
-        font-size: 3.8rem;
-        color: #FFD700;
-        margin-bottom: 1.4rem;
-      }
-
-      .vehicle-info {
-        padding: 1.4rem 0;
-      }
-
-      .vehicle-info h3 {
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-      }
-
-      .vehicle-info ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-        font-size: 1.1rem;
-      }
-
-      .vehicle-info li {
-        margin-bottom: 0.6rem;
-        display: flex;
-        align-items: center;
-      }
-
-      .vehicle-info i {
-        color: #FFD700;
-        margin-right: 0.6rem;
-        width: 22px;
-      }
-
-      /* About Section */
-      .about {
-        background-color: #F5F5F5;
-        padding: 3.5rem 0;
-      }
-
-      .about-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .about-text {
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 1.1rem;
-      }
-
-      .about-text p {
-        margin-bottom: 1.4rem;
-      }
-
-      .about-text .section-title {
-        text-align: center;
-      }
-
-      /* FAQ Section */
-      .faq {
-        background-color: #FFFFFF;
-        padding: 3.5rem 0;
-      }
-
-      .accordion {
-        background-color: #F9F9F9;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
-      }
-
-      .accordion-item {
-        border-bottom: 1px solid #F5F5F5;
-      }
-
-      .accordion-item:last-child {
-        border-bottom: none;
-      }
-
-      .accordion-button {
-        background-color: #FFFFFF;
-        color: #1A1F2C;
-        cursor: pointer;
-        padding: 1.3rem;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        font-size: 1.1rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .accordion-button:hover {
-        background-color: #F5F5F5;
-      }
-
-      .accordion-button:after {
-        content: '\f107';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        position: absolute;
-        right: 15px;
-        transition: all 0.3s ease;
-        font-size: 1.2rem;
-      }
-
-      .accordion-button.active:after {
-        transform: rotate(180deg);
-      }
-
-      .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background-color: #FFFFFF;
-      }
-
-      .accordion-content p {
-        padding: 1rem 1.3rem;
-        color: #4A4A4A;
-        font-size: 1.05rem;
-      }
-
-      /* Footer */
-      footer {
-        background-color: #1A1F2C;
-        color: #FFFFFF;
-        padding: 3rem 0;
-        display: block;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 2rem;
-      }
-
-      .footer-logo {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-      }
-
-      .footer-logo .highlight {
-        color: #FFD700;
-      }
-
-      .footer-col {
-        flex: 1 0 250px;
-      }
-
-      .footer-heading {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-      }
-
-      .footer-heading:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 40px;
-        height: 3px;
-        background-color: #FFD700;
-      }
-
-      .footer-links {
-        display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .footer-links a {
-        color: #DDDDDD;
-        transition: all 0.3s ease;
-        font-size: 1.05rem;
-      }
-
-      .footer-links a:hover {
-        color: #FFD700;
-      }
-
-      .footer-contact {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        font-size: 1.05rem;
-      }
-
-      .footer-contact span {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .footer-contact i {
-        color: #FFD700;
-        width: 20px;
-        text-align: center;
-      }
-
-      .footer-social {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .social-icon:hover {
-        background-color: #FFD700;
-        color: #1A1F2C;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 2.5rem;
-        margin-top: 2.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1rem;
-      }
-
-      /* Verbesserter Datenschutz-Link im Footer */
-      .footer-bottom a#open-datenschutz {
-        color: #003399 !important;
-        background: #FFD700;
-        padding: 0.18em 0.85em;
-        border-radius: 6px;
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 1.1em;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        transition: background 0.2s, color 0.2s, text-decoration 0.2s;
-      }
-      .footer-bottom a#open-datenschutz:hover {
-        background: #003399;
-        color: #FFD700 !important;
-        text-decoration: underline;
-      }
-
-      /* Back to top button */
-      .back-to-top {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: #FFD700;
-        color: #1A1F2C;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+        position: absolute;
+        top: 58px;
+        right: 0;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(30,31,44,0.09);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        display: none;
+        padding: 1.2rem 0 1.2rem 0;
         z-index: 999;
-        font-size: 1.2rem;
       }
-
-      .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
+      .nav-toggle:checked + .nav-toggle-label + nav .nav-menu {
+        display: flex;
       }
-
-      .back-to-top:hover {
-        background-color: #E6C200;
-        transform: translateY(-3px);
-      }
-
-      /* Media Queries - Enhanced for better mobile experience */
-      @media screen and (max-width: 992px) {
-        .hero-content {
-          flex-direction: column;
-          gap: 1.8rem;
-          text-align: left;
-        }
-        
-        .hero-text {
-          flex: 0 0 100%;
-        }
-        
-        .hero-buttons {
-          justify-content: flex-start;
-        }
-
-        .footer-content {
-          flex-direction: column;
-          gap: 2.5rem;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        html {
-          font-size: 17px;
-        }
-        
-        .section-title {
-          font-size: 1.8rem;
-          margin-bottom: 1.8rem;
-        }
-        
-        .nav-toggle-label {
-          display: block;
-        }
-        
-        .nav-menu {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          background-color: #FFFFFF;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 1.5rem 0;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          clip-path: circle(0% at top right);
-          transition: clip-path 0.5s ease;
-          z-index: 1000;
-        }
-        
-        .nav-menu li {
-          margin: 0.8rem 0;
-        }
-        
-        #nav-toggle:checked ~ .nav-menu {
-          clip-path: circle(150% at top right);
-        }
-        
-        .hero {
-          padding-top: 0.1rem; /* Noch weniger Abstand zum Header auf Handy */
-          padding-bottom: 2.5rem;
-        }
-        
-        .hero-text h1 {
-          font-size: 3.2rem;
-          line-height: 1.1;
-          text-align: left;
-          margin-top: 0.5rem;
-          margin-bottom: 1rem;
-        }
-        
-        .hero-text p {
-          text-align: left;
-          font-size: 1.3rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        .hero-buttons {
-          flex-direction: column;
-          gap: 0.9rem;
-          width: 100%;
-        }
-
-        .btn {
-          padding: 0.9rem 1.6rem;
-          width: 100%;
-          font-size: 1.1rem;
-          justify-content: center;
-        }
-        
-        .footer-col {
-          flex: 0 0 100%;
-        }
-
-        .logo a {
-          font-size: 1.9rem;
-        }
-
-        .nav-menu a {
-          font-size: 0.93rem;
-        }
-      }
-
-      @media screen and (max-width: 576px) {
-        html {
-          font-size: 16px;
-        }
-        
-        section {
-          padding: 2.5rem 0;
-        }
-        
-        .hero {
-          padding-top: 0.1rem; /* Noch weniger Abstand zum Header auf Handy */
-          padding-bottom: 2.5rem;
-        }
-        
-        .hero-text h1 {
-          font-size: 2.9rem;
-          margin-bottom: 0.8rem;
-          margin-top: 0.5rem;
-        }
-        
-        .hero-text p {
-          font-size: 1.2rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        .services-grid,
-        .fleet-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .btn {
-          padding: 0.9rem 1.2rem;
-        }
-
-        .logo a {
-          font-size: 1.9rem;
-        }
-
-        .nav-menu a {
-          font-size: 0.89rem;
-        }
-      }
+    }
     </style>
   </head>
 
