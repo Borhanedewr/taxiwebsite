@@ -1,24 +1,87 @@
-<!-- Datei wurde entfernt, da die Flotten-Infos jetzt auf der Startseite sind. -->
-<body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unsere Flotte - TaxiGo Neumünster</title>
+    <meta name="description" content="Unsere moderne Taxi-Flotte in Neumünster: Komfort, Sicherheit und Umweltfreundlichkeit. Jetzt mehr erfahren!" />
+    <meta name="author" content="TaxiGo Neumünster" />
+    <meta property="og:title" content="Unsere Flotte - TaxiGo Neumünster" />
+    <meta property="og:description" content="Unsere moderne Taxi-Flotte in Neumünster: Komfort, Sicherheit und Umweltfreundlichkeit. Jetzt mehr erfahren!" />
+    <meta property="og:type" content="website" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+    <style>
+      :root { --primary-color: #FFD700; --primary-dark: #E6C200; --secondary-color: #1A1F2C; --light-color: #F9F9F9; --gray-color: #8E9196; --gray-light: #F5F5F5; --gray-dark: #4A4A4A; --white: #FFFFFF; --black: #000000; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --radius: 8px; --transition: all 0.3s ease; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; font-size: 16px; }
+      body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--secondary-color); background-color: var(--light-color); overflow-x: hidden; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; }
+      a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+      ul { list-style-type: none; }
+      .container { width: 100%; max-width: 1280px; padding: 0 1.5rem; margin: 0 auto; }
+      header { position: sticky; top: 0; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 1000; height: 58px; padding: 0.1rem 0; transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1); }
+      header.header-small { height: 48px; padding: 0.05rem 0; }
+      .header-content { display: flex; justify-content: space-between; align-items: center; }
+      .logo a { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.9rem; color: #1A1F2C; display: flex; align-items: center; }
+      .highlight { color: #FFD700; font-weight: 800; -webkit-text-stroke: 0.5px black; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+      .nav-menu { display: flex; align-items: center; }
+      .nav-menu li { margin-left: 1.75rem; }
+      .nav-menu a { font-weight: 600; color: #1A1F2C; position: relative; font-size: 0.98rem; }
+      .nav-menu a:after { content: ''; position: absolute; width: 0; height: 1.5px; bottom: -4px; left: 0; background-color: #FFD700; transition: width 0.3s ease; }
+      .nav-menu a:hover:after, .nav-menu a.active:after { width: 100%; }
+      #nav-toggle { display: none; }
+      .nav-toggle-label { display: none; cursor: pointer; }
+      .nav-toggle-label span, .nav-toggle-label span:before, .nav-toggle-label span:after { display: block; background: #1A1F2C; height: 3px; width: 28px; position: relative; border-radius: 2px; transition: all 0.3s ease-in-out; }
+      .nav-toggle-label span:before, .nav-toggle-label span:after { content: ''; position: absolute; }
+      .nav-toggle-label span:before { bottom: 8px; }
+      .nav-toggle-label span:after { top: 8px; }
+      @media screen and (max-width: 768px) { .nav-toggle-label { display: block; } .nav-menu { position: absolute; top: 100%; right: 0; left: 0; background-color: #FFFFFF; display: flex; flex-direction: column; align-items: center; padding: 1.5rem 0; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); clip-path: circle(0% at top right); transition: clip-path 0.5s ease; z-index: 1000; } .nav-menu li { margin: 0.8rem 0; } #nav-toggle:checked ~ .nav-menu { clip-path: circle(150% at top right); } .logo a { font-size: 1.9rem; } .nav-menu a { font-size: 0.93rem; } }
+      @media screen and (max-width: 576px) { .logo a { font-size: 1.9rem; } .nav-menu a { font-size: 0.89rem; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">Taxi<span class="highlight">Go</span> Neumünster</a>
+          </div>
+          <nav>
+            <input type="checkbox" id="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span></span>
+            </label>
+            <ul class="nav-menu">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="ueber-uns.html">Über uns</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <input type="checkbox" id="nav-toggle">
-          <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
-          </label>
-          <ul class="nav-menu">
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
       </div>
-    </div>
-  </header>
+    </header>
+    <main>
+      <section style="padding:4rem 0;text-align:center;">
+        <h1>Unsere Flotte</h1>
+        <p>Die Flotten-Informationen finden Sie jetzt auf der <a href="index.html" style="color:#FFD700;text-decoration:underline;">Startseite</a>.</p>
+      </section>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Navigation Toggle: Menü schließt beim Klick auf Link
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.checked = false;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
 

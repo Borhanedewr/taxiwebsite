@@ -16,69 +16,21 @@
     
     <style>
       /* Base Styles */
-      :root {
-        --primary-color: #FFD700;
-        --primary-dark: #E6C200;
-        --secondary-color: #1A1F2C;
-        --light-color: #F9F9F9;
-        --gray-color: #8E9196;
-        --gray-light: #F5F5F5;
-        --gray-dark: #4A4A4A;
-        --white: #FFFFFF;
-        --black: #000000;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --radius: 8px;
-        --transition: all 0.3s ease;
-      }
+      :root { --primary-color: #FFD700; --primary-dark: #E6C200; --secondary-color: #1A1F2C; --light-color: #F9F9F9; --gray-color: #8E9196; --gray-light: #F5F5F5; --gray-dark: #4A4A4A; --white: #FFFFFF; --black: #000000; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --radius: 8px; --transition: all 0.3s ease; }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
-        font-size: 18px; /* vorher 16px, jetzt größer */
-      }
+      html { scroll-behavior: smooth; font-size: 16px; }
 
-      body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.5;
-        color: var(--secondary-color);
-        background-color: var(--light-color);
-        overflow-x: hidden;
-      }
+      body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--secondary-color); background-color: var(--light-color); overflow-x: hidden; }
 
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        line-height: 1.2;
-      }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; }
 
-      h1 {
-        font-size: 2.5rem; /* größer */
-      }
-      h2 {
-        font-size: 2rem; /* größer */
-      }
+      a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: var(--transition);
-      }
+      ul { list-style-type: none; }
 
-      ul {
-        list-style-type: none;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1440px; /* vorher 1280px, jetzt breiter */
-        padding: 0 2rem; /* vorher 1rem, jetzt mehr Rand */
-        margin: 0 auto;
-      }
+      .container { width: 100%; max-width: 1280px; padding: 0 1.5rem; margin: 0 auto; }
 
       .section-title {
         position: relative;
@@ -153,11 +105,15 @@
       header {
         position: sticky;
         top: 0;
-        background-color: var(--white);
+        background-color: #FFFFFF;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        padding: 0.75rem 0;
+        height: 58px;
+        padding: 0.1rem 0;
+        transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
       }
+
+      header.header-small { height: 48px; padding: 0.05rem 0; }
 
       .header-content {
         display: flex;
@@ -168,17 +124,17 @@
       .logo a {
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-        font-size: 1.4rem;
-        color: var (--secondary-color);
+        font-size: 1.9rem;
+        color: #1A1F2C;
         display: flex;
         align-items: center;
       }
 
       .highlight {
-        color: var(--primary-color);
+        color: #FFD700;
         font-weight: 800;
-        -webkit-text-stroke: 1px black;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        -webkit-text-stroke: 0.5px black;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       }
 
       .nav-menu {
@@ -187,24 +143,24 @@
       }
 
       .nav-menu li {
-        margin-left: 1.25rem;
+        margin-left: 1.75rem;
       }
 
       .nav-menu a {
         font-weight: 600;
-        color: var(--secondary-color);
+        color: #1A1F2C;
         position: relative;
-        font-size: 0.9rem;
+        font-size: 0.98rem;
       }
 
       .nav-menu a:after {
         content: '';
         position: absolute;
         width: 0;
-        height: 2px;
-        bottom: -3px;
+        height: 1.5px;
+        bottom: -4px;
         left: 0;
-        background-color: var(--primary-color);
+        background-color: #FFD700;
         transition: width 0.3s ease;
       }
 
@@ -227,10 +183,11 @@
       .nav-toggle-label span:before,
       .nav-toggle-label span:after {
         display: block;
-        background: var(--secondary-color);
-        height: 2px;
-        width: 25px;
+        background: #1A1F2C;
+        height: 3px;
+        width: 28px;
         position: relative;
+        border-radius: 2px;
         transition: all 0.3s ease-in-out;
       }
 
@@ -246,6 +203,54 @@
 
       .nav-toggle-label span:after {
         top: 8px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-toggle-label {
+          display: block;
+        }
+
+        .nav-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background-color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          clip-path: circle(0% at top right);
+          transition: clip-path 0.5s ease;
+          z-index: 1000;
+        }
+
+        .nav-menu li {
+          margin: 0.8rem 0;
+        }
+
+        #nav-toggle:checked ~ .nav-menu {
+          clip-path: circle(150% at top right);
+        }
+
+        .logo a {
+          font-size: 1.9rem;
+        }
+
+        .nav-menu a {
+          font-size: 0.93rem;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .logo a {
+          font-size: 1.9rem;
+        }
+
+        .nav-menu a {
+          font-size: 0.89rem;
+        }
       }
 
       /* Detailed Services - KOMPAKTER GEMACHT */
@@ -542,11 +547,11 @@
           top: 100%;
           right: 0;
           left: 0;
-          background-color: var(--white);
+          background-color: #FFFFFF;
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 1rem 0;
+          padding: 1.5rem 0;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           clip-path: circle(0% at top right);
           transition: clip-path 0.5s ease;
@@ -554,11 +559,11 @@
         }
         
         .nav-menu li {
-          margin: 0.5rem 0;
+          margin: 0.8rem 0;
         }
         
         .nav-menu a {
-          font-size: 0.95rem;
+          font-size: 0.93rem;
         }
         
         #nav-toggle:checked ~ .nav-menu {
@@ -622,7 +627,6 @@
       }
     </style>
   </head>
-
   <body>
     <header>
       <div class="container">
@@ -834,6 +838,17 @@
       backToTopButton.addEventListener('click', (e) => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Mobile Navigation Toggle: Menü schließt beim Klick auf Link
+      document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.checked = false;
+          });
+        });
       });
     </script>
   </body>
