@@ -11,10 +11,8 @@
     <meta property="og:description" content="Sicheres und bequemes Taxi in Neumünster. Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr." />
     <meta property="og:type" content="website" />
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
       /* Base Styles */
@@ -153,13 +151,7 @@
         background-color: #FFFFFF;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        height: 58px;
-        padding: 0.1rem 0;
-        transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
-      }
-      header.header-small {
-        height: 48px;
-        padding: 0.05rem 0;
+        padding: 0.8rem 0;
       }
 
       .header-content {
@@ -171,7 +163,7 @@
       .logo a {
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-        font-size: 1.9rem;
+        font-size: 1.5rem;
         color: #1A1F2C;
         display: flex;
         align-items: center;
@@ -198,14 +190,14 @@
         font-weight: 600;
         color: #1A1F2C;
         position: relative;
-        font-size: 0.98rem;
+        font-size: 1.1rem;
       }
 
       .nav-menu a:after {
         content: '';
         position: absolute;
         width: 0;
-        height: 1.5px;
+        height: 2px;
         bottom: -4px;
         left: 0;
         background-color: #FFD700;
@@ -232,10 +224,9 @@
       .nav-toggle-label span:after {
         display: block;
         background: #1A1F2C;
-        height: 3px; /* dünner */
-        width: 28px;   /* kürzer */
+        height: 3px;
+        width: 28px;
         position: relative;
-        border-radius: 2px;
         transition: all 0.3s ease-in-out;
       }
 
@@ -246,17 +237,16 @@
       }
 
       .nav-toggle-label span:before {
-        bottom: 8px; /* weniger Abstand */
+        bottom: 8px;
       }
 
       .nav-toggle-label span:after {
-        top: 8px; /* weniger Abstand */
+        top: 8px;
       }
 
       /* Hero Section - Adjusted for better mobile display */
       .hero {
-        padding-top: 0.1rem; /* Noch weniger Padding für mehr Nähe zum Header */
-        padding-bottom: 3.5rem;
+        padding: 2.2rem 0 3.5rem; /* Slightly reduced top padding to position hero higher */
       }
 
       .hero-content {
@@ -271,7 +261,7 @@
       }
 
       .hero-text h1 {
-        font-size: 2.9rem !important; /* Slightly smaller heading */
+        font-size: 2.9rem; /* Slightly smaller heading */
         margin-bottom: 1.2rem;
         color: #1A1F2C;
       }
@@ -649,24 +639,6 @@
         font-size: 1rem;
       }
 
-      /* Verbesserter Datenschutz-Link im Footer */
-      .footer-bottom a#open-datenschutz {
-        color: #003399 !important;
-        background: #FFD700;
-        padding: 0.18em 0.85em;
-        border-radius: 6px;
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 1.1em;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        transition: background 0.2s, color 0.2s, text-decoration 0.2s;
-      }
-      .footer-bottom a#open-datenschutz:hover {
-        background: #003399;
-        color: #FFD700 !important;
-        text-decoration: underline;
-      }
-
       /* Back to top button */
       .back-to-top {
         position: fixed;
@@ -759,7 +731,7 @@
         }
         
         .hero {
-          padding-top: 0.1rem; /* Noch weniger Abstand zum Header auf Handy */
+          padding-top: 2rem;
           padding-bottom: 2.5rem;
         }
         
@@ -793,14 +765,6 @@
         .footer-col {
           flex: 0 0 100%;
         }
-
-        .logo a {
-          font-size: 1.9rem;
-        }
-
-        .nav-menu a {
-          font-size: 0.93rem;
-        }
       }
 
       @media screen and (max-width: 576px) {
@@ -813,12 +777,12 @@
         }
         
         .hero {
-          padding-top: 0.1rem; /* Noch weniger Abstand zum Header auf Handy */
+          padding-top: 2rem;
           padding-bottom: 2.5rem;
         }
         
         .hero-text h1 {
-          font-size: 2.5rem;
+          font-size: 3rem;
           margin-bottom: 0.8rem;
           margin-top: 0.5rem;
         }
@@ -836,20 +800,14 @@
         .btn {
           padding: 0.9rem 1.2rem;
         }
-
-        .logo a {
-          font-size: 1.9rem;
-        }
-
-        .nav-menu a {
-          font-size: 0.89rem;
-        }
       }
     </style>
   </head>
 
   <body>
-    <!-- Header: Sticky und direkt eingebunden -->
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
     <header>
       <div class="container">
         <div class="header-content">
@@ -862,18 +820,16 @@
               <span></span>
             </label>
             <ul class="nav-menu">
-              <li><a href="index.html">Startseite</a></li>
+              <li><a href="index.html" class="active">Startseite</a></li>
               <li><a href="leistungen.html">Leistungen</a></li>
               <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+
     <main>
       <!-- Hero Section -->
       <section class="hero">
@@ -890,31 +846,6 @@
                   <i class="fab fa-whatsapp"></i> Per WhatsApp buchen
                 </a>
               </div>
-              <!-- Statischer, schwarzer V-Form Scroll-Down Arrow mit transparentem Hintergrund -->
-              <div style="display:flex;justify-content:center;margin-top:1.2rem;">
-                <button id="scroll-down-arrow" aria-label="Nach unten scrollen" style="background:transparent;border:none;outline:none;cursor:pointer;border-radius:50%;padding:0.5rem;">
-                  <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 16L19 25L28 16" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-              <style>
-                #scroll-down-arrow:hover svg path {
-                  filter: drop-shadow(0 0 8px #0006);
-                  stroke-opacity: 1;
-                }
-              </style>
-              <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                  var btn = document.getElementById('scroll-down-arrow');
-                  if(btn) {
-                    btn.addEventListener('click', function() {
-                      var target = document.getElementById('services');
-                      if(target) target.scrollIntoView({behavior:'smooth'});
-                    });
-                  }
-                });
-              </script>
             </div>
           </div>
         </div>
@@ -1148,7 +1079,7 @@
               <a href="leistungen.html">Unsere Leistungen</a>
               <a href="preise.html">Preise</a>
               <a href="ueber-uns.html">Über uns</a>
-              <a href="contact.html">Kontakt</a>
+              <a href="kontakt.html">Kontakt</a>
             </div>
           </div>
           <div class="footer-col">
@@ -1162,73 +1093,10 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten. | <a href="#" id="open-datenschutz" style="color:#FFD700;cursor:pointer;">Datenschutz</a></p>
+          <p>&copy; 2025 TaxiGo Neumünster. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>
-
-    <!-- Datenschutz Modal -->
-    <div id="datenschutz-modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(30,30,40,0.85);overflow:auto;">
-      <div style="background:#fff;max-width:800px;margin:4rem auto 2rem auto;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);position:relative;">
-        <button id="close-datenschutz" style="position:absolute;top:18px;right:18px;font-size:1.5rem;background:none;border:none;cursor:pointer;color:#1A1F2C;">&times;</button>
-        <h1 style="text-align:center;color:#1A1F2C;font-size:2.1rem;margin-bottom:1.2rem;">Datenschutzerklärung</h1>
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">1. Name und Kontaktdaten des Verantwortlichen</h2>
-        Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
-        Jalil Ahmad Motazawi<br>
-        TaxiGo Neumünster<br>
-        Telefon: 04321 9638 696<br>
-        E-Mail: taxigoneumuenster@gmail.com<br>
-        Website: www.taxigoneumuenster.de
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck von deren Verwendung</h2>
-        <b>a) Beim Besuch der Website</b><br>
-        Beim Aufrufen unserer Website werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser automatisch Informationen an den Server unserer Website gesendet. Diese Informationen werden temporär in einem sogenannten Logfile gespeichert.<br>
-        Erfasst werden dabei insbesondere:
-        <ul>
-          <li>IP-Adresse</li>
-          <li>Datum und Uhrzeit des Zugriffs</li>
-          <li>Name und URL der abgerufenen Datei</li>
-          <li>Website, von der aus der Zugriff erfolgt</li>
-          <li>verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
-        </ul>
-        Die genannten Daten werden durch uns zu folgenden Zwecken verarbeitet:
-        <ul>
-          <li>Gewährleistung eines reibungslosen Verbindungsaufbaus der Website</li>
-          <li>Gewährleistung einer komfortablen Nutzung unserer Website</li>
-          <li>Auswertung der Systemsicherheit und -stabilität</li>
-        </ul>
-        Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.
-        <br><br>
-        <b>b) Bei Nutzung unseres Kontaktformulars</b><br>
-        Bei Fragen jeglicher Art bieten wir Ihnen die Möglichkeit, mit uns über ein auf der Website bereitgestelltes Formular Kontakt aufzunehmen. Dabei ist die Angabe einer gültigen E-Mail-Adresse erforderlich. Weitere Angaben können freiwillig getätigt werden.<br>
-        Die Datenverarbeitung zum Zwecke der Kontaktaufnahme erfolgt nach Art. 6 Abs. 1 lit. a DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung.
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">3. Weitergabe von Daten</h2>
-        Eine Übermittlung Ihrer persönlichen Daten an Dritte findet grundsätzlich nicht statt, es sei denn, dies ist zur Vertragsabwicklung erforderlich oder gesetzlich vorgeschrieben.
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">4. Einsatz von Google Analytics</h2>
-        Diese Website benutzt Google Analytics, einen Webanalysedienst der Google LLC. Google Analytics verwendet sog. „Cookies“. Die durch Cookies erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.<br>
-        Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, Reports über die Websiteaktivitäten zusammenzustellen und weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen.<br>
-        Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern.<br>
-        Mehr Informationen zum Datenschutz bei Google finden Sie unter:<br>
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">5. Verwendung von Google Fonts</h2>
-        Auf dieser Website werden externe Schriften, Google Fonts, verwendet. Google Fonts ist ein Dienst der Google Inc. (USA). Die Einbindung der Web Fonts erfolgt durch einen Serveraufruf bei Google. Dabei wird Ihre IP-Adresse an Google übermittelt.
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">6. Ihre Rechte als betroffene Person</h2>
-        Sie haben das Recht:
-        <ul>
-          <li>gemäß Art. 15 DSGVO Auskunft über Ihre verarbeiteten personenbezogenen Daten zu verlangen,</li>
-          <li>gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger oder Vervollständigung Ihrer gespeicherten Daten zu verlangen,</li>
-          <li>gemäß Art. 17 DSGVO die Löschung Ihrer gespeicherten personenbezogenen Daten zu verlangen,</li>
-          <li>gemäß Art. 18 DSGVO die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen,</li>
-          <li>gemäß Art. 20 DSGVO Ihre personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten,</li>
-          <li>gemäß Art. 7 Abs. 3 DSGVO Ihre einmal erteilte Einwilligung jederzeit zu widerrufen,</li>
-          <li>gemäß Art. 77 DSGVO sich bei einer Aufsichtsbehörde zu beschweren.</li>
-        </ul>
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">7. Widerspruchsrecht</h2>
-        Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten Interessen gemäß Art. 6 Abs. 1 lit. f DSGVO verarbeitet werden, haben Sie das Recht, Widerspruch gegen die Verarbeitung einzulegen.
-        <h2 style="color:#1A1F2C;font-size:1.3rem;margin-top:2.2rem;">8. Aktualität und Änderung dieser Datenschutzerklärung</h2>
-        Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Mai 2025.<br>
-        Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
-      </div>
-    </div>
 
     <!-- Back to top button -->
     <a href="#" class="back-to-top">
@@ -1279,36 +1147,6 @@
         backToTopButton.addEventListener('click', (e) => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Datenschutz Modal
-        document.getElementById('open-datenschutz').addEventListener('click', function(e) {
-          e.preventDefault();
-          document.getElementById('datenschutz-modal').style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        });
-        document.getElementById('close-datenschutz').addEventListener('click', function() {
-          document.getElementById('datenschutz-modal').style.display = 'none';
-          document.body.style.overflow = '';
-        });
-        // Modal auch schließen, wenn man auf den Hintergrund klickt
-        document.getElementById('datenschutz-modal').addEventListener('click', function(e) {
-          if (e.target === this) {
-            this.style.display = 'none';
-            document.body.style.overflow = '';
-          }
-        });
-
-        // Header dynamisch verkleinern/vergrößern beim Scrollen
-        const header = document.querySelector('header');
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', function() {
-          if(window.scrollY > 10) {
-            header.classList.add('header-small');
-          } else {
-            header.classList.remove('header-small');
-          }
-          lastScrollY = window.scrollY;
         });
       });
     </script>
