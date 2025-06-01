@@ -149,7 +149,7 @@
         background-color: #FFFFFF;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        padding: 1rem 0;
+        padding: 1.2rem 0;
       }
 
       .header-content {
@@ -161,17 +161,17 @@
       .logo a {
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         color: #1A1F2C;
         display: flex;
         align-items: center;
       }
 
-      /* Modified highlight class for "Go" with outlined text */
+      /* Updated highlight class for "Go" to match index.html */
       .highlight {
         color: #FFD700;
         font-weight: 800;
-        -webkit-text-stroke: 1px black;
+        -webkit-text-stroke: 0.5px black;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       }
 
@@ -181,13 +181,14 @@
       }
 
       .nav-menu li {
-        margin-left: 1.75rem;
+        margin-left: 2rem;
       }
 
       .nav-menu a {
         font-weight: 600;
         color: #1A1F2C;
         position: relative;
+        font-size: 1.1rem;
       }
 
       .nav-menu a:after {
@@ -473,70 +474,135 @@
 
       @media screen and (max-width: 768px) {
         html {
-          font-size: 14px;
+          font-size: 18px; /* Increased from 16px */
         }
+        
         .section-title {
-          font-size: 1.3rem;
-          margin-bottom: 1.2rem;
+          font-size: 2rem; /* Increased from 1.7rem */
+          margin-bottom: 2.5rem; /* Increased from 2rem */
         }
+        
         .service-detail {
-          padding: 0.7rem;
-          margin-bottom: 0.8rem;
+          padding: 2rem; /* Increased from 1.5rem */
+          margin-bottom: 2.5rem; /* Increased from 1.8rem */
         }
+        
         .service-detail-content {
-          padding: 0.4rem 0.1rem;
+          padding: 1.5rem 0.8rem; /* Increased from 1rem 0.5rem */
         }
+        
         .service-detail-content h2 {
-          font-size: 1.05rem;
+          font-size: 1.8rem; /* Increased from 1.5rem */
         }
+        
         .service-icon {
-          font-size: 1.3rem;
+          font-size: 3rem; /* Increased from 2.5rem */
         }
-        .service-detail-content p,
+
+        .service-detail-content p {
+          font-size: 1.15rem; /* Increased from 0.95rem */
+        }
+        
         .service-detail-content ul li {
-          font-size: 0.9rem;
-          margin-bottom: 0.3rem;
+          font-size: 1.15rem; /* Increased from 1.05rem */
+          margin-bottom: 0.75rem; /* Increased from 0.5rem */
         }
+
+        .nav-toggle-label {
+          display: block;
+        }
+        
+        .nav-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background-color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0; /* Increased from 1.5rem */
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          clip-path: circle(0% at top right);
+          transition: clip-path 0.5s ease;
+          z-index: 1000;
+        }
+        
+        .nav-menu li {
+          margin: 1rem 0; /* Increased from 0.75rem */
+        }
+        
         .nav-menu a {
-          font-size: 1rem;
+          font-size: 1.2rem; /* Added larger font size */
         }
+        
+        #nav-toggle:checked ~ .nav-menu {
+          clip-path: circle(150% at top right);
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .legal-links {
+          justify-content: center;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+        
         .btn {
-          padding: 0.6rem 0.9rem;
-          font-size: 0.95rem;
+          padding: 1rem 2rem; /* Increased from original */
+          font-size: 1.2rem; /* Larger font size */
         }
-        section {
-          padding: 1.2rem 0;
+        
+        .logo a {
+          font-size: 1.8rem; /* Increased from 1.6rem */
         }
       }
+
       @media screen and (max-width: 576px) {
+        section {
+          padding: 3.5rem 0; /* Increased from 3rem */
+        }
+        
         html {
-          font-size: 13px;
+          font-size: 20px; /* Further increased from 18px */
         }
+        
         .service-detail-content h2 {
-          font-size: 0.95rem;
+          font-size: 2rem; /* Increased from 1.8rem */
         }
+        
         .service-detail-content p,
         .service-detail-content ul li {
-          font-size: 0.85rem;
+          font-size: 1.2rem; /* Increased font size */
+          line-height: 1.7; /* Improved readability */
         }
+        
         .call-to-action h2 {
-          font-size: 1rem;
+          font-size: 2.2rem; /* Increased from 2rem */
         }
+        
         .call-to-action p {
-          font-size: 0.95rem;
+          font-size: 1.3rem; /* Increased from 1.15rem */
         }
+        
         .footer-section h3 {
-          font-size: 1rem;
+          font-size: 1.6rem; /* Increased font size */
         }
+        
         .contact-info p,
         .footer-links li {
-          font-size: 0.9rem;
+          font-size: 1.2rem; /* Increased font size */
         }
       }
     </style>
   </head>
+
   <body>
-    <!-- Header von index.html übernommen -->
     <header>
       <div class="container">
         <div class="header-content">
@@ -552,7 +618,7 @@
               <li><a href="index.html">Startseite</a></li>
               <li><a href="leistungen.html" class="active">Leistungen</a></li>
               <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
           </nav>
         </div>
