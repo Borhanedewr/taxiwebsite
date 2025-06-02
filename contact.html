@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -75,8 +75,8 @@
 
       .section-title {
         position: relative;
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
         text-align: center;
       }
 
@@ -86,14 +86,14 @@
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
+        width: 60px;
+        height: 3px;
         background-color: #FFD700;
         border-radius: 2px;
       }
 
       section {
-        padding: 5rem 0;
+        padding: 3.5rem 0;
       }
 
       .btn {
@@ -101,17 +101,18 @@
         align-items: center;
         justify-content: center;
         font-weight: 600;
-        padding: 0.875rem 1.75rem;
+        padding: 0.75rem 1.5rem;
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
         text-align: center;
         border: none;
         gap: 0.5rem;
+        font-size: 0.95rem;
       }
 
       .btn i {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .btn-primary {
@@ -141,142 +142,120 @@
         background-color: #1da851;
       }
 
-      /* Header Styles */
-      .logo a {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 1.9rem;
-        color: #1A1F2C;
-        display: flex;
-        align-items: center;
-      }
-      .highlight {
-        color: #FFD700;
-        font-weight: 800;
-        -webkit-text-stroke: 0.5px black;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      }
+      /* Header Styles - EXACT SAME AS STARTSEITE */
       header {
         position: sticky;
         top: 0;
         background-color: #FFFFFF;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        height: 58px;
-        padding: 0.1rem 0;
-        transition: height 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
+        padding: 0.8rem 0;
       }
-      header.header-small {
-        height: 48px;
-        padding: 0.05rem 0;
-      }
+
       .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
+
+      .logo a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #1A1F2C;
+        display: flex;
+        align-items: center;
+      }
+
+      .highlight {
+        color: #FFD700;
+        font-weight: 800;
+        -webkit-text-stroke: 0.5px black;
+        text-stroke: 0.5px black;
+      }
+
       .nav-menu {
         display: flex;
         align-items: center;
       }
+
       .nav-menu li {
-        margin-left: 1.75rem;
+        margin-left: 1.5rem;
       }
+
       .nav-menu a {
         font-weight: 600;
         color: #1A1F2C;
         position: relative;
-        font-size: 0.98rem;
+        font-size: 0.9rem;
       }
+
       .nav-menu a:after {
         content: '';
         position: absolute;
         width: 0;
-        height: 1.5px;
+        height: 2px;
         bottom: -4px;
         left: 0;
         background-color: #FFD700;
         transition: width 0.3s ease;
       }
+
       .nav-menu a:hover:after,
       .nav-menu a.active:after {
         width: 100%;
       }
+
       /* Mobile Navigation */
       #nav-toggle {
         display: none;
       }
+
       .nav-toggle-label {
         display: none;
         cursor: pointer;
       }
+
       .nav-toggle-label span,
       .nav-toggle-label span:before,
       .nav-toggle-label span:after {
         display: block;
         background: #1A1F2C;
-        height: 3px;
-        width: 28px;
+        height: 2px;
+        width: 25px;
         position: relative;
-        border-radius: 2px;
         transition: all 0.3s ease-in-out;
       }
+
       .nav-toggle-label span:before,
       .nav-toggle-label span:after {
         content: '';
         position: absolute;
       }
+
       .nav-toggle-label span:before {
         bottom: 8px;
       }
+
       .nav-toggle-label span:after {
         top: 8px;
-      }
-      @media screen and (max-width: 768px) {
-        .logo a {
-          font-size: 1.3rem;
-        }
-        .nav-toggle-label {
-          display: block;
-        }
-        .nav-menu {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          background-color: #FFFFFF;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 1.5rem 0;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          clip-path: circle(0% at top right);
-          transition: clip-path 0.5s ease;
-          z-index: 1000;
-        }
-        .nav-menu li {
-          margin: 0.75rem 0;
-        }
-        #nav-toggle:checked ~ .nav-menu {
-          clip-path: circle(150% at top right);
-        }
       }
 
       /* Contact Info Section */
       .contact-info-section {
         background-color: #FFFFFF;
-        padding-top: 3rem;
+        padding-top: 2.5rem;
       }
 
       .contact-info-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       .contact-info-card {
         background-color: #F5F5F5;
-        padding: 2rem;
+        padding: 1.75rem;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         text-align: center;
@@ -289,14 +268,18 @@
       }
 
       .contact-info-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: #FFD700;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
       }
 
       .contact-info-card h3 {
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+      }
+
+      .contact-info-card p {
+        font-size: 0.95rem;
       }
 
       .contact-link {
@@ -304,11 +287,11 @@
         font-weight: 700;
         color: #1A1F2C;
         margin: 0.5rem 0 1rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .contact-note {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: var(--gray-color);
       }
 
@@ -320,17 +303,17 @@
       .contact-container {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
       }
 
       .contact-form {
         background-color: #FFFFFF;
-        padding: 2rem;
+        padding: 1.75rem;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
       }
 
       .form-group {
@@ -345,16 +328,18 @@
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 500;
+        font-size: 0.95rem;
       }
 
       .form-group input,
       .form-group textarea {
         width: 100%;
-        padding: 0.75rem;
+        padding: 0.7rem;
         border: 1px solid #ddd;
         border-radius: 4px;
         background-color: #F5F5F5;
         transition: all 0.3s ease;
+        font-size: 0.95rem;
       }
 
       .form-group input:focus,
@@ -378,12 +363,12 @@
       }
 
       .form-group.checkbox-group label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: var(--gray-dark);
       }
 
       .form-note {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         color: var(--gray-color);
         margin-top: 1rem;
         grid-column: span 2;
@@ -397,12 +382,12 @@
       }
 
       .address-container {
-        padding: 2rem;
+        padding: 1.75rem;
       }
 
       .address-container h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
         position: relative;
         padding-bottom: 0.75rem;
       }
@@ -412,22 +397,27 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 50px;
+        width: 40px;
         height: 2px;
         background-color: #FFD700;
       }
 
       .address-container p {
         margin-bottom: 0.5rem;
+        font-size: 0.95rem;
       }
 
       .address-hours {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
 
       .address-hours h4 {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-bottom: 0.75rem;
+      }
+
+      .address-hours p {
+        font-size: 0.9rem;
       }
 
       /* FAQ Section */
@@ -439,7 +429,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .accordion-item {
@@ -451,13 +441,13 @@
       .accordion-button {
         width: 100%;
         text-align: left;
-        padding: 1.25rem;
+        padding: 1rem;
         background-color: transparent;
         border: none;
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1rem;
         position: relative;
-        padding-right: 3rem;
+        padding-right: 2.5rem;
         cursor: pointer;
       }
 
@@ -466,7 +456,7 @@
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         position: absolute;
-        right: 1.25rem;
+        right: 1rem;
         top: 50%;
         transform: translateY(-50%);
         transition: all 0.3s ease;
@@ -477,19 +467,20 @@
       }
 
       .accordion-content {
-        padding: 0 1.25rem;
+        padding: 0 1rem;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
       }
 
       .accordion-content p {
-        padding-bottom: 1.25rem;
+        padding-bottom: 1rem;
+        font-size: 0.95rem;
       }
 
       .faq-link {
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
 
       /* Call to Action */
@@ -497,17 +488,18 @@
         background-color: #1A1F2C;
         color: #FFFFFF;
         text-align: center;
-        padding: 4rem 0;
+        padding: 3rem 0;
       }
 
       .call-to-action h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-bottom: 1rem;
       }
 
       .call-to-action p {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         opacity: 0.9;
+        font-size: 1rem;
       }
 
       .cta-buttons {
@@ -520,19 +512,19 @@
       footer {
         background-color: #1A1F2C;
         color: #F9F9F9;
-        padding: 4rem 0 1rem;
+        padding: 3rem 0 1rem;
       }
 
       .footer-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3rem;
+        gap: 2.5rem;
         margin-bottom: 2rem;
       }
 
       .footer-section h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
         position: relative;
         padding-bottom: 0.75rem;
       }
@@ -542,7 +534,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 50px;
+        width: 40px;
         height: 2px;
         background-color: #FFD700;
       }
@@ -551,17 +543,22 @@
         display: flex;
         align-items: center;
         margin-bottom: 0.75rem;
+        font-size: 0.95rem;
       }
 
       .contact-info i {
         color: #FFD700;
         margin-right: 0.75rem;
-        width: 20px;
+        width: 18px;
         text-align: center;
       }
 
       .footer-links li {
         margin-bottom: 0.75rem;
+      }
+
+      .footer-links a {
+        font-size: 0.95rem;
       }
 
       .footer-links a:hover {
@@ -578,8 +575,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         transition: all 0.3s ease;
@@ -598,11 +595,16 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
+        font-size: 0.9rem;
       }
 
       .legal-links {
         display: flex;
         gap: 1.5rem;
+      }
+
+      .legal-links a {
+        font-size: 0.9rem;
       }
 
       .legal-links a:hover {
@@ -614,8 +616,8 @@
         position: fixed;
         right: 25px;
         bottom: 25px;
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         background-color: #FFD700;
         color: #1A1F2C;
         border-radius: 50%;
@@ -652,7 +654,7 @@
         }
         
         .section-title {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
         }
         
         .nav-toggle-label {
@@ -711,7 +713,7 @@
 
       @media screen and (max-width: 576px) {
         section {
-          padding: 3rem 0;
+          padding: 2.5rem 0;
         }
         
         .contact-info-grid {
@@ -741,7 +743,7 @@
               <li><a href="index.html">Startseite</a></li>
               <li><a href="leistungen.html">Leistungen</a></li>
               <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="contact.html" class="active">Kontakt</a></li>
+              <li><a href="kontakt.html" class="active">Kontakt</a></li>
             </ul>
           </nav>
         </div>
