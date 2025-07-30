@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiterleitung - TaxiGo Neumünster</title>
+    <!-- Meta refresh as fallback -->
+    <meta http-equiv="refresh" content="0;url=https://app.toyumobility.de/?srcid=34">
+    <!-- Canonical redirect for SEO -->
+    <link rel="canonical" href="https://app.toyumobility.de/?srcid=34">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1A1F2C 0%, #2A3142 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .redirect-container {
+            max-width: 500px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .highlight {
+            color: #FFD700;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #FFD700;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .manual-link {
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #FFD700;
+            color: #1A1F2C;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .manual-link:hover {
+            background-color: #E6C200;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">
+            Taxi<span class="highlight">Go</span> Neumünster
+        </div>
+        <div class="spinner"></div>
+        <p>Sie werden automatisch weitergeleitet...</p>
+        <p><small>Falls die Weiterleitung nicht funktioniert:</small></p>
+        <a href="https://app.toyumobility.de/?srcid=34" class="manual-link">
+            Hier klicken für manuelle Weiterleitung
+        </a>
+    </div>
+
+    <script>
+        // Immediate JavaScript redirect
+        window.location.replace('https://app.toyumobility.de/?srcid=34');
+        
+        // Fallback timeout redirect in case replace doesn't work
+        setTimeout(function() {
+            window.location.href = 'https://app.toyumobility.de/?srcid=34';
+        }, 100);
+    </script>
+</body>
+</html>
