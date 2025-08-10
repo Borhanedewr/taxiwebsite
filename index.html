@@ -209,6 +209,71 @@
         width: 100%;
       }
 
+        /* Online Bestellen Button */
+        .btn-order {
+          background: linear-gradient(90deg, #FFD700 0%, #FFB300 100%);
+          color: #1A1F2C;
+          font-weight: 800;
+          border-radius: 999px;
+          padding: 0.7rem 2.2rem;
+          font-size: 1.15rem;
+          box-shadow: 0 4px 16px rgba(255, 215, 0, 0.18);
+          border: none;
+          outline: none;
+          transition: transform 0.15s, box-shadow 0.15s;
+          margin-left: 2rem;
+          position: relative;
+          z-index: 1100;
+          letter-spacing: 0.03em;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.7rem;
+          cursor: pointer;
+        }
+        .btn-order:hover, .btn-order:focus {
+          background: linear-gradient(90deg, #FFB300 0%, #FFD700 100%);
+          transform: translateY(-2px) scale(1.04);
+          box-shadow: 0 8px 24px rgba(255, 215, 0, 0.22);
+          color: #000;
+          text-decoration: none;
+        }
+
+          /* Floating Order Button for Mobile */
+          @media (max-width: 900px) {
+            .btn-order {
+              display: none !important;
+            }
+            .btn-order-mobile {
+              display: flex;
+              position: fixed;
+              right: 18px;
+              bottom: 22px;
+              z-index: 2000;
+              background: linear-gradient(90deg, #FFD700 0%, #FFB300 100%);
+              color: #1A1F2C;
+              font-weight: 800;
+              border-radius: 999px;
+              padding: 1.1rem 2.2rem;
+              font-size: 1.15rem;
+              box-shadow: 0 8px 32px rgba(255, 215, 0, 0.22);
+              border: none;
+              outline: none;
+              letter-spacing: 0.03em;
+              align-items: center;
+              gap: 0.7rem;
+              cursor: pointer;
+              transition: transform 0.15s, box-shadow 0.15s;
+              animation: popin 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+            }
+            .btn-order-mobile:active {
+              transform: scale(0.97);
+            }
+          }
+          @keyframes popin {
+            0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+          }
+
       /* Mobile Navigation */
       #nav-toggle {
         display: none;
@@ -824,11 +889,34 @@
               <li><a href="leistungen.html">Leistungen</a></li>
               <li><a href="ueber-uns.html">Über uns</a></li>
               <li><a href="contact.html">Kontakt</a></li>
+                <li>
+                  <a href="/qr.html" class="btn-order">
+                    <i class="fas fa-taxi"></i> Online bestellen
+                  </a>
+                </li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
+
+      <!-- Floating Order Button for Mobile -->
+      <a href="/qr.html" class="btn-order-mobile" style="display:none">
+        <i class="fas fa-taxi"></i> Online bestellen
+      </a>
+      <script>
+        // Zeige Floating-Button nur auf kleinen Bildschirmen
+        function toggleOrderBtn() {
+          const btn = document.querySelector('.btn-order-mobile');
+          if(window.innerWidth <= 900) {
+            btn.style.display = 'flex';
+          } else {
+            btn.style.display = 'none';
+          }
+        }
+        window.addEventListener('resize', toggleOrderBtn);
+        window.addEventListener('DOMContentLoaded', toggleOrderBtn);
+      </script>
 
     <main>
       <!-- Hero Section -->

@@ -1,67 +1,109 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preisübersicht</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preisübersicht</title>
+  <link rel="stylesheet" href="style-main.css">
 </head>
+
 <body>
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <a href="index.html">Taxi<span class="highlight">Go</span>‎ Neumünster</a>
-          </div>
-          <nav>
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-              <span></span>
-            </label>
-            <ul class="nav-menu">
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="leistungen.html">Leistungen</a></li>
-              <li><a href="ueber-uns.html">Über uns</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-          </nav>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Taxi<span class="highlight">Go</span>‎ Neumünster</a>
         </div>
+        <nav>
+          <input type="checkbox" id="nav-toggle">
+          <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+          </label>
+          <ul class="nav-menu">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li>
+              <a href="/qr.html" class="btn-order">
+                <i class="fas fa-taxi"></i> Online bestellen
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </header>
+    </div>
+  </header>
+  <!-- Floating Order Button for Mobile -->
+  <a href="/qr.html" class="btn-order-mobile" style="display:none">
+    <i class="fas fa-taxi"></i> Online bestellen
+  </a>
+  <script>
+    function toggleOrderBtn() {
+      const btn = document.querySelector('.btn-order-mobile');
+      if (window.innerWidth <= 900) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+      }
+    }
+    window.addEventListener('resize', toggleOrderBtn);
+    window.addEventListener('DOMContentLoaded', toggleOrderBtn);
+  </script>
 
-    <main>
-        <div class="container">
-            <h1>Unsere Preise</h1>
-            <p style="margin-bottom:18px; color:#555; font-size:1.05rem;">Alle Preise entsprechen den offiziellen Tarifen der Stadt Neumünster.</p>
-            <table>
-                <tr>
-                    <th>Leistung</th>
-                    <th>Preis</th>
-                </tr>
-                <tr>
-                    <td>Grundpreis</td>
-                    <td>4,60 €</td>
-                </tr>
-                <tr>
-                    <td>Kilometerpreis bis 6 km</td>
-                    <td>2,30 €/km</td>
-                </tr>
-                <tr>
-                    <td>Kilometerpreis über 6 km</td>
-                    <td>1,90 €/km</td>
-                </tr>
-                <tr>
-                    <td>Wartezeit pro Stunde</td>
-                    <td>36,00 €</td>
-                </tr>
-            </table>
-        </div>
-    </main>
+  <!-- Floating Order Button for Mobile -->
+  <a href="/qr.html" class="btn-order-mobile" style="display:none">
+    <i class="fas fa-taxi"></i> Online bestellen
+  </a>
+  <script>
+    function toggleOrderBtn() {
+      const btn = document.querySelector('.btn-order-mobile');
+      if (window.innerWidth <= 900) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+      }
+    }
+    window.addEventListener('resize', toggleOrderBtn);
+    window.addEventListener('DOMContentLoaded', toggleOrderBtn);
+  </script>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 TaxiGo Neumünster</p>
-        </div>
-    </footer>
+  <main>
+    <div class="container">
+      <h1>Unsere Preise</h1>
+      <p style="margin-bottom:18px; color:#555; font-size:1.05rem;">Alle Preise entsprechen den offiziellen Tarifen der
+        Stadt Neumünster.</p>
+      <table>
+        <tr>
+          <th>Leistung</th>
+          <th>Preis</th>
+        </tr>
+        <tr>
+          <td>Grundpreis</td>
+          <td>4,60 €</td>
+        </tr>
+        <tr>
+          <td>Kilometerpreis bis 6 km</td>
+          <td>2,30 €/km</td>
+        </tr>
+        <tr>
+          <td>Kilometerpreis über 6 km</td>
+          <td>1,90 €/km</td>
+        </tr>
+        <tr>
+          <td>Wartezeit pro Stunde</td>
+          <td>36,00 €</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 TaxiGo Neumünster</p>
+    </div>
+  </footer>
 </body>
+
 </html>
