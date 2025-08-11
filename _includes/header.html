@@ -13,7 +13,7 @@
           {% assign is_en = page.lang == 'en' or page.url contains '/en/' %}
           {% if is_en %}
             <li><a href="/en/" {% if page.url == '/en/' %}class="active"{% endif %}>Home</a></li>
-            <li><a href="/en/leistungen/" {% if page.url contains '/en/services' %}class="active"{% endif %}>Services</a></li>
+            <li><a href="/en/leistungen/" {% if page.url contains '/en/leistungen' %}class="active"{% endif %}>Services</a></li>
             <li><a href="/en/ueber-uns/" {% if page.url contains '/en/ueber-uns' %}class="active"{% endif %}>About</a></li>
             <li><a href="/en/contact/" {% if page.url contains '/en/contact' %}class="active"{% endif %}>Contact</a></li>
             <li>
