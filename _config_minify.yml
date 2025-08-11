@@ -1,0 +1,10 @@
+# Jekyll Minify Plugin
+
+# Minify HTML, CSS, and JS for faster load times
+plugins:
+  - jekyll-minifier
+
+# Optional: Exclude files/folders from minification
+# exclude:
+#   - 'assets/vendor/'
+#   - '*.min.js'
