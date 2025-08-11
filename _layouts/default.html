@@ -17,10 +17,6 @@
   </head>
   <body>
     {% include header.html %}
-    <nav style="text-align:right; margin:0 2rem 1rem 0;">
-      <a href="{{ page.url | replace:'/en/','/' | relative_url }}" {% unless page.lang == 'en' %}style="font-weight:bold;"{% endunless %}>Deutsch</a> |
-      <a href="{{ '/en' | append: page.url | replace:'//en','/en' | relative_url }}" {% if page.lang == 'en' %}style="font-weight:bold;"{% endif %}>English</a>
-    </nav>
     {{ content }}
     {% include footer.html %}
   </body>

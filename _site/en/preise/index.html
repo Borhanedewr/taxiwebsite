@@ -47,7 +47,7 @@
           
           
             <li><a href="/en/" >Home</a></li>
-            <li><a href="/en/services/" >Services</a></li>
+            <li><a href="/en/leistungen/" >Services</a></li>
             <li><a href="/en/ueber-uns/" >About</a></li>
             <li><a href="/en/contact/" >Contact</a></li>
             <li>
@@ -66,20 +66,18 @@
             </li>
           
         </ul>
-        <div class="lang-switcher" style="display:inline-block; margin-left:2.2rem; vertical-align:middle;">
-          <form method="get" id="langForm" style="display:inline;">
-            <label for="langSelect" style="position:absolute;left:-9999px;">Sprache wählen</label>
-            <select name="lang" id="langSelect" style="padding:0.35em 1.5em;border-radius:999px;font-weight:600;font-size:1em;background:#fff;border:1.5px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,0.04);outline:none;cursor:pointer;transition:box-shadow 0.2s;">
-              <option value="de" >Deutsch</option>
-              <option value="en" selected>English</option>
-            </select>
-          </form>
-        </div>
-        </ul>
       </nav>
     </div>
   </div>
 </header>
+
+<nav style="text-align:right; margin:0 2rem 1rem 0;">
+  <a href="/preise/" >Deutsch</a> |
+  
+  
+    <a href="/en/preise/" style="font-weight:bold;">English</a>
+  
+</nav>
 <!-- Floating Order Button for Mobile -->
 <a href="/en/qr/" class="btn-order-mobile" style="display:none">
   <span class="btn-order-svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;width:1.7em;height:1em;margin-right:0.5em;line-height:0;">
@@ -106,40 +104,28 @@
   window.addEventListener('resize', toggleOrderBtn);
   window.addEventListener('DOMContentLoaded', toggleOrderBtn);
 
-  // Sprachumschalter
+  // Sprachweiterleitung nur beim ersten Besuch
   document.addEventListener('DOMContentLoaded', function() {
-    var langSelect = document.getElementById('langSelect');
-    if(langSelect) {
-      langSelect.addEventListener('change', function() {
-        var val = this.value;
-        var path = window.location.pathname;
-        if(val === 'en') {
-          if(!path.startsWith('/en/')) {
-            window.location.href = '/en/' + (path === '/' ? '' : path.replace(/^\//, ''));
-          }
-        } else {
-          if(path.startsWith('/en/')) {
-            window.location.href = '/' + path.replace(/^\/en\//, '');
-          }
-        }
-        localStorage.setItem('langSelected', val);
-      });
-    }
-
-    // Automatische Sprachweiterleitung nur beim ersten Besuch
     if(!localStorage.getItem('langSelected')) {
       var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
       if(userLang.startsWith('en') && !window.location.pathname.startsWith('/en/')) {
         window.location.href = '/en/';
       }
     }
+    // Klick auf Sprachlinks merkt Auswahl
+    var langLinks = document.querySelectorAll('nav a[href*="/en"], nav a[href*="/"]');
+    langLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if(link.textContent.trim().toLowerCase().includes('deutsch')) {
+          localStorage.setItem('langSelected', 'de');
+        } else {
+          localStorage.setItem('langSelected', 'en');
+        }
+      });
+    });
   });
 </script>
 
-    <nav style="text-align:right; margin:0 2rem 1rem 0;">
-      <a href="/preise/" >Deutsch</a> |
-      <a href="/en/en/preise/" style="font-weight:bold;">English</a>
-    </nav>
     
 <main>
   <div class="container">

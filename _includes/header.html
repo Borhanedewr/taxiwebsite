@@ -13,7 +13,7 @@
           {% assign is_en = page.lang == 'en' or page.url contains '/en/' %}
           {% if is_en %}
             <li><a href="/en/" {% if page.url == '/en/' %}class="active"{% endif %}>Home</a></li>
-            <li><a href="/en/services/" {% if page.url contains '/en/services' %}class="active"{% endif %}>Services</a></li>
+            <li><a href="/en/leistungen/" {% if page.url contains '/en/services' %}class="active"{% endif %}>Services</a></li>
             <li><a href="/en/ueber-uns/" {% if page.url contains '/en/ueber-uns' %}class="active"{% endif %}>About</a></li>
             <li><a href="/en/contact/" {% if page.url contains '/en/contact' %}class="active"{% endif %}>Contact</a></li>
             <li>
@@ -51,22 +51,22 @@
             </li>
           {% endif %}
         </ul>
-        <div class="lang-switcher" style="display:inline-block; margin-left:2.2rem; vertical-align:middle;">
-          <form method="get" id="langForm" style="display:inline;">
-            <label for="langSelect" style="position:absolute;left:-9999px;">Sprache wählen</label>
-            <select name="lang" id="langSelect" style="padding:0.35em 1.5em;border-radius:999px;font-weight:600;font-size:1em;background:#fff;border:1.5px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,0.04);outline:none;cursor:pointer;transition:box-shadow 0.2s;">
-              <option value="de" {% unless is_en %}selected{% endunless %}>Deutsch</option>
-              <option value="en" {% if is_en %}selected{% endif %}>English</option>
-            </select>
-          </form>
-        </div>
-        </ul>
       </nav>
     </div>
   </div>
 </header>
+
+<nav style="text-align:right; margin:0 2rem 1rem 0;">
+  <a href="{{ page.url | replace:'/en/','/' | relative_url }}" {% unless page.lang == 'en' %}style="font-weight:bold;"{% endunless %}>Deutsch</a> |
+  {% assign is_en = page.lang == 'en' or page.url contains '/en/' %}
+  {% if is_en %}
+    <a href="{{ page.url | relative_url }}" style="font-weight:bold;">English</a>
+  {% else %}
+    <a href="{{ '/en' | append: page.url | replace:'//en','/en' | relative_url }}">English</a>
+  {% endif %}
+</nav>
 <!-- Floating Order Button for Mobile -->
-<a href="{% if is_en %}/en/qr/{% else %}{{ '/qr' | relative_url }}{% endif %}" class="btn-order-mobile" style="display:none">
+<a href="{% assign is_en = page.lang == 'en' or page.url contains '/en/' %}{% if is_en %}/en/qr/{% else %}{{ '/qr' | relative_url }}{% endif %}" class="btn-order-mobile" style="display:none">
   <span class="btn-order-svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;width:1.7em;height:1em;margin-right:0.5em;line-height:0;">
     <svg style="scale: 1.4; rotate: 45deg" width="100%" height="100%" viewBox="0 0 2000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
       <g>
@@ -91,32 +91,24 @@
   window.addEventListener('resize', toggleOrderBtn);
   window.addEventListener('DOMContentLoaded', toggleOrderBtn);
 
-  // Sprachumschalter
+  // Sprachweiterleitung nur beim ersten Besuch
   document.addEventListener('DOMContentLoaded', function() {
-    var langSelect = document.getElementById('langSelect');
-    if(langSelect) {
-      langSelect.addEventListener('change', function() {
-        var val = this.value;
-        var path = window.location.pathname;
-        if(val === 'en') {
-          if(!path.startsWith('/en/')) {
-            window.location.href = '/en/' + (path === '/' ? '' : path.replace(/^\//, ''));
-          }
-        } else {
-          if(path.startsWith('/en/')) {
-            window.location.href = '/' + path.replace(/^\/en\//, '');
-          }
-        }
-        localStorage.setItem('langSelected', val);
-      });
-    }
-
-    // Automatische Sprachweiterleitung nur beim ersten Besuch
     if(!localStorage.getItem('langSelected')) {
       var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
       if(userLang.startsWith('en') && !window.location.pathname.startsWith('/en/')) {
         window.location.href = '/en/';
       }
     }
+    // Klick auf Sprachlinks merkt Auswahl
+    var langLinks = document.querySelectorAll('nav a[href*="/en"], nav a[href*="/"]');
+    langLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if(link.textContent.trim().toLowerCase().includes('deutsch')) {
+          localStorage.setItem('langSelected', 'de');
+        } else {
+          localStorage.setItem('langSelected', 'en');
+        }
+      });
+    });
   });
 </script>
