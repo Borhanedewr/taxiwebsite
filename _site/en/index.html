@@ -48,7 +48,7 @@
           
             <li><a href="/en/" class="active">Home</a></li>
             <li><a href="/en/services/" >Services</a></li>
-            <li><a href="/en/about/" >About</a></li>
+            <li><a href="/en/ueber-uns/" >About</a></li>
             <li><a href="/en/contact/" >Contact</a></li>
             <li>
               <a href="/en/qr/" class="btn-order">
@@ -65,14 +65,16 @@
               </a>
             </li>
           
-          <li class="lang-switcher" style="margin-left:1.5rem;">
-            <form method="get" id="langForm" style="display:inline;">
-              <select name="lang" id="langSelect" style="padding:0.3em 1.2em;border-radius:999px;font-weight:600;font-size:1em;">
-                <option value="de" >Deutsch</option>
-                <option value="en" selected>English</option>
-              </select>
-            </form>
-          </li>
+        </ul>
+        <div class="lang-switcher" style="display:inline-block; margin-left:2.2rem; vertical-align:middle;">
+          <form method="get" id="langForm" style="display:inline;">
+            <label for="langSelect" style="position:absolute;left:-9999px;">Sprache wählen</label>
+            <select name="lang" id="langSelect" style="padding:0.35em 1.5em;border-radius:999px;font-weight:600;font-size:1em;background:#fff;border:1.5px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,0.04);outline:none;cursor:pointer;transition:box-shadow 0.2s;">
+              <option value="de" >Deutsch</option>
+              <option value="en" selected>English</option>
+            </select>
+          </form>
+        </div>
         </ul>
       </nav>
     </div>
