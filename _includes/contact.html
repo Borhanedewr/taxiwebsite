@@ -1,0 +1,139 @@
+<main>
+  <section class="contact-info-section">
+    <div class="container">
+      <h1 class="section-title" style="font-size:2.2rem; margin-bottom:1.2rem;">Kontakt – TaxiGo Neumünster</h1>
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Rufen Sie uns an</h3>
+            <p>Für sofortige Hilfe und Buchungen:</p>
+            <a href="tel:043219638696" class="contact-link">04321 9638696</a>
+            <p class="contact-note">Wir sind rund um die Uhr für Sie erreichbar.</p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Für schnelle Buchungen per Nachricht:</p>
+            <a href="https://wa.me/4943219638696" class="contact-link">04321 9638696</a>
+            <p class="contact-note">Erhalten Sie eine sofortige Bestätigung.</p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>E-Mail</h3>
+            <p>Für Anfragen und Informationen:</p>
+            <a href="mailto:taxigoneumuenster@gmail.com" class="contact-link">taxigoneumuenster@gmail.com</a>
+            <p class="contact-note">Wir antworten innerhalb von 24 Stunden.</p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Adresse</h3>
+            <p>Unser Standort:</p>
+            <address class="contact-link">
+              Am neuen kamp 38a<br>
+              24537 Neumünster
+            </address>
+            <p class="contact-note">Besuchen Sie uns nach Terminvereinbarung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- FAQ Quick Access -->
+  <section class="faq-quick">
+    <div class="container">
+      <h2 class="section-title">Häufig gestellte Fragen</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-button">Wie weit im Voraus sollte ich ein Taxi buchen?</button>
+            <div class="accordion-content">
+              <p>Für spontane Fahrten genügt ein Anruf 15-30 Minuten vor der gewünschten Abholzeit. Für wichtige Termine
+                wie Flughafentransfers empfehlen wir eine Buchung mindestens 24 Stunden im Voraus.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Kann ich ein bestimmtes Fahrzeug anfragen?</button>
+            <div class="accordion-content">
+              <p>Ja, Sie können bei der Buchung einen Fahrzeugtyp anfragen. Je nach Verfügbarkeit werden wir versuchen,
+                Ihrem Wunsch nachzukommen.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Was passiert, wenn sich meine Pläne ändern?</button>
+            <div class="accordion-content">
+              <p>Änderungen und Stornierungen sollten so früh wie möglich mitgeteilt werden. Bei kurzfristigen
+                Änderungen kontaktieren Sie uns bitte telefonisch unter 043219638696.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Gibt es zusätzliche Kosten für Gepäck?</button>
+            <div class="accordion-content">
+              <p>Normales Gepäck ist im Fahrpreis inbegriffen. Bei übermäßig großem oder schwerem Gepäck kann ein
+                kleiner Aufpreis anfallen. Bitte informieren Sie uns bei der Buchung über Ihr Gepäck.</p>
+            </div>
+          </div>
+        </div>
+      <div class="faq-link">
+        <a href="index.html#faq" class="btn btn-secondary">Alle FAQs anzeigen</a>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Accordion functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordionButtons = document.querySelectorAll('.accordion-button');
+
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          this.classList.toggle('active');
+          const content = this.nextElementSibling;
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
+
+      // Form submission handling (for demo purposes)
+      const contactForm = document.querySelector('.contact-form');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // In a real-world scenario, you would send the form data to your server here
+          alert('Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.');
+          contactForm.reset();
+        });
+      }
+
+      // Back to top button
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</main>

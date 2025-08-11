@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Preise – TaxiGo Neumünster"
+description: "Unsere aktuellen Taxipreise für Fahrten in und um Neumünster. Transparente Kostenübersicht für Ihre nächste Fahrt."
+permalink: /prices/
+---
+{% include prices.html %}
 <!DOCTYPE html>
 <html lang="de">
 
@@ -26,31 +33,26 @@
       "@context": "https://schema.org",
       "@type": "OfferCatalog",
       "name": "Preise – Taxiunternehmen Mustermann",
-      "url": "https://www.taxi-mustermann.de/prices.html",
+      "url": "https://www.taxi-mustermann.de/prices/",
       "description": "Transparente Taxipreise für jede Fahrt. Informieren Sie sich über unsere Tarife, Pauschalen und Sonderangebote. Jetzt unverbindlich anfragen!"
     }
   </script>
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="index.html">Taxi<span class="highlight">Go</span>‎ Neumünster</a>
-        </div>
-        <nav>
-          <input type="checkbox" id="nav-toggle">
-          <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
-          </label>
-          <ul class="nav-menu">
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-            <li>
-              <a href="/qr.html" class="btn-order">
+---
+layout: default
+title: "Taxipreise Neumünster – TaxiGo Neumünster Tarife & Angebote"
+description: "Unsere aktuellen Taxipreise für Fahrten in und um Neumünster. Transparente Kostenübersicht, Tarife und Angebote für Ihre nächste Fahrt."
+permalink: /de/prices/index.html
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Taxipreise Neumünster – TaxiGo Neumünster Tarife & Angebote",
+  "description": "Unsere aktuellen Taxipreise für Fahrten in und um Neumünster. Transparente Kostenübersicht, Tarife und Angebote für Ihre nächste Fahrt.",
+  "url": "https://xn--taxigoneumnster-8vb.de/prices.html"
+}
+</script>
+{% include prices.html %}
                 <i class="fas fa-taxi"></i> Online bestellen
               </a>
             </li>

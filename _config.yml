@@ -1,0 +1,22 @@
+title: TaxiGo Neumünster
+email: taxigoneumuenster@gmail.com
+description: >-
+  Sicheres und bequemes Taxi in Neumünster. Business-Fahrten, Schülerfahrten, Kurierfahrten, Flughafentransfer und mehr.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://xn--taxigoneumnster-8vb.de" # the base hostname & protocol for your site
+lang: de
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - node_modules
+  - README.md
+  - postcss.config.js
+  - tailwind.config.js
+  - LICENSE
+  - CNAME
+  - index.md
+  - .devcontainer
+  - .vscode
