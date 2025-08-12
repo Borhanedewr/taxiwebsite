@@ -24,6 +24,7 @@ exclude:
   - index.md
   - .devcontainer
   - .vscode
+# assets/fonts und assets/css werden nicht ausgeschlossen, damit sie nach _site kopiert werden
 jekyll-minifier:
   preserve_php: true                # Default: false
   remove_spaces_inside_tags: true   # Default: true
