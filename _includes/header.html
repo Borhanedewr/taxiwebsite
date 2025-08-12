@@ -56,7 +56,7 @@
   </div>
 </header>
 
-<nav style="text-align:right; margin:0 2rem 1rem 0;">
+<nav style="text-align:right; margin:0.5rem 1rem 1rem 0;">
   <a href="{{ page.url | replace:'/en/','/' | relative_url }}" {% unless page.lang == 'en' %}style="font-weight:bold;"{% endunless %}>Deutsch</a> |
   {% assign is_en = page.lang == 'en' or page.url contains '/en/' %}
   {% if is_en %}
